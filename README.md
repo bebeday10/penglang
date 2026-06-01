@@ -1,0 +1,74 @@
+# PengLang, that one penguin language
+
+Hello and welcome to **PengLang**, this language is created by *Penguins*™, that's why it's called PengLang because *Penguins*™.  
+
+# Why does this exist
+
+I don't know either. Actually, the *Penguins*™ made it.  
+Ask them.  
+The python snake also helped.  
+Ask them.
+
+# Things you can do
+The main point is:  
+Dancing.
+
+Other usual *Penguin*™ things:
+- saying stuff
+- fishing stuff
+- assigning tasks
+- doing tasks
+
+These are the main things *Penguin*™ can do in order to *Survive*™.  
+Please do these *Things*™.
+
+---
+
+Things penguins might do in a while:
+
+- penguin do over
+- shouting
+- making a *List*™ to keep track of *Things*™
+- making a *Dictionary*™ because language is hard
+- making a variable because **why *not***
+
+These are probable *Things*™.
+
+---
+
+Things penguins would do if they had *Friends*™:
+
+- answering yes-no questions to help *Friends*™
+- doing a penguin noise because **why *not***
+
+---
+
+Errors
+
+- PenguinError: because penguin errorment
+
+
+# This is Python what are you thinking
+
+No it isn't this is a module of Python
+
+# Modules
+
+Here are some modules included in PengLang.
+
+## Pengmath
+
+A basic math module that let's you let *Penguins*™ count because they are *Smart*™.
+
+- addition
+- subtraction
+- multiplication
+- division
+
+## Pengwindow
+
+Make *Windows*™. Add things to *Window*™. Add child *Window*™.
+
+# Conclusion
+
+This is a penguin-made *"""language"""*.
