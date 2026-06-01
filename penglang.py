@@ -192,3 +192,56 @@ def penguin_noise(noise = "penguin", shouting: bool = False, times: int = 1):
 
 # could we make like a tkinter type of module for this language? that would be fun! we could make functions for creating windows, buttons, labels, etc. that use penguin words instead of python keywords! maybe we can call it pengtkinter or something like that!
 # let's call it pengwindow! we can make functions for creating windows, buttons, labels, etc. that use penguin words instead of python keywords! that could be fun!
+# i just did that just now, check it out!
+
+# make a help function
+
+def penguin_help(function):
+    """
+    get help on a function
+
+    Args:
+        function (Callable): the function to get help on
+    """
+    if hasattr(function, "__doc__") and function.__doc__:
+        say(f"here is the help for {function.__name__}:")
+        say(function.__doc__)
+    else:
+        say(f"penguin scoured the depths of the ocean but couldn't find any help for {function.__name__}!")
+
+
+# make a function factory
+# what else can we add to the factory?
+
+def penguin_function_maker(typeofthing, log_: bool = False, **funcargs):
+    """
+    make a function
+
+    Args:
+        typeofthing (str): the type of function to create
+        log_ (bool, optional): whether to log the creation of the function. Defaults to False.
+
+    Returns:
+        Callable: the created function
+    """
+    if log_:
+        say(f"Creating a penguin function of type: {typeofthing} with message: {funcargs.get('message', 'No message provided')}")
+    def inner():
+        if typeofthing == "dance":
+
+            return dance(funcargs.get("dance_style", "penguin"), funcargs.get("shouting", False))
+        elif typeofthing == "noise":
+
+            return penguin_noise(funcargs.get("noise", "penguin"), funcargs.get("shouting", False), funcargs.get("times", 1))
+        elif typeofthing == "shout":
+
+            return shout(funcargs.get("message", "Penguin Shout!"))
+        elif typeofthing == "say":
+
+            return say(funcargs.get("message", "Penguin says something!"))
+        
+        elif typeofthing == "help":
+
+            return penguin_help(funcargs.get("function", lambda: None))
+        
+    return inner
