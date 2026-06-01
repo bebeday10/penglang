@@ -10,20 +10,56 @@
     - make functions that do things if a condition is true"""
 
 def say(message):
+    """
+    This is a task that makes penguins say stuff
+
+    Args:
+        message (Any): the message to say, can be any type, it will be converted to a string before being printed
+    """
     print(message)
 
 def fish(thing):
+    """
+    fish something (returns item)
+
+    Args:
+        thing (Any): the item to fish out
+
+    Returns:
+        Any: the item that was fished out
+    """
     return thing # this is a function that does nothing, just for fun
 
 def task(function):
+    """
+    do a task
+
+    Args:
+        function (Callable): the function to execute
+
+    Returns:
+        Any: the result of the function execution
+    """
     return function # this is a decorator that does nothing, just for fun
 
 def do(function):
+    """
+    does a task
+
+    Args:
+        function (Callable): the function to execute
+    """
     function()
 
 # what else to add?
 
 def penguin_do_over(iterable):
+    """
+    says each item in the iterable
+
+    Args:
+        iterable (Iterable): the iterable to iterate over
+    """
     if isinstance(iterable, dict):
         for key, value in iterable.items():
             say(f"{key}: {value}")
@@ -32,22 +68,65 @@ def penguin_do_over(iterable):
             say(item)
 
 def shout(message):
+    """
+    shout a message
+
+    Args:
+        message (Any): the message to shout, can be any type, it will be converted to a string before being printed
+    """
+    str(message) # convert message to string just in case it's not already a string
     print(message.upper() + "!!!")
 
 # how to make a rhing that makes a list using a function? how about this:
 def penguin_list(*items):
+    """
+    make a list of items
+
+    Args:
+        *items: the items to include in the list
+
+    Returns:
+        list: the list containing the items
+    """
     return list(items)
 
 def penguin_dict(**kwargs):
+    """
+    make a dictionary
+
+    Args:
+        **kwargs: the key-value pairs for the dictionary
+
+    Returns:
+        dict: the dictionary containing the key-value pairs
+    """
     return dict(kwargs)
 
 def penguin_variable(name, value):
+    """
+    make a variable
+
+    Args:
+        name (str): the name of the variable
+        value (Any): the value of the variable
+    """
     globals()[name] = value # how to make a thing that makes a variable? this is a hacky way to do it, but it works! # this doesn't declare the variable though, so anywhere else you want to use it, you have to use the same name as a string, which is not ideal, but it's the best I can do with this language
 
 
 # sadly you can't make statements like if, for, while, etc. in this language, but you can make functions that do things!
 
 def penguin_yesno_question(thing, condition = True, log: bool = False):
+    """
+    ask the penguin a question
+
+    Args:
+        thing (Any): the thing to check
+        condition (Any, optional): the condition to check against. Defaults to True.
+        log (bool, optional): whether to log the result. Defaults to False.
+
+    Returns:
+        bool: True if the condition is met, False otherwise
+    """
     if thing == condition:
         if log:
             say(f"{thing} is {condition}!")
@@ -63,18 +142,49 @@ def penguin_yesno_question(thing, condition = True, log: bool = False):
 
 # should we make error messages that are more penguin-like? maybe we can make a function that raises an error with a penguin message instead of a python message? that could be fun!
 class PenguinError(Exception):
+    """
+    the basic penguinerror when you decide it
+
+    Args:
+        Exception (str): the error message to raise
+    """
     pass
 def penguin_error(type, message):
+    """
+    raise a penguin error
+
+    Args:
+        type (str): the type of error
+        message (str): the error message
+
+    Raises:
+        PenguinError: the penguin error
+    """
     raise PenguinError(f"{type} - {message}")
 
 # what other fun things can we add to this language? maybe we can make a function that makes a penguin noise? or a function that makes a penguin dance? the possibilities are endless!
 
 def dance(dance_style = "penguin", shouting: bool = False):
+    """
+    make a penguin dance.
+
+    Args:
+        dance_style (str, optional): the style of dance. Defaults to "penguin".
+        shouting (bool, optional): whether the penguin should shout while dancing. Defaults to False.
+    """
     say(f"The penguin is dancing the {dance_style} dance!")
     if shouting:
         shout("Penguin dance!")
 
 def penguin_noise(noise = "penguin", shouting: bool = False, times: int = 1):
+    """
+    make a penguin make a noise.
+
+    Args:
+        noise (str, optional): the noise to make. Defaults to "penguin".
+        shouting (bool, optional): whether the penguin should shout the noise. Defaults to False.
+        times (int, optional): how many times to make the noise. Defaults to 1.
+    """
     for _ in range(times):
         say(f"The penguin says: {noise}!")
         if shouting:
