@@ -12,16 +12,14 @@ This is a requirement.
 
 # Step 2: Get this.
 
-Go to Releases > Go to Latest > Download ZIP > File Explorer > Find that one specific ZIP > Extract it (Extract in a new folder, this will be useful for later) > You got it
+Go to Releases > Go to Latest > Download ZIP > File Explorer > Find that one specific ZIP > Extract it > You got it
 
 # Step 3: Rename the folder
 
-You currently have `penglang-main`. That is ***bad*** penguin. Rename it to `penglang_language`.
+You don't need to anymore after v0.1.0.
 
-# Step 4: Hopefully you made a new parent folder for PengLang like penguins said
-
-**ALL** PengLang projects **NEED** to be **1 FOLDER OUTSIDE** (parent folder) the `penglang_language` folder.  
-Or else penguins will get extremely confused about modules. Sorry about that.
+# Step 4: Where to make projects
+Anywhere, as long as you refer to the path of the import.
 
 # Step 5: PengLang projects are Python projects
 
@@ -33,7 +31,7 @@ Here is some Python code.
 This is for the main PengLang language.
 
 ```python
-import penglang_language.penglang as peng
+import your.path.here.penglang_language.penglang_language.penglang as peng
 ```
 
 `peng` can be whatever you want.
@@ -41,7 +39,7 @@ import penglang_language.penglang as peng
 This is for the math module.
 
 ```python
-import penglang_language.modules.pengmath as pengmath
+import your.path.here.penglang_language.penglang_language.modules.pengmath as pengmath
 ```
 
 `pengmath` can be whatever you want.
@@ -49,14 +47,14 @@ import penglang_language.modules.pengmath as pengmath
 This is for the window module.
 
 ```python
-import penglang_language.modules.pengwindow as pengwindow
+import your.path.here.penglang_language.penglang_language.modules.pengwindow as pengwindow
 ```
 `pengwindow` can be whatever you want.
 
 Or, for all,
 
 ```python
-import penglang_language as peng
+import your.path.here.penglang_language.penglang_language as peng
 ```
 `peng` can be whatever you want.
 
@@ -69,17 +67,18 @@ You can code Python or you can code Python.
 Here is a map of where you should put stuff:
 
 ```
-your folder/
-    yourgame.py
+yourgamesomewherehere.py
+penglang_language/
     penglang_language/
         modules/
             pengmath.py
             pengwindow.py
-        .gitignore
-        LICENSE
         penglang.py
-        README.md
-        setup.md [YOU ARE HERE]
+        ___init__.py
+    .gitignore
+    LICENSE
+    README.md
+    setup.md [YOU ARE HERE]
 ```
 
 # Conclusion
