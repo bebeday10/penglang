@@ -1,5 +1,5 @@
 # this is the math module for the penguin language, it has functions for addition, subtraction, multiplication, division, etc. that use penguin words instead of python keywords
-import penglang_language.penglang as peng
+from .. import penglang as peng
 
 def penguin_add(a, b, *args, log: bool = False):
     """

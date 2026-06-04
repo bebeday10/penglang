@@ -1,5 +1,5 @@
 import tkinter as tk
-import penglang_language.penglang as peng
+from .. import penglang as peng
 
 def penguin_window(title="Penguin Window", width=400, height=300,color="lightgray", log: bool = False):
     """

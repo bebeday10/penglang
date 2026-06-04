@@ -245,3 +245,15 @@ def penguin_function_maker(typeofthing, log_: bool = False, **funcargs):
             return penguin_help(funcargs.get("function", lambda: None))
         
     return inner
+
+# multi command func
+
+def penguin_multi_command(*commands):
+    """
+    execute multiple commands in sequence
+
+    Args:
+        *commands (Callable): the commands to execute, each command should be a callable
+    """
+    for command in commands:
+        command()
