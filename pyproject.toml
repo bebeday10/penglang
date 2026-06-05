@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "penglang"
+version = "0.1.0"
+description = "a nonserious language module for penguins"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    {name = "bebeday10"}
+]
+license = "MIT"
+keywords = ["language", "penguin", "nonserious", "fun", "programming"]
+
+[project.urls]
+Homepage = "https://github.com/bebeday10/penglang"
+Repository = "https://github.com/bebeday10/penglang"
+Issues = "https://github.com/bebeday10/penglang/issues"
