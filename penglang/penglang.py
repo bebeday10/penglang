@@ -269,7 +269,7 @@ def horse(func):
         func (Callable): the function to execute when the horse does its thing
 
     Returns:
-        Callable: the created horse function
+        Callable: the decorated function that includes horse-related messages
     """
     def inner(*args, **kwargs):
         say("neeeeeigh! 🐎🐎🐎 hoooorse!")
