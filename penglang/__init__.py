@@ -1,4 +1,4 @@
-__version__ = "0.1.0-alpha2"
+__version__ = "0.1.0"
 
 from .penglang import *
 from .modules import pengwindow, pengmath
