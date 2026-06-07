@@ -12,6 +12,14 @@ This is a requirement.
 
 # Step 2: Get this.
 
+> [!NOTE]
+> You can now pip install the module.
+> ```bash
+> pip install penglang
+> ```
+> Skip to step 5, and read the notes:  
+> - On step 6, do `import penglang.penglang`, `import penglang.modules.pengmath`, and `import penglang.modules.pengwindow`. For all, `import penglang`.
+
 Go to Releases > Go to Latest > Download ZIP > File Explorer > Find that one specific ZIP > Extract it > You got it
 
 # Step 3: Rename the folder
@@ -64,7 +72,7 @@ You can code Python or you can code Python.
 
 # Map
 
-Here is a map of where you should put stuff:
+Here is a map of where you should put stuff (if not pip installed):
 
 ```
 yourgamesomewherehere.py
