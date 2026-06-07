@@ -263,7 +263,7 @@ def penguin_multi_command(*commands):
 
 def horse(func):
     """
-    make a function that does something horse-related
+    make a function that does something horse-related NOTE: this is just for fun, it doesn't actually do anything horse-related, it's just a decorator that adds some horse-related messages before and after the function execution
 
     Args:
         func (Callable): the function to execute when the horse does its thing
