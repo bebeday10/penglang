@@ -257,3 +257,22 @@ def penguin_multi_command(*commands):
     """
     for command in commands:
         command()
+
+
+# Horse
+
+def horse(func):
+    """
+    make a function that does something horse-related
+
+    Args:
+        func (Callable): the function to execute when the horse does its thing
+
+    Returns:
+        Callable: the created horse function
+    """
+    def inner(*args, **kwargs):
+        say("neeeeeigh! 🐎🐎🐎 hoooorse!")
+        func(*args, **kwargs)
+        say("the horse has finished its thing!")
+    return inner
