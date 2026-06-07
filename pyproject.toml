@@ -18,3 +18,6 @@ keywords = ["language", "penguin", "nonserious", "fun", "programming"]
 Homepage = "https://github.com/bebeday10/penglang"
 Repository = "https://github.com/bebeday10/penglang"
 Issues = "https://github.com/bebeday10/penglang/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
