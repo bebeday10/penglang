@@ -1,4 +1,14 @@
 # Changelog
+## v0.2.0
+Penguins have found out about the mesmerizing thing called **a vending machine**.  
+Many penguins call this an "economic disaster" for poor penguins.  
+
+---
+
+The penguin vending machine is a class in PengVending, the newly made module for PengLang.  
+
+We hope you enjoy the *vending machine*. Catch you next time!
+
 ## v0.1.0
 Hello goldfish, clownfish, fish that are _pink_, fish that are _blue_, fish, fish and blobfish, we welcome **the logo of PengLang** and **the new wiki**, `setup.md`, **guest** `__init__.py`, the *Factory*­™, `penguin_multi_command`, changed structure, and `setup.md`.
 
