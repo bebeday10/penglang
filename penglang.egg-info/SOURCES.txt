@@ -9,4 +9,5 @@ penglang.egg-info/dependency_links.txt
 penglang.egg-info/top_level.txt
 penglang/modules/__init__.py
 penglang/modules/pengmath.py
+penglang/modules/pengvending.py
 penglang/modules/pengwindow.py
