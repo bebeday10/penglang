@@ -3,7 +3,7 @@
 # this is unserious and not meant to be taken seriously.
 
 class PenguinVendingMachine:
-    def __init__(self, inventory: dict):
+    def __init__(self, inventory: dict, name="vending machine"):
         """
         vending machine
 
@@ -23,6 +23,7 @@ class PenguinVendingMachine:
         """
         self.inventory = inventory
         self.total_sales = 0
+        self.name = name
 
     def purchase(self, item_name: str, money: float, give_back_change: str=None):
 
