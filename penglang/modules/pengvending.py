@@ -87,3 +87,6 @@ class PenguinVendingMachine:
 
     def display_total_sales(self):
         return self.total_sales
+    
+    def __str__(self):
+        return f"a vending machine named {self.name}, has {f", ".join(i for i in list(self.inventory)) if self.inventory else "no items"}"

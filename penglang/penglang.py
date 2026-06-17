@@ -9,6 +9,10 @@
     - make functions that do things
     - make functions that do things if a condition is true"""
 
+from rich import print
+from rich.panel import Panel
+import asyncio as asy
+
 def say(message):
     """
     This is a task that makes penguins say stuff
@@ -17,6 +21,25 @@ def say(message):
         message (Any): the message to say, can be any type, it will be converted to a string before being printed
     """
     print(message)
+
+def say_in_a_box(message, title, box_color):
+    """
+    say stuff, but in a box
+
+    Args:
+        message (Any): the message to say
+        title (Any): the title of the box
+        box_color (str): the color of the box
+    """
+
+    print(
+        Panel(
+           renderable=message,
+           title=title,
+           border_style=box_color
+
+        )
+    )
 
 def fish(thing):
     """
@@ -172,7 +195,7 @@ def dance(dance_style = "penguin", shouting: bool = False):
         dance_style (str, optional): the style of dance. Defaults to "penguin".
         shouting (bool, optional): whether the penguin should shout while dancing. Defaults to False.
     """
-    say(f"The penguin is dancing the {dance_style} dance!")
+    say(f"[bright_magenta]The penguin is dancing the {dance_style} dance![/bright_magenta]")
     if shouting:
         shout("Penguin dance!")
 
@@ -258,6 +281,15 @@ def penguin_multi_command(*commands):
     for command in commands:
         command()
 
+def penguin_execute(thing_to_execute: str):
+    """
+    execute a string
+
+    Args:
+        thing_to_execute (str): the thing the execute, make sure it's a string
+    """
+    exec(thing_to_execute)
+
 
 # Horse
 
@@ -276,3 +308,18 @@ def horse(func):
         func(*args, **kwargs)
         say("the horse has finished its thing!")
     return inner
+
+def multitask(func):
+    """
+    multitask that makes sleeping only to that func only, use await statement
+
+    Args:
+        func (Callable): the func
+
+    Returns:
+        the function but with async on
+    """
+    def wrapper(*args, **kwargs):
+        return asy.run(func(*args, **kwargs))
+    
+    return wrapper

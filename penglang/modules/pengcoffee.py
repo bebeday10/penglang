@@ -3,6 +3,7 @@ import asyncio as asy
 import random as r
 from .. import penglang as pl
 from . import pengvending as pv
+from .penglink.hubs import coffee as plink
 
 def auto_async(func):
     def wrapper(*args, **kwargs):
@@ -24,6 +25,7 @@ class PenguinCoffeeMachine:
                         "item": amount
                         "another": amount
                         }
+                    "price": float (optional)
                     },
                 "another": {
                     "amount": int,
@@ -31,6 +33,7 @@ class PenguinCoffeeMachine:
                         "item": amount
                         "another": amount
                         }
+                    "price": float (optional)
                     }
             }
             supplies (dict): the preset supplies in your coffee machine. follow:
@@ -68,12 +71,45 @@ class PenguinCoffeeMachine:
             self.vendinglink.inventory[item] = item_in_vending
 
         return f"Finished sending coffees to {pv.PenguinVendingMachine}."
+    
+    def add_request(self, mode: str, request_name: str, coffee: str, amount: int, log: bool =False):
+        if self.inventory.get(coffee) == None:
+            pl.say("[bold blue]coffee doesn't exist[/bold blue]") if log else None
+            return "Coffee doesn't exist"
+        
+        if self.inventory.get(coffee, {}).get("amount", 0) < amount:
+            pl.say("you don't have that much coffees") if log else None
+            return "Not enough coffees"
+        
+        plink.add_request(request_name, self.name, mode, self.inventory.get(coffee), amount, "PenguinCoffeeMachine", log)
+
+    def accept_request(self, request_name, remove_request=True, log=False):
+        result = plink.accept_request(request_name, "PenguinCoffeeMachine", log, remove_request)
+
+        if result == None:
+            pl.say("failed") if log else None
+            return None
+
+        if result[0] == "give":
+            if self.inventory.get(result[1], None) == None:
+                self.inventory.update(result[3])
+                pl.say(f"got {result[1]}.") if log else None
+                return f"Got {result[1]}."
+            else:
+                self.inventory[result[1]]["amount"] = self.inventory.get(result[1], {}).get("amount", 0) + result[2]
+
+        elif result[0] == "share recipe":
+            if self.inventory.get(result[3], None) == None:
+                self.inventory.update(result[1])
+
+            else:
+                self.inventory[result[3]]["supplies"] = result[1]
                 
             
     @auto_async
     async def make_coffee(self, typeofcoffee: str, log: bool =False):
         if self.inventory.get(typeofcoffee) == None:
-            pl.say("that coffee doesn't exist!") if log else None
+            pl.say("[bold cyan]that coffee doesn't exist![/bold cyan]") if log else None
             return "Coffee doesn't exist."
 
         suppliesneeded: dict = self.inventory[typeofcoffee]["supplies"]
@@ -81,7 +117,7 @@ class PenguinCoffeeMachine:
         for itemneeded, amountneeded in suppliesneeded.items():
             currentsupplies = self.supplies.get(itemneeded, 0)
             if currentsupplies < amountneeded:
-                pl.say(f"don't have the supplies: {itemneeded}, need {amountneeded}.") if log else None
+                pl.say(f"[bold bright_red]don't have the supplies: [italic]{itemneeded}[/italic], need [/bold bright_red]{amountneeded}[bold bright_red].[/bold bright_red]") if log else None
                 return "Don't have the supplies."
         else:
             for item, amount in suppliesneeded.items():
@@ -123,29 +159,52 @@ class PenguinCoffeeMachine:
 
         return f"Supplied {amount} {supply}s."
     
-    def new_coffee(self, typeofcoffee, suppliesneeded: dict ={}, log: bool =False):
+    def new_coffee(self, typeofcoffee, price: float =round(r.uniform(6, 9) * 20) / 20, suppliesneeded: dict ={}, log: bool =False):
         if typeofcoffee in self.inventory:
             pl.say("coffee already exists") if log else None
             return f"{typeofcoffee} already exists."
         
         self.inventory[typeofcoffee] = {
             "supplies": suppliesneeded,
-            "amount": 0
+            "amount": 0,
+            "price": price
         }
 
         pl.say(f"{typeofcoffee} made.")
 
         return f"{typeofcoffee} has been made."
     
-    def display_inventory(self, log: bool =True):
+    def display_inventory(self, log: bool =True, mode: str ="normal"):
         inventory_list = []
 
-        for item_name, details in self.inventory.items():
-            inventory_list.append(f"{item_name}: {details["amount"]} ({" | ".join(f"{k}: {v}" for k, v in details["supplies"].items())})")
+        if mode == "normal":
 
-        pl.say("\n".join(inventory_list)) if log else None
+            for item_name, details in self.inventory.items():
+                inventory_list.append(f"{item_name}: {details["amount"]} ({" | ".join(f"{k}: {v}" for k, v in details["supplies"].items())})")
 
-        return "\n".join(inventory_list)
+            pl.say("\n".join(inventory_list)) if log else None
+
+            return "\n".join(inventory_list)
+        
+        elif mode == "dev":
+            pl.say(self.inventory) if log else None
+            return self.inventory
+
+    def display_supplies(self, log: bool =True, mode: str ="normal"):
+        supplies_list: list = []
+        if mode == "normal":
+
+            for supply, amount in self.supplies.items():
+                supplies_list.append(f"{supply}: {amount}")
+
+            pl.say("\n".join(supplies_list)) if log else None
+
+            return "\n".join(supplies_list)
+        
+        elif mode == "dev":
+            pl.say(self.supplies)
+
+            return self.supplies
 
     
     def link_PenguinVendingMachine(self, vending_machine: pv.PenguinVendingMachine, log: bool =False):
@@ -153,6 +212,9 @@ class PenguinCoffeeMachine:
         self.send_to_vending() if self.autosend else None
         pl.say(f"vending machine {vending_machine} linked.") if log else None
         return f"Linked {vending_machine}."
+    
+    def __str__(self):
+        return f"a coffee machine named {self.name}, makes a coffee per {self.speed}, currently {f"linked by '{self.vendinglink}'" if self.vendinglink else "not linked"}, has {", ".join(i for i in list(self.inventory))}"
 
 
 
