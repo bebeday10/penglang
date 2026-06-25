@@ -1,4 +1,52 @@
 # Changelog
+## v0.3.0
+Hello fish, fish, and fried fish. This is a big update. We now have a coffee machine that stabilizes the *economy*.
+
+---
+
+The coffee machine is a way to stabilize the "economic disaster".  
+Many penguins call this an "economic stabilizer".  
+We hope you enjoy this product.
+
+---
+
+**PengImage** is a new module for penguins to make images in their mind. This is a *Revolutionary Invention*™.
+
+---
+
+**PengIterable** is a new module for penguins to utilize dictionaries and lists the *PengLang* way.
+
+---
+
+**PengLink**: *Transferring Everything, Everywhere*  
+**PengLink** is a way to transfer items to items for everything, everywhere.  
+Many penguins imagine this as a way to *cooperate with one another*.
+
+---
+
+**PengPath** is our version of pathing. Penguins can access their files in ***no Time***™.
+
+---
+
+**PengPrint** is a way for penguins to print emergency, info and warning boxes.
+
+---
+
+**PengVending** has been made to comply with the *PengLink Standards*™, and now, penguins can assign a name to it. There is also a new way to say it with `say()`.
+
+---
+
+**PengLang** main has updated. Please, check it out:
+
+- Talking now uses `rich`
+- You can now talk in a box
+- Dancing is now in bright magenta
+- Penguins can now use `penguin_execute`. It will execute the string.
+- Multitasking now available as a decorator.
+
+---
+
+We hope you enjoy this update. Goodbye!
 ## v0.2.0
 Penguins have found out about the mesmerizing thing called **a vending machine**.  
 Many penguins call this an "economic disaster" for poor penguins.  
