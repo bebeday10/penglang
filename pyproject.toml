@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "penglang"
-version = "0.3.0"
+version = "0.3.1"
 description = "a nonserious language module for penguins"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -13,7 +13,7 @@ authors = [
 ]
 dependencies = [
     "rich",
-    "magic-ascii"
+    "ascii-magic"
 ]
 license = "MIT"
 keywords = ["language", "penguin", "nonserious", "fun", "programming", "dsl"]
