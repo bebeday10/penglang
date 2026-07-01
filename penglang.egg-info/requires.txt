@@ -1,4 +1,4 @@
 rich
-magic-ascii
+ascii-magic
 
 [nothing]

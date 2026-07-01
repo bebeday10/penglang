@@ -19,3 +19,4 @@ penglang/modules/pengvending.py
 penglang/modules/pengwindow.py
 penglang/modules/penglink/central.py
 penglang/modules/penglink/hubs/coffee.py
+penglang/modules/penglink/hubs/vending.py
