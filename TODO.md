@@ -10,5 +10,9 @@
 ## penglink
 - [ ] fix it
 
+## pengpenguin
+- [ ] add Penguin class
+    - [ ] add this to penglink as well
+
 ## currently unknown module
 - [ ] add class factory (add in penglang or pengclass)
