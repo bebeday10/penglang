@@ -8,7 +8,7 @@
 - [ ] add reverse text
 
 ## penglink
-- [ ] fix it
+- [x] fix it
 
 ## pengpenguin
 - [ ] add Penguin class

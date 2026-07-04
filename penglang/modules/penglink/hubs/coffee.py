@@ -56,7 +56,7 @@ def accept_request(request_name: str, name: str, log: bool = False, remove_reque
 
             supplies: dict = item.get("supplies", {})
 
-            item_name: str = item.get("name", "coffee")
+            item_name: str = request.get("name", "coffee")
 
             price: float = item.get("price", round(r.uniform(6, 9) * 20) / 20)
 
