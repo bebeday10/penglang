@@ -1,9 +1,8 @@
-# __init__.py file for the penglang_language.modules package
+# __init__.py for penglink
 
 __version__ = "0.4.0"
 
-from .pengmath import *
-from .pengwindow import *
+from .central import show_requests
 
 SHOWLOGS = False
 

@@ -36,7 +36,7 @@ def reverse_the_dict(the_dict: dict):
     return dict(reversed(the_dict.items()))
 
 def invert_the_dict(the_dict: dict):
-    inverted_dict =defaultdict(list)
+    inverted_dict = defaultdict(list)
 
     for key, value in the_dict.items():
         inverted_dict[value].append(key)

@@ -323,3 +323,17 @@ def multitask(func):
         return asy.run(func(*args, **kwargs))
     
     return wrapper
+
+# make a type returner
+
+def penguin_what_is(object):
+    """
+    tells what is the object you gave
+
+    Args:
+        object (object): the object you want to know what it is
+
+    Returns:
+        type: the type of object you get
+    """
+    return type(object)

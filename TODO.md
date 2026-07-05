@@ -1,11 +1,11 @@
 # todo
 ## pengprint
-- [ ] add typewriter
-- [ ] add async typewriter
-- [ ] add better say
+- [x] add typewriter
+- [x] add async typewriter
+- [x] add better say
 
 ## pengstring
-- [ ] add reverse text
+- [x] add reverse text
 
 ## penglink
 - [x] fix it

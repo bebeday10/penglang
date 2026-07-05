@@ -1,4 +1,36 @@
 # Changelog
+## v0.4.0
+Hello pufferfish and seahorses. Today we welcome you a *small* update.
+
+---
+
+There are new `typewrite` commands for penguins to have a *satisfying* talk.  
+One is *normal* and the other is **multitask-effecient**. **Multitasking** is for penguins that don't have much *time on their beaks*.  
+These are located under `pengprint`.
+
+---
+
+There is a new `better_say` for penguins to utilize the *best of their beaks*.  
+In this talker, penguins can split their sentences into *6* and it will *still* work, and they can specify what to put in the splits or what to say after saying.
+
+---
+
+**PengString** is an up-and-coming module that according to *penguins* across the *world* looks empty.  
+For now, **PengString** will only have `reverse_speech`.  
+But fear not, pufferfish and seahorses! There will be more!
+
+---
+
+**PengLink** has been fixed. Penguins no longer have their packages *misunderstood*.
+
+---
+
+**PengLang** main has a new command. `penguin_what_is`. This is for penguins to answer,
+> What is that thing?
+
+---
+
+We hope you'll be happy with this update. Goodbye!
 ## v0.3.0
 Hello fish, fish, and fried fish. This is a big update. We now have a coffee machine that stabilizes the *economy*.
 
