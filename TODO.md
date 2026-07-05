@@ -20,5 +20,11 @@
 - [ ] add save as
 - [ ] add load option
 
-## currently unknown module
-- [ ] add class factory (add in penglang or pengclass)
+## pengclass
+- [ ] add class factory
+
+## pengcondition
+- [ ] add if that executes code
+- [ ] add the compare operators
+- [ ] add compare in
+- [ ] add True/False compare
