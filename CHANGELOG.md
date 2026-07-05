@@ -1,4 +1,22 @@
 # Changelog
+## v0.5.0
+Hello anglerfish and seals. Today we welcome some *nice little* update.
+
+---
+
+There is a new **PengYesNo** module for penguins that want an advanced experience of *asking questions* and *getting answered*.  
+
+Penguins can *ask questions*, *get answered*, and *do stuff based on the answer* all in **one** command.  
+
+---
+
+There is a new **PengThing** module for penguins who like making stuff one by one.  
+Penguins can treat this like a way to make *PengVending* or *PengCoffee*'s such things in only one command.
+
+---
+
+We hope this update brings you joy. Goodbye!
+
 ## v0.4.0
 Hello pufferfish and seahorses. Today we welcome you a *small* update.
 
