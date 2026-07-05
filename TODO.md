@@ -23,7 +23,7 @@
 ## pengclass
 - [ ] add class factory
 
-## pengcondition
+## pengyesno
 - [ ] add if that executes code
 - [ ] add the compare operators
 - [ ] add compare in
