@@ -20,11 +20,11 @@
 - [ ] add save as
 - [ ] add load option
 
-## pengclass
-- [ ] add class factory
+## pengthing
+- [x] add class factory
 
 ## pengyesno
-- [ ] add if that executes code
-- [ ] add the compare operators
-- [ ] add compare in
-- [ ] add True/False compare
+- [x] add if that executes code
+- [x] add the compare operators
+- [x] add compare in
+- [x] add True/False compare

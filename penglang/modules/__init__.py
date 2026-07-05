@@ -1,6 +1,6 @@
 # __init__.py file for the penglang_language.modules package
 
-__version__ = "0.4.0"
+__version__ = "0.5.0"
 
 from .pengmath import *
 from .pengwindow import *

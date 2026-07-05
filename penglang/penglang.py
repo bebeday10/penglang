@@ -1,13 +1,16 @@
 # this is a funny penguin language using python as syntax, but with penguin words instead of python keywords
-"""This is a funny penguin language using python as syntax.
-    This language is not meant to be taken seriously, it's just for fun!
-    You can use this language to write code that looks like it's written by a penguin, but it's still valid python code!
-    things you can do with this language:
-    - say things
-    - make lists and dictionaries
-    - make variables
-    - make functions that do things
-    - make functions that do things if a condition is true"""
+"""
+# PengLang
+This is a funny penguin language using python as syntax.
+This language is not meant to be taken seriously, it's just for fun!
+You can use this language to write code that looks like it's written by a penguin, but it's still valid python code!
+things you can do with this language:
+- say things
+- make lists and dictionaries
+- make variables
+- make functions that do things
+- make functions that do things if a condition is true
+"""
 
 from rich import print
 from rich.panel import Panel
