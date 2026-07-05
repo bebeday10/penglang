@@ -16,8 +16,10 @@ penglang/modules/pengmath.py
 penglang/modules/pengpath.py
 penglang/modules/pengprint.py
 penglang/modules/pengstring.py
+penglang/modules/pengthing.py
 penglang/modules/pengvending.py
 penglang/modules/pengwindow.py
+penglang/modules/pengyesno.py
 penglang/modules/penglink/__init__.py
 penglang/modules/penglink/central.py
 penglang/modules/penglink/hubs/coffee.py
