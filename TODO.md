@@ -28,3 +28,9 @@
 - [x] add the compare operators
 - [x] add compare in
 - [x] add True/False compare
+
+## pengrandom
+- [ ] add random integer
+- [ ] add random decimal
+- [ ] add random choice
+- [ ] add random choices
