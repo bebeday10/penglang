@@ -84,7 +84,7 @@ class PenguinCoffeeMachine:
 
         plink.add_request(request_name, self.name, mode, self.inventory.get(coffee), coffee, amount, "PenguinCoffeeMachine", log)
 
-    def accept_request(self, request_name, remove_request=True, log=False):
+    def accept_request(self, request_name, remove_request=True, log=False, overwrite: bool = False):
         result = plink.accept_request(request_name, "PenguinCoffeeMachine", log, remove_request)
 
         if result is None:
@@ -92,7 +92,7 @@ class PenguinCoffeeMachine:
             return None
 
         if result[0] == "give":
-            if self.inventory.get(result[1], None) == None:
+            if self.inventory.get(result[1], None) is None:
                 self.inventory.update(result[3])
                 pl.say(f"got {result[1]}.") if log else None
                 return f"Got {result[1]}."
@@ -100,11 +100,14 @@ class PenguinCoffeeMachine:
                 self.inventory[result[1]]["amount"] = self.inventory.get(result[1], {}).get("amount", 0) + result[2]
 
         elif result[0] == "share recipe":
-            if self.inventory.get(result[3], None) == None:
+            if overwrite:
                 self.inventory.update(result[1])
-
             else:
-                self.inventory[result[3]]["supplies"] = result[1]
+                if self.inventory.get(result[3], None) is None:
+                    self.inventory.update(result[1])
+
+                else:
+                    self.inventory[result[3]]["supplies"] = result[1]
 
     @auto_async
     async def make_coffee(self, typeofcoffee: str, log: bool = False):
@@ -205,6 +208,17 @@ class PenguinCoffeeMachine:
             pl.say(self.supplies)
 
             return self.supplies
+        
+    def change_recipe(self, coffee: str, recipe: dict[str, int], log: bool = False):
+        if coffee not in self.inventory:
+            pl.say(f"that coffee doesn't exist.") if log else None
+            return "Doesn't exist."
+        
+        self.inventory[coffee]["supplies"] = recipe
+        pl.say(f"coffee machine has now changed {coffee}'s recipe.")
+        return self.inventory[coffee]
+        
+
 
     def link_PenguinVendingMachine(self, vending_machine: pv.PenguinVendingMachine, log: bool = False):
         self.vendinglink = vending_machine

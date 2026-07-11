@@ -6,9 +6,12 @@
 
 ## pengstring
 - [x] add reverse text
+- [ ] add slice text
+- [ ] add replace part in text
 
 ## penglink
 - [x] fix it
+- [ ] add other hub for other people that want to unofficially add their own classes
 
 ## pengpenguin
 - [ ] add Penguin class
@@ -30,7 +33,40 @@
 - [x] add True/False compare
 
 ## pengrandom
-- [ ] add random integer
-- [ ] add random decimal
-- [ ] add random choice
-- [ ] add random choices
+- [x] add random integer
+- [x] add random decimal
+- [x] add random choice
+- [x] add random choices
+
+## pengthis
+
+- [x] add this
+
+## pengbulletins
+
+- [ ] add a bulletins board
+  - [ ] add a way to add bulletins to a function
+  - [ ] add a way to have it randomly spit a message
+
+
+## pengkaraoke
+- [x] add penguin karaoke machine
+  - [x] add to penglink
+  - [ ] add debug mode
+
+## pengsong
+- [x] add penguin song
+  - [x] add splicing
+  - [x] add merging
+  - [x] add to penglink
+- [x] move convert to lyrics to here
+
+## pengbanana
+- [ ] add banana class
+  - [ ] add to penglink
+
+## pengmath
+
+- [ ] add power
+- [ ] add floor division
+- [ ] add remainder

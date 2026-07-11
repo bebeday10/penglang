@@ -56,7 +56,7 @@ def accept_request(request_name: str, name: str, log: bool = False, remove_reque
         item = request.get("item")
         if item is None: pl.say("item doesn't exist") if log else None; return None
 
-        item_name: str = item.get("name", "unknown")
+        item_name: str = request.get("name", "unknown")
         price: float = item.get("price", round(r.uniform(6, 9) * 20) / 20)
         supplies: dict = item.get("supplies", {})
 
@@ -71,3 +71,5 @@ def accept_request(request_name: str, name: str, log: bool = False, remove_reque
                 "supplies": supplies,
             }
         }, supplies, item_name
+    
+    pl.say("[red]cannot process this request. reason: unsupported mode[/red]") if log else None

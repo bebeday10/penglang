@@ -66,7 +66,7 @@ class PenguinVendingMachine:
 
         plink.add_request(request_name, self.name, mode, self.inventory.get(item_name, {}), amount=amount, internal_name="PenguinVendingMachine", log=log, item_name=item_name)
 
-    def accept_request(self, request_name, remove_request: bool = True, log: bool = False):
+    def accept_request(self, request_name, remove_request: bool = True, log: bool = False, overwrite: bool = False):
         result = plink.accept_request(request_name, self.name, log, remove_request)
 
         if result is None:
@@ -81,6 +81,8 @@ class PenguinVendingMachine:
                 self.inventory[result[2]]["quantity"] = self.inventory.get(result[2], {}).get("quantity", 0) + result[3]
 
         elif result[0] == "share recipe":
+            if overwrite:
+                self.inventory.update(result[1])
             if self.inventory.get(result[3]) is None:
                 self.inventory.update(result[1])
                 return f"Got {result[3]}."

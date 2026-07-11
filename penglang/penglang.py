@@ -329,7 +329,7 @@ def multitask(func):
 
 # make a type returner
 
-def penguin_what_is(object):
+def penguin_what_is(object: object):
     """
     tells what is the object you gave
 
@@ -340,3 +340,17 @@ def penguin_what_is(object):
         type: the type of object you get
     """
     return type(object)
+
+# make a input returner
+
+def penguin_ask(question) -> str:
+    """
+    asks the user and gives it to you
+
+    Args:
+        question (str): your question
+
+    Returns:
+        str: their answer
+    """
+    return input(question)
