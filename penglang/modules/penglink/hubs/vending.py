@@ -48,7 +48,7 @@ def accept_request(request_name: str, name: str, log: bool = False, remove_reque
                 "quantity": amount,
                 "supplies": supplies
             }
-        }, item_name, amount
+        }, item_name, amount, item
 
 
 
@@ -70,6 +70,6 @@ def accept_request(request_name: str, name: str, log: bool = False, remove_reque
                 "quantity": 0,
                 "supplies": supplies,
             }
-        }, supplies, item_name
+        }, supplies, item_name, item
     
     pl.say("[red]cannot process this request. reason: unsupported mode[/red]") if log else None

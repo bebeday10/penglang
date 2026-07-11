@@ -82,7 +82,7 @@ class PenguinVendingMachine:
 
         elif result[0] == "share recipe":
             if overwrite:
-                self.inventory.update(result[1])
+                self.inventory.update(result[4])
             if self.inventory.get(result[3]) is None:
                 self.inventory.update(result[1])
                 return f"Got {result[3]}."

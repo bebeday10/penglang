@@ -47,7 +47,7 @@ def accept_request(request_name: str, name: str, log: bool = False, remove_reque
                     "supplies": supplies,
                     "price": price,
                 }
-            }, supplies, item_name
+            }, supplies, item_name, item
 
         else:
             item = request.get("item", {})
@@ -72,4 +72,4 @@ def accept_request(request_name: str, name: str, log: bool = False, remove_reque
                     "supplies": supplies,
                     "price": price,
                 }
-            }
+            }, item
