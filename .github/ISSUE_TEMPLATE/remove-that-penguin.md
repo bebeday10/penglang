@@ -1,6 +1,6 @@
 ---
 name: remove that penguin
-about: Describe this issue template's purpose here.
+about: remove mwo
 title: remove that NOW
 labels: ''
 assignees: ''
