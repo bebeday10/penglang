@@ -73,7 +73,9 @@ class PenguinVendingMachine:
             return "Request not found."
 
         if result[0] == "give":
-            if self.inventory.get(result[2]) is None:
+            if overwrite:
+                self.inventory.update(result[4])
+            elif self.inventory.get(result[2]) is None:
                 self.inventory.update(result[1])
                 return f"Got {result[2]}."
 
@@ -83,7 +85,7 @@ class PenguinVendingMachine:
         elif result[0] == "share recipe":
             if overwrite:
                 self.inventory.update(result[4])
-            if self.inventory.get(result[3]) is None:
+            elif self.inventory.get(result[3]) is None:
                 self.inventory.update(result[1])
                 return f"Got {result[3]}."
             else:

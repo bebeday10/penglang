@@ -94,7 +94,7 @@ class PenguinCoffeeMachine:
         if result[0] == "give":
             if overwrite:
                 self.inventory.update(result[4])
-            if self.inventory.get(result[1], None) is None:
+            elif self.inventory.get(result[1], None) is None:
                 self.inventory.update(result[3])
                 pl.say(f"got {result[1]}.") if log else None
                 return f"Got {result[1]}."
