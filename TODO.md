@@ -70,3 +70,7 @@
 - [ ] add power
 - [ ] add floor division
 - [ ] add remainder
+
+## penggame
+
+- [ ] add pygame support
