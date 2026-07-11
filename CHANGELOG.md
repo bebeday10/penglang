@@ -1,4 +1,55 @@
 # Changelog
+## v0.6.0
+Hello *fish*, *goldfish*, and *sharks*. Today **we** welcome an *shark-sized* update.
+
+---
+
+First of all, objects like *PenguinCoffeeMachine* that are supported by *PengLink*, can now choose to *force overwrite* their items. Penguins use this to *force the request to be always correct*, after all,
+> The Penguin Is Always Correct
+
+---
+
+**PenguinCoffeeMachine**s can now change their coffees recipe. Penguins use this if they found a new *formula* to their coffee.
+
+---
+
+We present our biggest part of this update,
+
+---
+
+**PenguinKaraokeMachine**! This machine can take lyrics, and transforms it into singable karaoke! This machine is connected with *PengLink*.
+
+---
+
+**PengRandom** is a module that let's penguin have some randomness. Penguins find this "random but amazing".
+
+---
+
+Our second biggest part,
+
+---
+
+**PenguinSong** is designed for penguins to have an nice way to edit songs before using *PengLink* to transfer to the *PenguinKaraokeMachine*.
+
+---
+
+**PengSongDesign** is for penguins that need help designing their new song. These include merging songs, and simplifying song making.
+
+---
+
+**PengThis**... is something for penguins to find out themselves.
+> Mysteries must be made without exposure.  
+> \- Pengnology
+
+---
+
+**PengLang** has a new feature.
+
+`penguin_ask`, for penguin that ask *the users* and get responded.
+
+---
+
+*Goodbye*, and see you *later*.
 ## v0.5.0
 Hello anglerfish and seals. Today we welcome some *nice little* update.
 
