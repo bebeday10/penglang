@@ -74,3 +74,7 @@
 ## penggame
 
 - [ ] add pygame support
+
+## other
+
+- [ ] docstring update
