@@ -53,6 +53,7 @@
 - [x] add penguin karaoke machine
   - [x] add to penglink
   - [ ] add debug mode
+  - [ ] add `add_song`
 
 ## pengsong
 - [x] add penguin song
@@ -78,3 +79,10 @@
 ## other
 
 - [ ] docstring update
+
+## pengdecorators
+- [x] add PengDeprecation
+
+## pengcard
+
+- [ ] add cards
