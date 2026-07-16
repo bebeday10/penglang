@@ -1,4 +1,24 @@
 # Changelog
+## v0.7.0
+Hello *whales*, *dolphins* and *nerdy fish*. Today we present reading, the newest technology.
+
+---
+
+**Documentation**. The fish may still not understand, but some penguins will gain a knowledge update. Stay aware!
+
+---
+
+**PengPast**. Deprecations are starting. Some penguins may still want to use them. That's why **PengPast** exists!  
+Penguins can use this to use old functions without getting warned.
+
+---
+
+**PengDecorator**, for penguins that want to upgrade their functions. These include doing things multiple times, deprecating things and many more.
+
+---
+
+That's it for now, goodbye!
+
 ## v0.6.0
 Hello *fish*, *goldfish*, and *sharks*. Today **we** welcome an *shark-sized* update.
 
