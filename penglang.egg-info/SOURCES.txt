@@ -10,6 +10,7 @@ penglang.egg-info/requires.txt
 penglang.egg-info/top_level.txt
 penglang/modules/__init__.py
 penglang/modules/pengcoffee.py
+penglang/modules/pengdecorator.py
 penglang/modules/pengimage.py
 penglang/modules/pengiterable.py
 penglang/modules/pengkaraoke.py
@@ -29,6 +30,9 @@ penglang/modules/penglink/hubs/coffee.py
 penglang/modules/penglink/hubs/karaoke.py
 penglang/modules/penglink/hubs/song.py
 penglang/modules/penglink/hubs/vending.py
+penglang/modules/pengpast/__init__.py
+penglang/modules/pengpast/pengcoffee.py
+penglang/modules/pengpast/pengwindow.py
 penglang/modules/pengsong/__init__.py
 penglang/modules/pengsong/pengsong.py
 penglang/modules/pengsong/pengsongdesign.py
