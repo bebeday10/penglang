@@ -1,3 +1,15 @@
+"""
+# PengMath
+
+PengMath: counting and more
+
+- add
+- subtract
+- multiply
+- divide
+"""
+
+
 # this is the math module for the penguin language, it has functions for addition, subtraction, multiplication, division, etc. that use penguin words instead of python keywords
 from .. import penglang as peng
 

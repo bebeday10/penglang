@@ -13,8 +13,8 @@ things you can do with this language:
 """
 
 from rich import print
-from rich.panel import Panel
 import asyncio as asy
+from rich.panel import Panel
 
 def say(message):
     """
@@ -295,7 +295,6 @@ def penguin_execute(thing_to_execute: str):
 
 
 # Horse
-
 def horse(func):
     """
     make a function that does something horse-related NOTE: this is just for fun, it doesn't actually do anything horse-related, it's just a decorator that adds some horse-related messages before and after the function execution
@@ -312,6 +311,7 @@ def horse(func):
         say("the horse has finished its thing!")
     return inner
 
+
 def multitask(func):
     """
     multitask that makes sleeping only to that func only, use await statement
@@ -324,7 +324,7 @@ def multitask(func):
     """
     def wrapper(*args, **kwargs):
         return asy.run(func(*args, **kwargs))
-    
+
     return wrapper
 
 # make a type returner

@@ -1,4 +1,6 @@
 """
+# PengLink
+
 PengLink, the bridge for items
 
 The dictionary style:
@@ -20,9 +22,17 @@ The dictionary style:
     }
 }
 
-Modes:
-    share recipe: share a recipe with PenguinCoffeeMachine
-    give: give something to something
+# Modes:
+    ## share recipe: share a recipe
+        ### Support:
+            PenguinCoffeeMachine
+            PenguinVendingMachine
+            PenguinKaraokeMachine
+            PenguinSong
+    ## give: give something to something
+        ### Support:
+            PenguinCoffeeMachine
+            PenguinVendingMachine
 """
 
 from ... import penglang as pl

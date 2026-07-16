@@ -1,4 +1,14 @@
+"""
+# PengKaraoke
+
+*PengKaraoke*: the place to dance and sing
+
+Has a PenguinKaraokeMachine.
+"""
+
 import os
+
+
 os.environ["PYGAME_HIDE_SUPPORT_PROMPT"] = "hide"
 
 from rich.text import Text
@@ -13,6 +23,16 @@ import pygame as pg
 pg.mixer.init()
 
 class PenguinKaraokeMachine:
+    """
+    the penguin karaoke machine.
+
+    # what you can do:
+        play songs
+        add request to PengLink
+        accept request from PengLink
+
+    Supports PengLink.
+    """
     def __init__(self, songs: dict[str, dict[str, list[dict[str, float | str]]]], show_words: list[int], active_color: str ="white", inactive_color: str = "dim white", word_one_away_color: str = "#B4B4B4", name: str = "karaoke machine"):
         """
         the penguin karaoke machine to play songs
@@ -49,6 +69,17 @@ class PenguinKaraokeMachine:
 
     @pl.multitask
     async def play_song(self, song_name: str, start_wait_time: int = 1, log: bool = False):
+        """
+        play a song from the karaoke machine.
+
+        Args:
+            song_name (str): the name of the song
+            start_wait_time (int, optional): the wait time to start. Defaults to 1.
+            log (bool, optional): whether to log or not. Defaults to False.
+
+        Returns:
+            None | str: the result of success. returns None if everything went well.
+        """
         if self.songs.get(song_name, {}).get("song") is None:
             pl.say("song doesn't exist!") if log else None
             return "Song doesn't exist."
@@ -103,6 +134,19 @@ class PenguinKaraokeMachine:
         pl.say("song has ended") if log else None
 
     def add_request(self, mode: str, request_name: str, song: str, amount: int, log: bool = False):
+        """
+        add a request to PengLink.
+
+        Args:
+            mode (str): the mode of the request
+            request_name (str): the name of the request
+            song (str): the song you want to attach
+            amount (int): the amount of the song
+            log (bool, optional): whether to log or not. Defaults to False.
+
+        Returns:
+            None | str: the result of the request. returns None if everything went correctly.
+        """
         if self.songs.get(song) is None:             
             pl.say("[bold blue]song doesn't exist[/bold blue]") if log else None
             return "Song doesn't exist"
@@ -110,6 +154,18 @@ class PenguinKaraokeMachine:
         plink.add_request(request_name, self.name, mode, self.songs[song], song, amount, "PenguinKaraokeMachine")
 
     def accept_request(self, request_name, remove_request=True, log=False, overwrite: bool = False):
+        """
+        accept a request from PengLink.
+
+        Args:
+            request_name (str): the request name you want to accept
+            remove_request (bool, optional): whether to remove the request or not. Defaults to True.
+            log (bool, optional): whether to log or not. Defaults to False.
+            overwrite (bool, optional): whether to overwrite or not. this is to preserve as much metadata as possible. Defaults to False.
+
+        Returns:
+            None: nothing
+        """
         result = plink.accept_request(request_name, self.name, log, remove_request)
 
         if result is None:
@@ -124,11 +180,20 @@ class PenguinKaraokeMachine:
             else:
                 self.songs[result[2]]["song"].extend(result[1].get("song"))
 
-    def show_songs(self) -> dict[str, dict[str, list[dict[str, float | str]]]]:
+    def show_songs(self, log: bool = True) -> dict[str, dict[str, list[dict[str, float | str]]]]:
+        """
+        show the songs in the karaoke machine. this is to show the player the songs.
+
+        Args:
+            log (bool): whether to log or not. Defaults to True.
+
+        Returns:
+            dict[str, dict[str, list[dict[str, float | str]]]]: the songs.
+        """
         for song_name, song in self.songs.items():
-            pl.say(f"{song_name}:")
+            pl.say(f"{song_name}:") if log else None
             for lyric in song.get("song", []):
-                pl.say(f"{lyric.get("lyric")}: {lyric.get("delay")}")
+                pl.say(f"{lyric.get("lyric")}: {lyric.get("delay")}") if log else None
 
         return self.songs
         

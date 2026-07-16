@@ -1,4 +1,23 @@
+"""
+# PengSongDesign
+
+PengSongDesign: the song designer
+
+- convert dictionary to lyrics
+- merge the lyrics
+"""
+
+
 def convert_to_lyrics(lyrics: dict[str, float]) -> list[dict[str, str | float]]:
+    """
+    convert a simple list into readable lyrics
+
+    Args:
+        lyrics (dict[str, float]): the list to transform
+
+    Returns:
+        list[dict[str, str | float]]: the lyrics
+    """
     song: dict[str, list] = {"song": []}
 
     for lyric, delay in lyrics.items():
@@ -12,7 +31,7 @@ def convert_to_lyrics(lyrics: dict[str, float]) -> list[dict[str, str | float]]:
 
     return song
 
-def merge(*lyrics: list[dict[str, str, float]] | dict[str, str, float]) -> dict[str. list]:
+def merge(*lyrics: list[dict[str, str, float]] | dict[str, str, float]) -> dict[str, list]:
     """
     merge multiple lyrics
 

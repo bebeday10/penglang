@@ -1,4 +1,6 @@
 import tkinter as tk
+
+from .pengdecorator import penguin_deprecation
 from .. import penglang as peng
 
 def penguin_window(title="Penguin Window", width=400, height=300,color="lightgray", log: bool = False):
@@ -97,6 +99,7 @@ def color_widget(widget, color, log: bool = False):
     if log:
         peng.say(f"Changed the penguin widget color to: {color}")
 
+@penguin_deprecation("v0.6.0", "v0.8.0", "Use penguin_window_maker", "penguin_extra_window")
 def penguin_extra_window(title="Penguin Extra Window", width=400, height=300,color="lightgray", log: bool = False): # the problem is you can't add a widget to this window because we don't know if the window exists or not, but we can still create the window and show it!
     """
     add an extra window

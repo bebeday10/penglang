@@ -1,3 +1,13 @@
+"""
+# PengPath
+
+PengPath: pathway to anywhere
+
+Features:
+    set root
+    filp pages
+"""
+
 from pathlib import Path
 
 ROOT = None

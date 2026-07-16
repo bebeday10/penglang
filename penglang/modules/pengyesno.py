@@ -1,5 +1,15 @@
+"""
+# PengYesNo
+
+PengYesNo, check stuff and execute
+
+### Features
+    - check if it is or not
+    - the checkers
+"""
+
 from .. import penglang as pl
-from typing import Callable
+from typing import Callable, Literal
 
 def penguin_is_it(*cases: tuple[bool, Callable], otherwise: Callable | None = None):
     """
@@ -53,7 +63,16 @@ def penguin_is_it(*cases: tuple[bool, Callable], otherwise: Callable | None = No
             otherwise()
             return False
         
-def penguin_check(a, b, mode: str):
+def penguin_check(a, b=True, mode: Literal[
+    "same",
+    "not same",
+    "more",
+    "more or same",
+    "less",
+    "less or same",
+    "in",
+    "is",
+] = "same") -> bool:
     """
     check if it happens and get the answers
 
@@ -62,7 +81,7 @@ def penguin_check(a, b, mode: str):
         b (Any): the condition
         mode (str): the way to check
 
-    Modes:
+    ## Modes
         "same": check if it is the same.
         "not same": check if it is not the same.
         "more": check if it is more.

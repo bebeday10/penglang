@@ -1,7 +1,14 @@
+"""
+# PengThis
+
+What is this?
+"""
+
 from .. import penglang as pl
 import textwrap
 
 def this():
+    """What is this? Secrets must be kept a mystery."""
     pl.say(textwrap.dedent("""
                            Once upon a time
                            One said
