@@ -119,3 +119,15 @@
   - [ ] add the recipes
   - [ ] add the penglink ownership
 
+# future update direction
+
+- [x] v0.8.0 - bulletin board and cards
+
+- [ ] v0.9.0 - money
+
+- [ ] v0.10.0 - banana
+
+...
+
+- [ ] v1.0.0 - penguin
+
