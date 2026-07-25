@@ -66,26 +66,6 @@ class PenguinCoffeeMachine:
         self.vendinglink: pv.PenguinVendingMachine = vendinglink
         self.autosend = autosend
 
-    @pd.penguin_deprecation("v0.6.0", "v0.8.0", "Use add_request.", "send_to_vending")
-    def send_to_vending(self, log: bool = False):
-        # formally known as sendto_Vending 🥹☕
-        if not self.vendinglink:
-            pl.say("you have no vending machine linked.") if log else None
-            return "No vending machines are linked."
-
-        for item, _ in self.inventory.items():
-            item_in_vending = self.vendinglink.inventory.get(item)
-            if item_in_vending == None:
-                item_in_vending = {}
-                item_in_vending["price"] = round(r.uniform(6, 9) * 20) / 20
-                item_in_vending["quantity"] = 0
-
-            item_in_vending["quantity"] += self.inventory[item]["amount"]
-            self.inventory[item]["amount"] = 0
-            self.vendinglink.inventory[item] = item_in_vending
-
-        return f"Finished sending coffees to {pv.PenguinVendingMachine}."
-
     def add_request(self, mode: str, request_name: str, coffee: str, amount: int, log: bool = False):
         """
         add a request
@@ -331,14 +311,7 @@ class PenguinCoffeeMachine:
         self.inventory[coffee]["supplies"] = recipe
         pl.say(f"coffee machine has now changed {coffee}'s recipe.") if log else None
         return self.inventory[coffee]
-        
-
-    @pd.penguin_deprecation("v0.6.0", "v0.8.0", "Use add_request.", "link_PenguinVendingMachine")
-    def link_PenguinVendingMachine(self, vending_machine: pv.PenguinVendingMachine, log: bool = False):
-        self.vendinglink = vending_machine
-        self.send_to_vending() if self.autosend else None
-        pl.say(f"vending machine {vending_machine} linked.") if log else None
-        return f"Linked {vending_machine}."
+    
 
     def __str__(self):
         return f"a coffee machine named {self.name}, makes a coffee per {self.speed}, currently {f"linked by '{self.vendinglink}'" if self.vendinglink else "not linked"}, has {", ".join(i for i in list(self.inventory))}"

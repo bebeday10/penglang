@@ -6,11 +6,13 @@
 
 ## pengstring
 - [x] add reverse text
-- [ ] add slice text
-- [ ] add replace part in text
+- [x] add slice text
+- [x] add replace part in text
 
 ## penglink
 - [x] fix it
+- [ ] add penguin bulletin support
+- [ ] add penguin bulletin board support
 - [ ] add other hub for other people that want to unofficially add their own classes
 
 ## pengpenguin
@@ -32,6 +34,9 @@
 - [x] add compare in
 - [x] add True/False compare
 
+- [x] add `penguin_and`
+- [x] add `penguin_or`
+
 ## pengrandom
 - [x] add random integer
 - [x] add random decimal
@@ -42,11 +47,11 @@
 
 - [x] add this
 
-## pengbulletins
+## pengbulletin
 
-- [ ] add a bulletins board
-  - [ ] add a way to add bulletins to a function
-  - [ ] add a way to have it randomly spit a message
+- [x] add a bulletins board
+  - [x] add a way to add bulletins to a function
+  - [x] add a way to have it randomly spit a message
 
 
 ## pengkaraoke
@@ -78,11 +83,39 @@
 
 ## other
 
-- [ ] docstring update
+- [x] docstring update
 
-## pengdecorators
+## pengdecorator
 - [x] add PengDeprecation
 
 ## pengcard
 
-- [ ] add cards
+- [x] add cards
+
+## pengvending
+
+- [ ] add sales
+
+## pengmoney
+
+- [ ] add nickels
+- [ ] add a bank
+- [ ] add wallets
+  - [ ] add a spend decorator, which adds a spend argument
+- [ ] add stock markets
+  - [ ] add stocks
+  - [ ] add shares
+
+
+
+## pengdish
+
+- [ ] add dishes
+- [ ] add a dishwasher
+
+## pengbakery
+
+- [ ] add a bakery
+  - [ ] add the recipes
+  - [ ] add the penglink ownership
+

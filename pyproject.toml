@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "penglang"
-version = "0.7.0"
+version = "0.8.0"
 description = "a nonserious language module for penguins"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -17,7 +17,23 @@ dependencies = [
     "pygame-ce"
 ]
 license = "MIT"
-keywords = ["language", "penguin", "nonserious", "fun", "programming", "dsl", "satisfying", "beginners", "learners", "terminal", "esolang", "coffee"]
+keywords = [
+    "language",
+    "penguin",
+    "nonserious",
+    "fun",
+    "programming",
+    "dsl",
+    "satisfying",
+    "beginners",
+    "learners",
+    "terminal",
+    "esolang",
+    "coffee",
+    "vending-machine",
+    "karaoke",
+    "nice"
+    ]
 
 [project.urls]
 Homepage = "https://github.com/bebeday10/penglang"

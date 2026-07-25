@@ -102,3 +102,22 @@ def penguin_check(a, b=True, mode: Literal[
     if mode == "less or same": return a <= b
     if mode == "in": return a in b
     if mode == "is": return a is b
+
+
+def penguin_and(*cases) -> bool:
+    for i in cases:
+        if i:
+            continue
+        else:
+            return False
+    else:
+        return True
+
+def penguin_or(*cases) -> bool:
+    for i in cases:
+        if i:
+            return True
+        else:
+            continue
+    else:
+        return False
