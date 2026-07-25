@@ -1,4 +1,55 @@
 # Changelog
+## v0.8.0
+Hello plastic fish. Today we present bulletin boards, cards, things, and everything else.
+
+---
+
+**PengBulletin**, is the home of bulletin boards. Penguins may read these bulletins to get the latest hot topics that they might've never known.
+
+---
+
+**PengCard** is a top-level card showing module for penguins to show their info in ***P R E S E N T A T I O N***.
+
+---
+
+The **PengThing**s are here! Everything is now *penguin*.
+
+- **PengThingString**
+- **PengThingInteger**
+- **PengThingFloat**
+- **PengThingDictionary**
+- **PengThingList**
+- **PengThingBoolean**
+
+---
+
+The following **PengCoffee** and **PengWindow** functions have been deprecated. Penguins can continue using them at **PengPast**.  
+
+**PengCoffee**
+- `send_to_vending`
+- `link_PenguinVendingMachine`
+
+**PengWindow**
+- `penguin_extra_window`
+
+---
+
+**`better_say_in_a_box`** in **PengPrint** has appeared, and there are **14** *options* of *Customization*™! Penguins can now show information however they want in **style**.
+
+---
+
+**PengString** has new features, like *cutting speech* and *replacing speech*.  
+We *hope* penguins can have a nice way controlling their speech.
+
+---
+**PengYesNo** now has `penguin_and` and `penguin_or`.  
+**`penguin_and`** is for checking whether the cases are *all* correct, and **`penguin_or`** is for checking if *any* of the cases are correct.  
+We hope all penguins can choose what and how however they want.
+
+---
+
+See you next time, goodbye!
+
 ## v0.7.0
 Hello *whales*, *dolphins* and *nerdy fish*. Today we present reading, the newest technology.
 
