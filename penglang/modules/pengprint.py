@@ -15,13 +15,16 @@
         better say
 """
 
-from typing import Literal, Optional
+from typing import Literal, Optional, TYPE_CHECKING
 
 from .. import penglang as pl
 import time as t
 from rich import print
 from rich.panel import Panel
-from rich.box import Box, box
+
+from rich import box
+if TYPE_CHECKING:
+    from rich.box import Box
 
 def emergency_box(message, title="🚨 EMERGENCY 🚨",):
     """
@@ -126,7 +129,7 @@ def better_say_in_a_box(
         style: str = "none",
         width: Optional[int] = None,
         height: Optional[int] = None,
-        box_type: Box = box.ROUNDED,
+        box_type: "Box" | None = box.ROUNDED,
         safe_box: bool = True
         
         ) -> None:

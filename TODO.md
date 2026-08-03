@@ -98,10 +98,10 @@
 
 ## pengmoney
 
-- [ ] add nickels
+- [x] add nickels
 - [ ] add a bank
-- [ ] add wallets
-  - [ ] add a spend decorator, which adds a spend argument
+- [x] add wallets
+  - [x] add a spend decorator, which adds a spend argument
 - [ ] add stock markets
   - [ ] add stocks
   - [ ] add shares
@@ -119,7 +119,17 @@
   - [ ] add the recipes
   - [ ] add the penglink ownership
 
-# future update direction
+## pengnote
+
+- [ ] add a notepad
+  - [ ] add bookmarks
+    - [ ] add error when bookmark
+  - [ ] add display
+  - [ ] add notes
+    - put them as a dictionary (easily accessed by bookmarking)
+    - [ ] add invis comments to them
+
+# future update direction 
 
 - [x] v0.8.0 - bulletin board and cards
 
@@ -130,4 +140,8 @@
 ...
 
 - [ ] v1.0.0 - penguin
+
+- [ ] v1.1.0 - bakery
+- [ ] v1.2.0 - fancy windows
+- [ ] v1.3.0 - grids
 

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "penglang"
-version = "0.8.0"
+version = "0.9.0"
 description = "a nonserious language module for penguins"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -32,7 +32,10 @@ keywords = [
     "coffee",
     "vending-machine",
     "karaoke",
-    "nice"
+    "nice",
+    "curious",
+    "coins",
+    "safe-coin-place"
     ]
 
 [project.urls]

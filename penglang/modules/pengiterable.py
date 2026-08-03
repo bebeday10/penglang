@@ -13,7 +13,7 @@ PengIterable: the module for iterables
 
 from .. import penglang as pl
 from collections import defaultdict
-from typing import Any
+from typing import Any, Callable, Iterable
 
 def get_answer(key: Any, dictionary: dict, if_no_exist: Any = None) -> Any:
     """
@@ -138,4 +138,12 @@ def invert_the_dict(the_dict: dict):
         inverted_dict[value].append(key)
 
     return inverted_dict
-            
+
+
+def iterate_a_function(the_iterable: Iterable, func: Callable, **funckwargs):
+    if isinstance(the_iterable, dict):
+        for i, j in the_iterable.items():
+            func(i, j, **funckwargs)
+    else:
+        for i in the_iterable:
+            func(i, **funckwargs)

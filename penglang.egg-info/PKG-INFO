@@ -1,13 +1,13 @@
 Metadata-Version: 2.4
 Name: penglang
-Version: 0.8.0
+Version: 0.9.0
 Summary: a nonserious language module for penguins
 Author: bebeday10
 License-Expression: MIT
 Project-URL: Homepage, https://github.com/bebeday10/penglang
 Project-URL: Repository, https://github.com/bebeday10/penglang
 Project-URL: Issues, https://github.com/bebeday10/penglang/issues
-Keywords: language,penguin,nonserious,fun,programming,dsl,satisfying,beginners,learners,terminal,esolang,coffee,vending-machine,karaoke,nice
+Keywords: language,penguin,nonserious,fun,programming,dsl,satisfying,beginners,learners,terminal,esolang,coffee,vending-machine,karaoke,nice,curious,coins,safe-coin-place
 Requires-Python: >=3.10
 Description-Content-Type: text/markdown
 License-File: LICENSE
