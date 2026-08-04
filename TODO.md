@@ -121,19 +121,29 @@
 
 ## pengnote
 
-- [ ] add a notepad
-  - [ ] add bookmarks
-    - [ ] add error when bookmark
-  - [ ] add display
-  - [ ] add notes
+- [x] add a notepad
+  - [x] add bookmarks
+    - [x] add error when bookmark
+  - [x] add display
+  - [x] add notes
     - put them as a dictionary (easily accessed by bookmarking)
     - [ ] add invis comments to them
+
+## pengtolerance
+- [ ] add tolerances
+  - [ ] `__init__`
+    - [ ] get base
+    - [ ] get tolerance
+  - [ ] `__contains__` dunder method
+
+## pengthinginteger
+- [ ] add a way to make tolerances out of it
 
 # future update direction 
 
 - [x] v0.8.0 - bulletin board and cards
 
-- [ ] v0.9.0 - money
+- [x] v0.9.0 - money
 
 - [ ] v0.10.0 - banana
 
@@ -141,7 +151,9 @@
 
 - [ ] v1.0.0 - penguin
 
-- [ ] v1.1.0 - bakery
+- [ ] v1.1.0 - bakery and tolerances
 - [ ] v1.2.0 - fancy windows
-- [ ] v1.3.0 - grids
+- [ ] v1.3.0 - grids and data
+- [ ] v1.4.0 - more math, dishes, and dishwashers
+- [ ] v1.5.0 - actions
 

@@ -1,4 +1,33 @@
 # Changelog
+## v0.9.0
+Hello polar bears. Today we present *coin bags*, *safe coin places*, and *notebooks*.
+
+---
+
+**PengMoney** is a super module for penguins and the economic disasters. They let penguin have price.  
+
+- *Coin bags*: Lets penguins keep money right beside them. *PengLink supported.*
+- *Safe coin places*: Lets penguins keep their money in a safe place for security.
+- *Nickels*: Valuable penguin coins.  
+
+They exist because of the **disasters** of vending machines, and the **stabilization** of coffee machines.
+
+---
+
+**PengNote** is a way for penguins to write down stuff, in their free time. Penguins call this a "way for penguins to remember".
+
+---
+
+**PengIterable** now lets penguins repeat over stuff. Penguin call this better than manually checking.  
+
+---
+
+**PengPrint** is now fixed. Penguins can finally use advanced printers again.
+
+---
+
+The penguins have **closed the doors**, goodbye!
+
 ## v0.8.0
 Hello plastic fish. Today we present bulletin boards, cards, things, and everything else.
 
