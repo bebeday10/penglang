@@ -145,7 +145,7 @@
 
 - [x] v0.9.0 - money
 
-- [ ] v0.10.0 - banana
+- [ ] v0.10.0 - banana, cursor
 
 ...
 
@@ -155,5 +155,6 @@
 - [ ] v1.2.0 - fancy windows
 - [ ] v1.3.0 - grids and data
 - [ ] v1.4.0 - more math, dishes, and dishwashers
-- [ ] v1.5.0 - actions
+- [ ] v1.5.0 - actions and farms
+- [ ] v1.6.0 - blizzard
 

@@ -12,6 +12,8 @@ things you can do with this language:
 - make functions that do things if a condition is true
 """
 
+from typing import Callable
+
 from rich import print
 import asyncio as asy
 from rich.panel import Panel
@@ -354,3 +356,19 @@ def penguin_ask(question) -> str:
         str: their answer
     """
     return input(question)
+
+def penguin_check_fish_virus(to_check: Callable, when_virus: Callable, virus: BaseException = Exception, *checkargs, **checkkwargs):
+    """
+    check if there is a fish virus.
+
+    Args:
+        to_check (Callable): the thing to check if it has a fish virus.
+        when_virus (Callable): when there is a fish virus, run this
+        virus (BaseException, optional): choose a specific fish virus. Defaults to Exception (all normal fish viruses not including special fish viruses).
+        *checkargs: the arguments in the thing to check
+        **checkkwargs: the specified arguments in the thing to check
+    """
+    try:
+        to_check(*checkargs, **checkkwargs)
+    except virus as e:
+        when_virus(e)

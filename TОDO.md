@@ -1,0 +1,63 @@
+# TОDO
+Welcome to the todo list where we keep track of mysterious things like fans.
+
+- [ ] add a window shopper
+- [ ] add a penguin that goes into an aircon
+- [ ] horse aircon
+  - [ ] add the essential bits
+  - [ ] blow it with a fan
+- [ ] change the wind rating of PengLang
+- [ ] Delete global warming
+  - [ ] Use the `del` button
+  - [ ] Install the `del` driver
+  - [ ] Drive a horse
+    - [ ] Make horse car
+
+---
+Future Update Checker
+
+- [ ] v1.0.0 - Grounded Chamber and new special horse
+- [ ] v1.1.0 - Grid check
+- [ ] v1.1.1 - Fix a bug that occured during the grid check
+- [ ] v1.2.0 - Add global warming
+- [ ] v1.3.0 - Regret global warming
+- [ ] v1.4.0 - Add a new banana option.
+- [ ] v1.5.0 - Add aircon tech
+- [ ] v1.6.0 - procrastinate
+- [ ] v1.7.0 - The horse beam
+- [ ] v1.8.0 - The horse car
+- [ ] v2.0.0 - Garbage bin
+- [ ] v2.1.0 - The biggest update: Horse racing
+- [ ] v2.1.1 - The pesky bug
+- [ ] v2.2.0 - The pesky bug (it big this time)
+- [ ] v2.2.1 - The newest update: Bowling (also packed with a bugfix)
+- [ ] v2.2.2 - Oh look 2.2.2
+- [ ] v2.3.0 - The radio
+- [ ] v2.4.0 - Accidentally pushed an update
+- [ ] v2.4.1 - Fix the bug that happened in the update
+- [ ] v2.5.0 - 250 kilometer car
+- [ ] v2.6.0 - Add the horses
+- [ ] v2.7.0 - Remove the horses (keep the beam)
+- [ ] v2.7.1 - The horse was still there. Was.
+- [ ] v3.0.0 - fixed a small bug
+- [ ] v3.0.0a - The all-new: Computer Penguin
+- [ ] v3.1.0 - Added a nice horse
+- [ ] v3.2.0 - Figured.
+- [ ] v3.3.0 - Accidentally pushed an update for 3.2.0 which was a comment
+- [ ] v3.3.1 - What
+- [ ] v3.3.2 - Fixed a bug that would occur when someone was using raisin water
+- [ ] v3.3.3 - A horse flew by, 3.3.3 is cool
+- [ ] v3.3.4 - Demolish the horses
+- [ ] v3.4.0 - Re-add the horses
+- [ ] v3.5.0 - (no message)
+- [ ] v3.5.1 - Left a message
+- [ ] v3.6.0 - Unknowingly did a 360 horse
+- [ ] v3.7.0 - Added a fan for the horse
+- [ ] v3.8.0 - The building crushes down.
+- [ ] v3.9.0 - Builded a horse.
+- [ ] v4.0.0 - Sorry, your message broke our Content Policies.
+- [ ] v4.0.1 - Managed to fight over that thing
+- [ ] v4.1.0 - Added a new horse
+- [ ] v4.1.1 - The horse flew by too fast. It shouldn't.
+- [ ] v4.2.0 - Added a sink.
+- [ ] v4.3.0 - Added Japanese.

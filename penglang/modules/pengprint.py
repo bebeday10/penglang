@@ -166,7 +166,7 @@ def better_say_in_a_box(
             style=style,
             width=width,
             height=height,
-            box_type=box_type,
+            box=box_type,
             safe_box=safe_box
         )
     )
