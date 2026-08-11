@@ -1,5 +1,5 @@
 [project]
-site_url = "https://github.com/bebeday10/penglang"
+site_url = "https://bebeday10.github.io/penglang/"
 site_name = "PengLang"
 # site_description = "Your project description"
 # site_author = "Your name"
@@ -79,9 +79,9 @@ scheme = "slate"
 toggle.icon = "lucide/moon"
 toggle.name = "Switch to system preference"
 
-# [[project.extra.social]]
-# icon = "fontawesome/brands/github"
-# link = "https://github.com/user/repo"
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/bebeday10/penglang"
 
 # [[project.extra.social]]
 # icon = "fontawesome/brands/mastodon"
