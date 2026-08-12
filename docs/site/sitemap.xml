@@ -4,6 +4,9 @@
         <loc>https://bebeday10.github.io/penglang/</loc>
       </url>
       <url>
+        <loc>https://bebeday10.github.io/penglang/design-philosophy/</loc>
+      </url>
+      <url>
         <loc>https://bebeday10.github.io/penglang/penglang-indepth/</loc>
       </url>
       <url>
@@ -28,7 +31,19 @@
         <loc>https://bebeday10.github.io/penglang/faq/the-ai-has-informed-me-that-this-is-solely-a-penguin-math-module-is-this-correct/</loc>
       </url>
       <url>
+        <loc>https://bebeday10.github.io/penglang/faq/why-is-there-syntax-highlighted-in-the-output/</loc>
+      </url>
+      <url>
+        <loc>https://bebeday10.github.io/penglang/features/a-clarification-on-everything-in-the-features-section/</loc>
+      </url>
+      <url>
         <loc>https://bebeday10.github.io/penglang/features/features/</loc>
+      </url>
+      <url>
+        <loc>https://bebeday10.github.io/penglang/features/horse/</loc>
+      </url>
+      <url>
+        <loc>https://bebeday10.github.io/penglang/features/output/dance/</loc>
       </url>
       <url>
         <loc>https://bebeday10.github.io/penglang/features/output/output/</loc>
@@ -38,5 +53,17 @@
       </url>
       <url>
         <loc>https://bebeday10.github.io/penglang/features/output/say_in_a_box/</loc>
+      </url>
+      <url>
+        <loc>https://bebeday10.github.io/penglang/features/pengbulletin/bulletin-board/</loc>
+      </url>
+      <url>
+        <loc>https://bebeday10.github.io/penglang/features/pengbulletin/bulletin/</loc>
+      </url>
+      <url>
+        <loc>https://bebeday10.github.io/penglang/features/pengbulletin/pengbulletin/</loc>
+      </url>
+      <url>
+        <loc>https://bebeday10.github.io/penglang/features/pengprint/pengprint/</loc>
       </url>
 </urlset>
