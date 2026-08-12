@@ -1,39 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
       <url>
-        <loc>https://github.com/bebeday10/penglang/</loc>
+        <loc>https://bebeday10.github.io/penglang/</loc>
       </url>
       <url>
-        <loc>https://github.com/bebeday10/penglang/penglang-indepth/</loc>
+        <loc>https://bebeday10.github.io/penglang/penglang-indepth/</loc>
       </url>
       <url>
-        <loc>https://github.com/bebeday10/penglang/basics/getting-started/</loc>
+        <loc>https://bebeday10.github.io/penglang/basics/getting-started/</loc>
       </url>
       <url>
-        <loc>https://github.com/bebeday10/penglang/basics/variables/</loc>
+        <loc>https://bebeday10.github.io/penglang/basics/variables/</loc>
       </url>
       <url>
-        <loc>https://github.com/bebeday10/penglang/errors/BookmarkError/</loc>
+        <loc>https://bebeday10.github.io/penglang/errors/BookmarkError/</loc>
       </url>
       <url>
-        <loc>https://github.com/bebeday10/penglang/errors/errors/</loc>
+        <loc>https://bebeday10.github.io/penglang/errors/errors/</loc>
       </url>
       <url>
-        <loc>https://github.com/bebeday10/penglang/faq/faq/</loc>
+        <loc>https://bebeday10.github.io/penglang/faq/faq/</loc>
       </url>
       <url>
-        <loc>https://github.com/bebeday10/penglang/faq/i-want-to-use-3.9-or-lower/</loc>
+        <loc>https://bebeday10.github.io/penglang/faq/i-want-to-use-3.9-or-lower/</loc>
       </url>
       <url>
-        <loc>https://github.com/bebeday10/penglang/features/features/</loc>
+        <loc>https://bebeday10.github.io/penglang/faq/the-ai-has-informed-me-that-this-is-solely-a-penguin-math-module-is-this-correct/</loc>
       </url>
       <url>
-        <loc>https://github.com/bebeday10/penglang/features/output/output/</loc>
+        <loc>https://bebeday10.github.io/penglang/features/features/</loc>
       </url>
       <url>
-        <loc>https://github.com/bebeday10/penglang/features/output/say/</loc>
+        <loc>https://bebeday10.github.io/penglang/features/output/output/</loc>
       </url>
       <url>
-        <loc>https://github.com/bebeday10/penglang/features/output/say_in_a_box/</loc>
+        <loc>https://bebeday10.github.io/penglang/features/output/say/</loc>
+      </url>
+      <url>
+        <loc>https://bebeday10.github.io/penglang/features/output/say_in_a_box/</loc>
       </url>
 </urlset>
