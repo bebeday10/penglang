@@ -16,13 +16,16 @@
         <loc>https://bebeday10.github.io/penglang/basics/variables/</loc>
       </url>
       <url>
+        <loc>https://bebeday10.github.io/penglang/errors/</loc>
+      </url>
+      <url>
         <loc>https://bebeday10.github.io/penglang/errors/BookmarkError/</loc>
       </url>
       <url>
-        <loc>https://bebeday10.github.io/penglang/errors/errors/</loc>
+        <loc>https://bebeday10.github.io/penglang/errors/PenguinError/</loc>
       </url>
       <url>
-        <loc>https://bebeday10.github.io/penglang/faq/faq/</loc>
+        <loc>https://bebeday10.github.io/penglang/faq/</loc>
       </url>
       <url>
         <loc>https://bebeday10.github.io/penglang/faq/i-want-to-use-3.9-or-lower/</loc>
@@ -34,19 +37,31 @@
         <loc>https://bebeday10.github.io/penglang/faq/why-is-there-syntax-highlighted-in-the-output/</loc>
       </url>
       <url>
-        <loc>https://bebeday10.github.io/penglang/features/a-clarification-on-everything-in-the-features-section/</loc>
+        <loc>https://bebeday10.github.io/penglang/features/</loc>
       </url>
       <url>
-        <loc>https://bebeday10.github.io/penglang/features/features/</loc>
+        <loc>https://bebeday10.github.io/penglang/features/a-clarification-on-everything-in-the-features-section/</loc>
       </url>
       <url>
         <loc>https://bebeday10.github.io/penglang/features/horse/</loc>
       </url>
       <url>
-        <loc>https://bebeday10.github.io/penglang/features/output/dance/</loc>
+        <loc>https://bebeday10.github.io/penglang/features/notebooks/</loc>
       </url>
       <url>
-        <loc>https://bebeday10.github.io/penglang/features/output/output/</loc>
+        <loc>https://bebeday10.github.io/penglang/features/notebooks/bookmarks/</loc>
+      </url>
+      <url>
+        <loc>https://bebeday10.github.io/penglang/features/notebooks/changing_directions/</loc>
+      </url>
+      <url>
+        <loc>https://bebeday10.github.io/penglang/features/notebooks/raw_body_vs_formatted_body/</loc>
+      </url>
+      <url>
+        <loc>https://bebeday10.github.io/penglang/features/output/</loc>
+      </url>
+      <url>
+        <loc>https://bebeday10.github.io/penglang/features/output/dance/</loc>
       </url>
       <url>
         <loc>https://bebeday10.github.io/penglang/features/output/say/</loc>
@@ -55,15 +70,51 @@
         <loc>https://bebeday10.github.io/penglang/features/output/say_in_a_box/</loc>
       </url>
       <url>
+        <loc>https://bebeday10.github.io/penglang/features/pengbulletin/</loc>
+      </url>
+      <url>
         <loc>https://bebeday10.github.io/penglang/features/pengbulletin/bulletin-board/</loc>
       </url>
       <url>
         <loc>https://bebeday10.github.io/penglang/features/pengbulletin/bulletin/</loc>
       </url>
       <url>
-        <loc>https://bebeday10.github.io/penglang/features/pengbulletin/pengbulletin/</loc>
+        <loc>https://bebeday10.github.io/penglang/features/pengkaraoke/</loc>
       </url>
       <url>
-        <loc>https://bebeday10.github.io/penglang/features/pengprint/pengprint/</loc>
+        <loc>https://bebeday10.github.io/penglang/features/pengkaraoke/penguinkaraokemachine/</loc>
+      </url>
+      <url>
+        <loc>https://bebeday10.github.io/penglang/features/pengpath/</loc>
+      </url>
+      <url>
+        <loc>https://bebeday10.github.io/penglang/features/pengpath/page/</loc>
+      </url>
+      <url>
+        <loc>https://bebeday10.github.io/penglang/features/pengpath/setting_roots/</loc>
+      </url>
+      <url>
+        <loc>https://bebeday10.github.io/penglang/features/pengprint/</loc>
+      </url>
+      <url>
+        <loc>https://bebeday10.github.io/penglang/features/pengprint/typewriters/</loc>
+      </url>
+      <url>
+        <loc>https://bebeday10.github.io/penglang/features/pengsong/pengsongdesign/</loc>
+      </url>
+      <url>
+        <loc>https://bebeday10.github.io/penglang/features/pengsong/pengsongdesign/convert_dictionaries/</loc>
+      </url>
+      <url>
+        <loc>https://bebeday10.github.io/penglang/features/pengsong/pengsongdesign/merge_lyrics/</loc>
+      </url>
+      <url>
+        <loc>https://bebeday10.github.io/penglang/tips/</loc>
+      </url>
+      <url>
+        <loc>https://bebeday10.github.io/penglang/tips/current_tip/</loc>
+      </url>
+      <url>
+        <loc>https://bebeday10.github.io/penglang/tips/tip%20archive/archive_1/</loc>
       </url>
 </urlset>
