@@ -1,0 +1,1 @@
+Some say that errors are cool. Do not try to place a bookmark outside the book
