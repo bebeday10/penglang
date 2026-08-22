@@ -51,7 +51,7 @@ class PenguinBanana:
             return "chonky banana"
 
     def quality_ratio(self):
-        (self.potassium * self.freshness) / (self.bmi() * 50)
+        return (self.potassium * self.freshness) / (self.bmi() * 50)
 
         
 

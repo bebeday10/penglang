@@ -13,6 +13,7 @@ PengIterable: the module for iterables
 
 from .. import penglang as pl
 from collections import defaultdict
+from copy import deepcopy
 from typing import Any, Callable, Iterable
 
 def get_answer(key: Any, dictionary: dict, if_no_exist: Any = None) -> Any:
@@ -147,3 +148,6 @@ def iterate_a_function(the_iterable: Iterable, func: Callable, **funckwargs):
     else:
         for i in the_iterable:
             func(i, **funckwargs)
+
+def list_to_dict(the_list, default):
+    return {i: deepcopy(default) for i in the_list}

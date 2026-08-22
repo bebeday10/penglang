@@ -1,6 +1,6 @@
 from ... import penglang as pl
 from . import pengbulletinmessage as pbs
-from .. import pengrandom as pd
+from ..pengrandom import pengrandom as pd
 
 class PenguinBulletin:
     def __init__(self, body) -> None:

@@ -1,4 +1,4 @@
-from .. import pengrandom as pr
+from ..pengrandom import pengrandom as pr
 
 
 

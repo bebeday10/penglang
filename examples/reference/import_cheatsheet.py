@@ -13,7 +13,7 @@ import penglang.modules.pengkaraoke as pk
 import penglang.modules.pengmath as pmath
 import penglang.modules.pengpath as ppath
 import penglang.modules.pengprint as pprint
-import penglang.modules.pengrandom as pr
+import penglang_dev.penglang.modules.pengrandom.pengrandom as pr
 import penglang.modules.pengstring as pstr
 import penglang.modules.pengthis as pthis
 import penglang.modules.pengvending as pv

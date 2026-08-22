@@ -11,7 +11,7 @@ PengRandom: the possibilities are too many penguins
     - random decisions
 """
 
-from .. import penglang
+from ... import penglang
 import random as r
 
 def random_number(start: int, end: int) -> int:

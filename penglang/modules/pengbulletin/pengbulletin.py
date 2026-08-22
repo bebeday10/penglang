@@ -8,7 +8,7 @@ from typing import Callable
 from ...penglang import multitask
 from ... import penglang as pl
 import asyncio as asy
-from .. import pengrandom as pd
+from ..pengrandom import pengrandom as pd
 from . import pengbulletinmessage as pbm
 
 

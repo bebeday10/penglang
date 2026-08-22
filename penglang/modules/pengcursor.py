@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from typing import Any
+from copy import deepcopy
 
 @dataclass
 class PenguinCursor:
@@ -17,10 +18,10 @@ class PenguinCursor:
         self.pins = self.pins or {}
 
     def move(self, direction: Any, movement: int):
-        self.position[direction] = self.position.get("direction", 0) + movement
+        self.position[direction] = self.position.get(direction, 0) + movement
 
     def pin(self, name: str):
-        self.pins[name] = self.position
+        self.pins[name] = deepcopy(self.position)
 
     def get_far_from_start(self):
         distance = 0

@@ -33,12 +33,12 @@ def keep_doing_it(times: int, log: bool = False):
     def decorator(func):
         @wraps(func)
         def inner(*args, **kwargs):
-            result = ()
+            result = []
             for i in range(times):
                 pl.say(f"this is the {i + 1} time!") if log else None
                 result.append(func(*args, **kwargs))
 
-            return result
+            return tuple(result)
 
         return inner
     return decorator

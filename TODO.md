@@ -152,9 +152,21 @@
 - [ ] v1.0.0 - penguin
 
 - [ ] v1.1.0 - bakery and tolerances
-- [ ] v1.2.0 - fancy windows
+- [ ] v1.2.0 - fancy windows and fractions
 - [ ] v1.3.0 - grids and data
 - [ ] v1.4.0 - more math, dishes, and dishwashers
+  - more math:
+    - floor div
+    - remainder
+    - power
+    - average
+    - mean
+    - mode
+    - math object
 - [ ] v1.5.0 - actions and farms
+  - actions:
+    - base action
+    - say action
+    - actions use `__matmul__`
 - [ ] v1.6.0 - blizzard
-
+- [ ] v1.7.0 - docstring update 2
