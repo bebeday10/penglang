@@ -1,13 +1,13 @@
 [project]
 site_url = "https://bebeday10.github.io/penglang/"
 site_name = "PengLang"
-# site_description = "Your project description"
-# site_author = "Your name"
+site_description = "That one penguin programming language"
+site_author = "bebeday10"
 
-# copyright = "Copyright &copy; 2026 Your name"
+copyright = "Copyright &copy; 2026 bebeday10"
 
-# repo_url = "https://github.com/user/repo"
-# repo_name = "user/repo"
+repo_url = "https://github.com/bebeday10/penglang"
+repo_name = "bebeday10/penglang"
 # edit_uri = "edit/main/docs/"
 
 
@@ -81,7 +81,7 @@ toggle.name = "Switch to system preference"
 
 [[project.extra.social]]
 icon = "fontawesome/brands/github"
-link = "https://github.com/bebeday10/penglang"
+link = "https://github.com/bebeday10"
 
 # [[project.extra.social]]
 # icon = "fontawesome/brands/mastodon"
