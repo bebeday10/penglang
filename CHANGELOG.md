@@ -1,4 +1,76 @@
 # Changelog
+## v0.10.0
+Hello **catfish**. This is the last of the *v0.x.x* series, we wish you all a **happy** end of an era. Today we present the *documentation*, *examples*, **bananas** and *their bags*, the *crowd*, and ***more***.
+
+---
+
+**PengLang** now has even more documentation! Penguins can use it to learn more about PengLang. The documentation is [here](https://bebeday10.github.io/penglang).  
+Penguins feel satisfied as they see this.  
+Some penguins forgot everything.  
+
+---
+
+**Examples** are now in *PengLang*. *Penguins* can see this to *understand* what the point of the things are for.  
+
+---
+
+**PengBanana** are the home for penguin food. Penguins can eat bananas, and throw them away!  
+Penguins call this, "*finally we can eat food*".
+
+---
+
+**PengBananaBag** are used to store bananas. Bananas are heavy, says the penguin in the corner.  
+
+---
+
+**PengCrowd** is a way see the *penguin crowd* as a whole. Penguins that aren't in the crowd can be added.  
+
+---
+
+**PengCursor** has a cursor that is useful to keep track where you go.  
+- Add pins
+- Go to pins
+- Check how far you are
+- Check how far you are from a pin
+- Check for pins
+- Getting pins
+
+---
+
+**PengDecorator** has fixed `keep_doing_it`. Penguins may retry in peace.
+
+---
+
+**PengIterable** now has a way to convert lists to dictionaries. **Penguins** use these if they are forced to use dictionaries.
+
+---
+
+**PengMustFollow** is a way to check if *penguins* have been following the must-follows. If not, they become must-follow breakers.
+
+---
+
+**PengPrint** has fixed saying boxes better. May *penguins* say better boxes.
+
+---
+
+**PengIceOfRandom** can be used to spit **nonsense** *penguin speech*. *Penguins* call this "unintelligible".
+
+---
+
+**PengSymbol** can be used to see some symbols, or check if something is in the symbols.
+
+---
+
+**PengLang** is now able to check for fish viruses. If there is a fish virus, it will run the fish virus handler.
+
+---
+
+**Fake files** have appeared. *Beware*!
+
+---
+
+See you at v1.0.0. Goodbye!
+
 ## v0.9.0
 Hello polar bears. Today we present *coin bags*, *safe coin places*, and *notebooks*.
 
