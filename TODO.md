@@ -170,3 +170,4 @@
     - actions use `__matmul__`
 - [ ] v1.6.0 - blizzard
 - [ ] v1.7.0 - docstring update 2
+- [ ] v1.8.0 - notebooks supports book website
