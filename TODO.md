@@ -161,9 +161,9 @@
 
 - [ ] v1.1.0 - bakery and tolerances
 - [ ] v1.2.0 - fancy windows and fractions and vending machine sales
-- [ ] v1.3.0 - grids, data, more path options
+- [ ] v1.3.0 - grids, data, ~~more path options~~
   - path:
-    - make root an argument
+    - ~~make root an argument~~ *Finished in v1.0.0*
 - [ ] v1.4.0 - more math, dishes, and dishwashers
   - more math:
     - floor div

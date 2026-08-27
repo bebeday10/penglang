@@ -2,10 +2,24 @@ from dataclasses import dataclass
 from operator import inv
 from .. import penglang as pl
 from . import pengbanana as pb
+from . import pengprint as pprint
 
 
 @dataclass
 class Penguin:
+    """
+    The awesome ***Penguin***.
+
+    ## Has:
+    - speed
+    - weight
+    - name
+    - money
+    - inventory
+    - clothes
+    - banana
+        - banana as used in PengBanana.
+    """
     speed: float
     weight: float
     name: str
@@ -20,6 +34,15 @@ class Penguin:
         self.banana = self.banana or pb.PenguinBanana("Banana", 1, 1, 1, 1, "Banana")
 
     def waddle(self, log: bool = False):
+        """
+        make your penguin do a fun waddle
+
+        Args:
+            log (bool, optional): SAY THE WADDLING. May scare penguins. Defaults to False.
+
+        Returns:
+            Literal['Penguin waddles.']: Penguin waddles.
+        """
         pl.say("the penguin waddles...") if log else None
         return "Penguin waddles."
 
@@ -44,7 +67,31 @@ class Penguin:
     def weight_to_speed_ratio(self) -> float:
         return self.weight / self.speed
 
+    def dance(self, dance_type: str, shout: bool = False):
+        pl.dance(dance_style=dance_type, shouting=shout)
+
+    def say(self, *message, ending_signature: str="\n", breath_moments: str = ""):
+        """
+        make your penguin say something
+
+        Args:
+            ending_signature (str): what to say at the end. Defaults to "".
+            breath_moments (str): what to breath after a message. Defaults to "\\n".
+        """
+        pprint.better_say(*message, end=ending_signature, seperator=breath_moments)
+
+    def fall(self, floor_hardness, log: bool = False):
+        speed -= floor_hardness
+        pl.say(f"ouch. lost {floor_hardness} speed.") if log else None
+        return "Pain"
+
     def quality_score(self) -> float:
+        """
+        check your penguin's quality. may be used for university or something. don't go fast.
+
+        Returns:
+            float: the quality
+        """
         quality = 0
         quality += (self.money / 4)
         for i in self.inventory.values():
