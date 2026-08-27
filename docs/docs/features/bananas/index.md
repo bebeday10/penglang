@@ -46,13 +46,13 @@ Penguins eat them because they are "cool".
 - get potassium: Check how potassiumized the banana is.
 - bmi: Get the BMI. Formula: `weight ÷ size²`
 - get weight category: Some penguins go on a diet. Lighter the more diet-friendly!
-  - 0-1: tiny banana
-  - 1-3: normal banana
-  - 3-5: big banana
-  - \>5: chonky banana
+    - 0-1: tiny banana
+    - 1-3: normal banana
+    - 3-5: big banana
+    - \>5: chonky banana
 
 - quality ratio: How rich the banana is. Used to check the best bananas.
-  - Formula: (Potassium * Freshness) / BMI * 50
+  - Formula: (Potassium * Freshness) / (BMI * 50)
 
 [^1]: They are a hazard if they aren't average.
     ??? question "I have fed them a banana, what do I do?"
