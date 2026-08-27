@@ -16,7 +16,7 @@
 - [ ] add other hub for other people that want to unofficially add their own classes
 
 ## pengpenguin
-- [ ] add Penguin class
+- [x] add Penguin class
     - [ ] add this to penglink as well
      
 ## pengdata
@@ -68,7 +68,7 @@
 - [x] move convert to lyrics to here
 
 ## pengbanana
-- [ ] add banana class
+- [x] add banana class
   - [ ] add to penglink
 
 ## pengmath
@@ -145,15 +145,25 @@
 
 - [x] v0.9.0 - money
 
-- [ ] v0.10.0 - banana, cursor
+- [x] v0.10.0 - banana, cursor
 
 ...
 
-- [ ] v1.0.0 - penguin
+- [ ] v1.0.0 - penguin, asker
+  - asker:
+    - pengask
+    - has ask, asker
+    - ask:
+      - ask cmd
+    - asker:
+      - uses list
+        - f-string that has asks. (see ask)
 
 - [ ] v1.1.0 - bakery and tolerances
-- [ ] v1.2.0 - fancy windows and fractions
-- [ ] v1.3.0 - grids and data
+- [ ] v1.2.0 - fancy windows and fractions and vending machine sales
+- [ ] v1.3.0 - grids, data, more path options
+  - path:
+    - make root an argument
 - [ ] v1.4.0 - more math, dishes, and dishwashers
   - more math:
     - floor div
@@ -168,6 +178,13 @@
     - base action
     - say action
     - actions use `__matmul__`
-- [ ] v1.6.0 - blizzard
+- [ ] v1.6.0 - blizzard, leaderboard
+  - leaderboard:
+    - uses table
+    - has multiple sort methods
 - [ ] v1.7.0 - docstring update 2
-- [ ] v1.8.0 - notebooks supports book website
+- [ ] v1.8.0 - notebooks supports book website and penguinmarkdown
+  - markdown:
+    - has metadata
+    - auto-nester
+    - exportable to md or json
