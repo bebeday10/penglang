@@ -149,7 +149,7 @@
 
 ...
 
-- [ ] v1.0.0 - penguin, asker
+- [ ] v1.0.0 - penguin, asker, races, social networking
   - asker:
     - pengask
     - has ask, asker

@@ -1,8 +1,7 @@
 from dataclasses import dataclass
-from operator import inv
-from .. import penglang as pl
-from . import pengbanana as pb
-from . import pengprint as pprint
+from ... import penglang as pl
+from .. import pengbanana as pb
+from .. import pengprint as pprint
 
 
 @dataclass
@@ -47,7 +46,7 @@ class Penguin:
         return "Penguin waddles."
 
     def train(self, amount, log: bool = False):
-        speed += amount
+        self.speed += amount
         pl.say(f"the penguin trains and earns {amount} speed") if log else None
         return "Penguin trains."
 

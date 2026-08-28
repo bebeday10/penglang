@@ -2,8 +2,38 @@
 
 __version__ = "0.5.0"
 
-from .pengmath import *
-from .pengwindow import *
+from . import (
+    pengkaraoke,
+    pengmath,
+    pengimage,
+    pengrandom,
+    pengbanana,
+    pengpenguin,
+    pengcrowd,
+    pengiterable,
+    pengbulletin,
+    pengcard,
+    pengdecorator,
+    pengvending,
+    pengsymbol,
+    pengcoffee,
+    pengcounter,
+    pengcursor,
+    penglink,
+    pengmoney,
+    pengmustfollow,
+    pengnote,
+    pengpast,
+    pengpath,
+    pengprint,
+    pengsong,
+    pengstring,
+    pengthing,
+    pengthis,
+    pengwindow,
+    pengyesno
+)
+
 
 SHOWLOGS = False
 

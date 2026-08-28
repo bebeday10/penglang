@@ -1,7 +1,7 @@
 __version__ = "0.9.0"
 
 from .penglang import *
-from .modules import pengwindow, pengmath
+from . import modules
 
 SHOW_LOGS = False
 

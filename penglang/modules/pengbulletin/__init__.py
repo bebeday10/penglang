@@ -1,1 +1,2 @@
 from .pengbulletin import PenguinBulletinBoard
+from .pengbulletinitem import PenguinBulletin
