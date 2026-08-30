@@ -18,6 +18,7 @@ penglang.egg-info/requires.txt
 penglang.egg-info/top_level.txt
 penglang/modules/__init__.py
 penglang/modules/pengcoffee.py
+penglang/modules/pengcounter.py
 penglang/modules/pengcrowd.py
 penglang/modules/pengcursor.py
 penglang/modules/pengdecorator.py
@@ -28,6 +29,7 @@ penglang/modules/pengmath.py
 penglang/modules/pengmustfollow.py
 penglang/modules/pengpath.py
 penglang/modules/pengprint.py
+penglang/modules/pengrace.py
 penglang/modules/pengstring.py
 penglang/modules/pengsymbol.py
 penglang/modules/pengthis.py
@@ -62,6 +64,9 @@ penglang/modules/pengnote/pengnote.py
 penglang/modules/pengpast/__init__.py
 penglang/modules/pengpast/pengcoffee.py
 penglang/modules/pengpast/pengwindow.py
+penglang/modules/pengpenguin/__init__.py
+penglang/modules/pengpenguin/pengpenguin.py
+penglang/modules/pengpenguin/pengracingpenguin.py
 penglang/modules/pengrandom/__init__.py
 penglang/modules/pengrandom/pengiceofrandom.py
 penglang/modules/pengrandom/pengrandom.py
