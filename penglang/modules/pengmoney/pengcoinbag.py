@@ -25,7 +25,7 @@ class PenguinCoinBag:
         self.balance -= amount
         self.coin_history.append(f"withdrew {amount}.")
 
-    def get_wallet_money(self) -> Decimal:
+    def get_coin_bag_coins(self) -> Decimal:
         self.coin_history.append(f"checked wallet.")
         return self.balance
     
@@ -34,7 +34,7 @@ class PenguinCoinBag:
         self.coin_history.append(f"former owner {self.owner} has transferred ownership to {new_owner}.")
         self.owner = new_owner
 
-    def get_wallet_owner(self) -> str:
+    def get_coin_bag_owner(self) -> str:
         self.coin_history.append("checked owner")
         return self.owner
 
