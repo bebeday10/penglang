@@ -313,7 +313,7 @@ actions: list[str] = [
     f"reading about the new {pr.random_decision(*news)}",
     f"getting emotional after hearing {pr.random_decision(*objects)} going to be {pr.random_decision(*places)}",
     f"professionally find a small {pr.random_decision(*objects)}",
-    f"getting their {pr.random_decision(*objects)} stolen by {pr.random_decision(*objects)}"
+    f"getting their {pr.random_decision(*objects)} stolen by {pr.random_decision(*objects)}",
     f"stealing {pr.random_decision(*objects)}'s {pr.random_decision(*objects)}",
     f"pushed off by {pr.random_decision(*objects)}"
 ]
