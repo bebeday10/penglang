@@ -11,9 +11,11 @@ class RacingPenguin(Penguin):
     stamina: int
     guts: int
     skills: None | list = None
+    racing_record: None | list = None
 
     def __post_init__(self):
         self.skills = self.skills or []
+        self.racing_record = self.racing_record or []
         return super().__post_init__()
 
     def speed_training(self):
