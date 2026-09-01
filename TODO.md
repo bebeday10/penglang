@@ -173,7 +173,7 @@
     - mean
     - mode
     - math object
-- [ ] v1.5.0 - actions and farms
+- [ ] v1.5.0 - actions and farms, agents
   - actions:
     - base action
     - say action
