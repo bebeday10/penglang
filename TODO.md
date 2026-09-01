@@ -149,7 +149,7 @@
 
 ...
 
-- [ ] v1.0.0 - penguin, asker, races, social networking
+- [ ] v1.0.0 - penguin, asker, races
   - asker:
     - pengask
     - has ask, asker
@@ -188,3 +188,5 @@
     - has metadata
     - auto-nester
     - exportable to md or json
+
+- [ ] v1.9.0 - social networking

@@ -11,7 +11,7 @@ class PenguinFish:
     spot: int = 0
     face: Literal["left", "right"] = "right"
     fish: str = "⪚(((#(。>"
-    tick_speed: float = 0.033333
+    tick_speed: float = 1 / 30
 
     @pl.multitask
     async def swim(self, swim_ticks: int = 300):
