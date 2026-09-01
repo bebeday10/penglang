@@ -4,7 +4,7 @@
 
 [^1]: There has been no tsunamis since an hour ago.
 
-*Penguins eat [bananas](../bananas/index.md)*. as a whole.
+*Penguins eat [bananas](../bananas/index.md)* as a whole.
 
 ??? question "How many bananananas do penguins eat per day?"
     28.
