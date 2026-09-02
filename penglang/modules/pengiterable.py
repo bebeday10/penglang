@@ -151,3 +151,12 @@ def iterate_a_function(the_iterable: Iterable, func: Callable, **funckwargs):
 
 def list_to_dict(the_list, default):
     return {i: deepcopy(default) for i in the_list}
+
+def list_combine(list_a: list, list_b: list) -> dict:
+
+    dictionary = list_to_dict(list_a, None)
+    for i, (key, val) in enumerate(deepcopy(dictionary).items()):
+        dictionary[key] = list_b[i % len(list_b)]
+
+    return dictionary
+
