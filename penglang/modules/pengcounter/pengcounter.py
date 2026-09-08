@@ -20,3 +20,6 @@ class PenguinCounter:
     def count_down(self, interval: int | None = None):
         interval = interval or self.interval
         self.count -= interval
+
+    def __str__(self):
+        return self.count

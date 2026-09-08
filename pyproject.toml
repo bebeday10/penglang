@@ -14,7 +14,8 @@ authors = [
 dependencies = [
     "rich",
     "ascii-magic",
-    "pygame-ce"
+    "pygame-ce",
+    "readchar"
 ]
 license = "MIT"
 keywords = [

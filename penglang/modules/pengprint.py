@@ -21,6 +21,7 @@ from .. import penglang as pl
 import time as t
 from rich import print
 from rich.panel import Panel
+import textwrap as tw
 
 from rich import box
 if TYPE_CHECKING:
@@ -170,3 +171,16 @@ def better_say_in_a_box(
             safe_box=safe_box
         )
     )
+
+def penguin_speech_bubble(speech: str, bubble_size: int = 28, speech_direction: Literal[">", "<", "^"] = "<"):
+    lines = tw.wrap(
+        speech,
+        bubble_size
+    )
+    pl.say(" " + "_" * (bubble_size + 2))
+    for line in lines:
+        pl.say(f"| {line:{speech_direction}{bubble_size}} |")
+
+    pl.say(" " + "-" * (bubble_size + 2))
+    pl.say("        \\")
+    pl.say("         🐧")
