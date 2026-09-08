@@ -3,7 +3,9 @@ from rich.panel import Panel
 from rich.live import Live
 from rich.text import Text
 from . import pengrandom as pr
-
+from . import pengprint as pprint
+from .. import penglang as pl
+import asyncio as asy
 import readchar
 
 @dataclass
@@ -21,11 +23,35 @@ class PenguinMenu:
     confirmations: int = 0
     random_start: bool = False
     beep: bool = False
+    selection_penguin: bool = False
+    disagreement_penguin: bool = False
+    selection_penguin_amount: int = 1
+    disagreement_penguin_amount: int = 1
+    forbidden_penguin_amount: int = 1
+    travellers_delay: float = 0
+    random_travellers_delay: bool = False
+    travel_amount: int = 1
+    remove_evidence: bool = False
+    random_forbidden_list: list | None = None
+    key_echo: bool = False
 
     def __post_init__(self):
         self.food = self.food or []
+        self.random_forbidden_list = self.random_forbidden_list or [
+            "we see you. we do not care.",
+            "what is that forbidden key. we will report to the police office next saturday at 5PM. make sure you remember this awful crime of one.",
+            "no",
+            "are you serious?",
+            "why did you do that. we hate you now",
+            "know your rules, buddy",
+            "did you know you can press the arrow keys, enter, esc to do stuff?",
+            "what does it mean to be like you",
+            "thank you for not following instructions.",
+            "we hope we know what you pressed. unfortunately we do not"
+        ]
 
-    def to_hungry_penguins(self):
+    @pl.multitask
+    async def to_hungry_penguins(self):
         current_selection = 0
         if self.random_start:
             current_selection = pr.random_number(0, (len(self.food) - 1))
@@ -69,26 +95,62 @@ class PenguinMenu:
 
                 if key == readchar.key.UP:
                     if current_selection <= 0:
-                        current_selection = len(self.food) - 1
+                        current_selection = len(self.food) - self.travel_amount
                     else:
-                        current_selection -= 1
+                        current_selection -= self.travel_amount
                     if self.beep:
                         print("\a", end="")
+                    if self.selection_penguin:
+                        pprint.penguin_speech_bubble(
+                            f"you have chosen {self.food[current_selection]}",
+                            speech_direction="^",
+                            penguins=self.selection_penguin_amount
+                        )
 
                 elif key == readchar.key.DOWN:
-                    if current_selection >= len(self.food) - 1:
+                    if current_selection >= len(self.food) - self.travel_amount:
                         current_selection = 0
                     else:
-                        current_selection += 1
+                        current_selection += self.travel_amount
                     if self.beep:
                         print("\a", end="")
+                    if self.selection_penguin:
+                        pprint.penguin_speech_bubble(
+                            f"you have chosen {self.food[current_selection]}",
+                            speech_direction="^",
+                            penguins=self.selection_penguin_amount
+                        )
                 elif key == readchar.key.ENTER or key == readchar.key.ENTER_2:
-
+                    if self.remove_evidence:
+                        l.update("(Evidence has been removed.)", refresh=True)
                     break
 
                 elif key == readchar.key.ESC or key == readchar.key.ESC_2:
+                    if self.remove_evidence:
+                        l.update("(Evidence has been removed.)", refresh=True)
+                    if self.disagreement_penguin:
+                        pprint.penguin_speech_bubble(
+                            f"you profusely disagree to the menu. they will hear about this",
+                            speech_direction="^",
+                            penguins=self.disagreement_penguin_amount
+                        )
                     return "The penguin profusely disagreed to your menu."
-                
+                else:
+                    pprint.penguin_speech_bubble(
+                        pr.random_decision(*self.random_forbidden_list),
+                        speech_direction="^",
+                        penguins=self.forbidden_penguin_amount
+                    )
+                if self.random_travellers_delay:
+                    await asy.sleep(pr.random_decimal(0, self.travellers_delay))
+                else:
+                    await asy.sleep(self.travellers_delay)
+                if self.key_echo:
+                    pprint.penguin_speech_bubble(
+                        f"you said {key}",
+                        speech_direction="^",
+                        penguins=self.selection_penguin_amount
+                    )
                 l.update(Panel(t, title=self.restaurant, border_style=self.color), refresh=True)
 
         for confirms in range(self.confirmations):
@@ -112,13 +174,13 @@ class PenguinMenu:
                         if confirm_selection <= 0:
                             confirm_selection = len(confirm_list) - 1
                         else:
-                            confirm_selection -= 1
+                            confirm_selection -= self.travel_amount
                     elif confirm_key == readchar.key.DOWN:
                         if confirm_selection >= len(confirm_list) - 1:
                             confirm_selection = 0
                         else:
 
-                            confirm_selection += 1
+                            confirm_selection += self.travel_amount
                     elif confirm_key == readchar.key.ENTER or confirm_key == readchar.key.ENTER_2:
                         if confirm_selection == 0:
                             break
