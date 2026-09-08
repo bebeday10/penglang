@@ -5,13 +5,13 @@ from . import pengsymbol as ps
 from . import pengiterable as pi
 
 @dataclass
-class PenguinTranslator:
+class PenguinTranslateMachine:
     translate_to: list | None = None
     translate_from: list | None = None
 
     def __post_init__(self):
         self.translate_to = self.translate_to or list(map(str, ps.alphanums))
-        if isinstance(self.translate_to, int):
+        if isinstance(self.translate_to, (int, float)):
             self.translate_to = str(self.translate_to)
         if isinstance(self.translate_to, str):
             self.translate_to = list(self.translate_to)

@@ -15,8 +15,8 @@ class PenguinCounter:
     interval: int
     def count_up(self, interval: int | None = None):
         interval = interval or self.interval
-        count += interval
+        self.count += interval
 
     def count_down(self, interval: int | None = None):
         interval = interval or self.interval
-        count -= interval
+        self.count -= interval

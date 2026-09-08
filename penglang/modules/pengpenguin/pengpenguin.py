@@ -80,7 +80,7 @@ class Penguin:
         pprint.better_say(*message, end=ending_signature, seperator=breath_moments)
 
     def fall(self, floor_hardness, log: bool = False):
-        speed -= floor_hardness
+        self.speed -= floor_hardness
         pl.say(f"ouch. lost {floor_hardness} speed.") if log else None
         return "Pain"
 
