@@ -91,6 +91,8 @@
 ## pengcard
 
 - [x] add cards
+- [ ] add card with image
+  - also remember about shutil
 
 ## pengvending
 

@@ -15,6 +15,7 @@
         better say
 """
 
+from os import terminal_size
 from typing import Literal, Optional, TYPE_CHECKING
 
 from .. import penglang as pl
@@ -22,7 +23,7 @@ import time as t
 from rich import print
 from rich.panel import Panel
 import textwrap as tw
-
+import shutil as su
 from rich import box
 if TYPE_CHECKING:
     from rich.box import Box
@@ -184,3 +185,15 @@ def penguin_speech_bubble(speech: str, bubble_size: int = 28, speech_direction: 
     pl.say(" " + "-" * (bubble_size + 2))
     pl.say("        \\")
     pl.say("         " + "🐧"*penguins)
+
+def get_ice_size(fallback: tuple[int, int] = (80, 24)) -> terminal_size:
+    """
+    get the size of the ice. for when a penguin wants a line that goes just right.
+
+    Args:
+        fallback (tuple[int, int], optional): if the ice is gone use this instead. Defaults to (80, 24).
+
+    Returns:
+        terminal_size: the ice size
+    """
+    return su.get_terminal_size(fallback)
