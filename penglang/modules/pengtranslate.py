@@ -1,7 +1,7 @@
 from copy import deepcopy
 from dataclasses import dataclass
 from typing import Generator, Iterable
-from . import pengsymbol as ps
+from .pengsymbol import pengsymbol as ps
 from . import pengiterable as pi
 
 @dataclass

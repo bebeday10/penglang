@@ -14,7 +14,6 @@ from . import (
     pengcard,
     pengdecorator,
     pengvending,
-    pengsymbol,
     pengcoffee,
     pengcursor,
     penglink,
@@ -32,6 +31,7 @@ from . import (
     pengyesno
 )
 from .pengcounter import pengcounter
+from .pengsymbol import pengsymbol
 
 
 SHOWLOGS = False

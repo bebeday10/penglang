@@ -12,7 +12,7 @@ things you can do with this language:
 - make functions that do things if a condition is true
 """
 
-from typing import Callable
+from typing import Any, Callable, NoReturn
 
 from rich import print
 import asyncio as asy
@@ -25,7 +25,7 @@ def say(message):
     Args:
         message (Any): the message to say, can be any type, it will be converted to a string before being printed
     """
-    print(message)
+    print(str(message))
 
 def say_in_a_box(message, title, box_color):
     """
@@ -344,8 +344,7 @@ def penguin_what_is(object: object):
     return type(object)
 
 # make a input returner
-
-def penguin_ask(question) -> str:
+def penguin_ask(question: str, as_a: type = str) -> Any:
     """
     asks the user and gives it to you
 
@@ -353,9 +352,15 @@ def penguin_ask(question) -> str:
         question (str): your question
 
     Returns:
-        str: their answer
+        Any | TheThingEndedAndYouGetNothing: the answer. or the penguin has failed and there is no more returning
+    Raises:
+        PenguinError: the penguin failed in convertion class
     """
-    return input(question)
+    answer = input(question)
+    try:
+        return as_a(answer)
+    except ValueError:
+        raise PenguinError("tried make it that type, but the penguin failed because it wasn't what it wanted.")
 
 def penguin_check_fish_virus(to_check: Callable, when_virus: Callable, virus: BaseException = Exception, *checkargs, **checkkwargs):
     """

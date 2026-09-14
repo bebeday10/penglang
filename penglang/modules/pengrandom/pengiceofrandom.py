@@ -1,7 +1,7 @@
 from concurrent.futures import ThreadPoolExecutor
 from threading import Event
 from ... import penglang as pl
-from .. import pengsymbol as ps
+from ..pengsymbol import pengsymbol as ps
 from . import pengrandom as pr
 from .. import pengiterable as pi
 import os
