@@ -5,7 +5,7 @@ from ... import penglang as pl
 
 class PenguinInteger(int):
     def __new__(cls, x: str | bytes | bytearray, /, base: SupportsIndex) -> Self:
-        return super().__new__(x, base)
+        return super().__new__(cls, x, base)
     
     def count_fish(self):
         return f"after a hard work, found {self} fish"
