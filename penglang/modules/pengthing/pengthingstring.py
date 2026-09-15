@@ -1,10 +1,10 @@
-from _typeshed import ReadableBuffer
+
 from typing_extensions import Self
 
 from ... import penglang as pl
 
 class PenguinString(str):
-    def __new__(cls, object: ReadableBuffer, encoding: str = "utf-8", errors: str = "strict") -> Self:
+    def __new__(cls, object, encoding: str = "utf-8", errors: str = "strict") -> Self:
         return super().__new__(object, encoding, errors)
 
     def reverse_speech(self):

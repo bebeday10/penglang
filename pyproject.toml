@@ -15,7 +15,8 @@ dependencies = [
     "rich",
     "ascii-magic",
     "pygame-ce",
-    "readchar"
+    "readchar",
+    "typing_extensions"
 ]
 license = "MIT"
 keywords = [
