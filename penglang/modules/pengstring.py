@@ -38,7 +38,7 @@ def cut_speech(speech: str, cut: Iterable[int]) -> str:
     """
     return speech[cut[0]:cut[1]:cut[2]]
 
-def replace_part(text: str, old: str, new: str) -> str:
+def replace_part(text: str, old: str, new: str, count: int = -1) -> str:
     """
     replace part in text
 
@@ -50,7 +50,7 @@ def replace_part(text: str, old: str, new: str) -> str:
     Returns:
         str: the replaced text
     """
-    return text.replace(old, new)
+    return text.replace(old, new, count=count)
 
 def put_speech_in_speech_everywhere(original_speech: str, speech_to_put: str, log: bool = False, cjk: bool = False) -> list:
     """
