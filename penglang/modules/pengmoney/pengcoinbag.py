@@ -38,7 +38,7 @@ class PenguinCoinBag:
         self.coin_history.append("checked owner")
         return self.owner
 
-    def spend(self, amount: Decimal, allow_debt: bool = True) -> Callable[...]:
+    def spend(self, amount: Decimal, allow_debt: bool = True):
         def decorator(func: Callable):
             @wraps(func)
             def inner(*args, **kwargs):
@@ -51,7 +51,7 @@ class PenguinCoinBag:
             return inner
         return decorator
 
-    def receive(self, amount: Decimal) -> Callable[...]:
+    def receive(self, amount: Decimal):
         def decorator(func: Callable):
             @wraps(func)
             def inner(*args, **kwargs):
