@@ -97,7 +97,7 @@ async def multitask_typewrite(*message, delay: float = 0.05, spacing: bool = Tru
     if spacing:
         print()
 
-def better_say(*message, end="\n", seperator="", flush: bool = False):
+def better_say(*message, end="\n", seperator="", flush: bool = False, inspection: bool = True):
     """
     say, but with more options.
 
@@ -106,8 +106,13 @@ def better_say(*message, end="\n", seperator="", flush: bool = False):
         end (str, optional): the ending of the say. useful for seperating. Defaults to "\\n".
         seperator (str, optional): the seperator between each message. useful for seperating. Defaults to "".
         flush (bool, optional): whether to force refresh the terminal. Defaults to False.
+        inspection (bool, optional): inspect the message. Defaults to True.
     """
-    print(*message, end=end, sep=seperator, flush=flush)
+    if inspection:
+        print(*message, end=end, sep=seperator, flush=flush)
+    else:
+        message = [str(piece) for piece in message]
+        print(*message, end=end, sep=seperator, flush=flush)
 
 
 def better_say_in_a_box(
