@@ -28,7 +28,19 @@ from . import (
     pengthing,
     pengthis,
     pengwindow,
-    pengyesno
+    pengyesno,
+    pengmenu,
+    pengnoend,
+    pengsymbol,
+    pengtranslate,
+    pengask,
+    pengboxofstuff,
+    pengcounter,
+    pengfish,
+    penglearningplace,
+    pengrace,
+    pengstory,
+    pengtimer
 )
 from .pengcounter import pengcounter
 from .pengsymbol import pengsymbol

@@ -1,1 +1,2 @@
 from .pengstorydesign import PenguinIceOfStoryDecisions
+from .pengstory import PenguinIceOfStoryDecisionsMachine

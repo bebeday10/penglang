@@ -11,8 +11,11 @@ class PenguinBoxOfStuff:
         self.stuff = self.stuff or []
 
     def get_something(self):
-        thing = pr.random_decision(*self.stuff)
-        self.stuff.remove(thing)
+        try:
+            thing = pr.random_decision(*self.stuff)
+            self.stuff.remove(thing)
+        except IndexError:
+            raise PenguinError("there were too little items to pick from (try to have less than have)")
         return thing
 
     def get_multiple_things(self, amount):
@@ -31,7 +34,7 @@ class PenguinBoxOfStuff:
         return item in self.stuff
 
     def __str__(self):
-        return f"a box of stuff named {self.name} with {", ".join(self.stuff)}"
+        return f"a box of stuff named {self.name} with {", ".join(str(stuff) for stuff in self.stuff)}"
 
     def __len__(self):
         return len(self.stuff)
