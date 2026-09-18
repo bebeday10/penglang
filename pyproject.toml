@@ -38,7 +38,8 @@ keywords = [
     "curious",
     "coins",
     "safe-coin-place",
-    "stable"
+    "stable",
+    "correct-version"
     ]
 
 [project.urls]
