@@ -151,7 +151,7 @@
 
 ...
 
-- [ ] v1.0.0 - penguin, asker, races
+- [x] v1.0.0 - penguin, asker, races
   - asker:
     - pengask
     - has ask, asker

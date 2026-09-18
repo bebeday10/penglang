@@ -1,4 +1,60 @@
 # Changelog
+## v1.0.0
+Hello **dogfish**. This is the first stable release, make sure to celebrate it! Today we present the newest and finest *Pengnologies*™, the highest leading group, such as **updated modules whole imports**, **question and askers**, **fish**, and many more *state of the arts*.
+
+---
+
+PengLang has improved what happens when you import `penglang.modules`. Now, it imports most modules *(excluding PengKaraoke, for reasons)*.
+
+---
+
+**PengAsk** includes the *advanced* way for penguins to ask questions. Penguins use these to answer other penguins.
+
+---
+
+**PengCounter** is a counter for simplistic penguins. Penguins just want to count. *(It is broken, v1.1.0 has fixed this)*
+
+---
+
+*Oh hey, what's that?* Oh, right. It's a fish! **PengFish** are for penguins that don't have fish. Penguins use these because they want to see *cool fish*!
+
+---
+
+**PengLearningPlace** is for penguins to grow and gain intelligence. They say, "*It makes penguins smart*."
+
+---
+
+**PengCoinBag**'s methods have been renamed to keep consistency with the world.
+
+---
+
+**PengPath** now lets you set a starting path rather than always staying at one place and nowhere else.
+
+---
+
+And now, the main point...
+
+---
+
+***Penguins!*** This is our flagship penguin that can waddle, train, inventory, use, have clothing, saying, falling (*broken, fixed in v1.1.0*), and quality scores!  
+**This is the proudest achievement of PengLang.**
+
+---
+
+**Races**, and **Racing Penguins** have blazed onto the racetrack! They can race now for the fun of it. Maybe give them prizes!
+
+---
+
+**PengIceOfRandom** can now target speeches! Make your CPU *(Camping Penguin Unity)* get angry with this.
+
+---
+
+**There's now... A timer?** Penguins sleep. Too much. And then, they pay bills. That's why Pengnology™ made something to break a good night's rest.
+
+---
+
+See you later, goodbye.
+
 ## v0.10.0
 Hello **catfish**. This is the last of the *v0.x.x* series, we wish you all a **happy** end of an era. Today we present the *documentation*, *examples*, **bananas** and *their bags*, the *crowd*, and ***more***.
 
