@@ -41,3 +41,6 @@ class PenguinBoxOfStuff:
 
     def __call__(self):
         return self.get_something()
+
+    def __bool__(self):
+        return bool(self.stuff)
