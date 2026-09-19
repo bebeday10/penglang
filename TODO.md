@@ -161,8 +161,8 @@
       - uses list
         - f-string that has asks. (see ask)
 
-- [ ] v1.1.0 - bakery and tolerances
-- [ ] v1.2.0 - fancy windows and fractions and vending machine sales
+- [x] v1.1.0 - unscheduled
+- [ ] v1.2.0 - fancy windows and vending machine sales
 - [ ] v1.3.0 - grids, data, ~~more path options~~
   - path:
     - ~~make root an argument~~ *Finished in v1.0.0*
@@ -175,6 +175,9 @@
     - mean
     - mode
     - math object
+    - tolerances
+    - math game
+    - fractions
 - [ ] v1.5.0 - actions and farms, agents
   - actions:
     - base action
