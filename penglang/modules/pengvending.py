@@ -33,7 +33,7 @@ class PenguinVendingMachine:
 
     Supports PengLink.
     """
-    def __init__(self, inventory: dict, name="vending machine"):
+    def __init__(self, inventory: dict[str, dict[str, float]], name="vending machine"):
         """
         vending machine
 
@@ -185,6 +185,24 @@ class PenguinVendingMachine:
             "quantity": quantity
         }
         return f"Added new item: {item_name} with price ${price:.2f} and quantity {quantity}."
+
+    def discount(self, item_name: str, percentage: float) -> str:
+        """
+        add a discount to an item forever.
+
+        Args:
+            item_name (str): the item to discount
+            percentage (float): percentage off
+
+        Returns:
+            str: result
+        """
+        if item_name not in self.inventory:
+            return "Item not found."
+
+        self.inventory[item_name]["price"] = self.inventory[item_name].get("price", 0) * (1 - percentage / 100)
+
+        return f"{item_name}'s price is now {self.inventory[item_name]["price"]}"
 
     def change_price(self, item_name: str, new_price: float):
         """
