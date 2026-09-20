@@ -16,7 +16,8 @@ dependencies = [
     "ascii-magic",
     "pygame-ce",
     "readchar",
-    "typing_extensions"
+    "typing_extensions",
+    "customtkinter"
 ]
 license = "MIT"
 keywords = [

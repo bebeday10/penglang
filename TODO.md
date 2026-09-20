@@ -172,7 +172,7 @@
     - remainder
     - power
     - average
-    - mean
+    - median
     - mode
     - math object
     - tolerances

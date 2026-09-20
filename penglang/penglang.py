@@ -352,7 +352,7 @@ def penguin_ask(question: str, as_a: type = str) -> Any:
         question (str): your question
 
     Returns:
-        Any | TheThingEndedAndYouGetNothing: the answer. or the penguin has failed and there is no more returning
+        Any: the answer. or the penguin has failed and there is no more returning
     Raises:
         PenguinError: the penguin failed in convertion class
     """
@@ -377,3 +377,5 @@ def penguin_check_fish_virus(to_check: Callable, when_virus: Callable, virus: Ba
         to_check(*checkargs, **checkkwargs)
     except virus as e:
         when_virus(e)
+
+# global warming
