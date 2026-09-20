@@ -26,6 +26,8 @@ class PenguinCursor:
     def get_far_from_start(self):
         distance = 0
         for i in self.position.values():
+            if i < 0:
+                i *= -1
             distance += i
         if distance < 0:
             distance *= -1
@@ -35,6 +37,8 @@ class PenguinCursor:
     def get_pin_far_from_start(self, pin):
         distance = 0
         for i in self.pins.get(pin, {}).values():
+            if i < 0:
+                i *= -1
             distance += i
         if distance < 0:
             distance *= -1
@@ -42,17 +46,32 @@ class PenguinCursor:
         return distance
 
     def get_far_from_pin(self, pin):
-        pin_distance = self.get_pin_far_from_start(pin)
-        current_distance = self.get_far_from_start()
-        distance = pin_distance - current_distance
+        longest_pin = self.pins.get(pin, {})
+        shortest_pin = self.position
+        distance = 0
+        for k, v in longest_pin.items():
+            temp_distance = v - shortest_pin.get(k, 0)
+            if temp_distance < 0:
+                temp_distance *= -1
+
+            distance += temp_distance
+
         if distance < 0:
             distance *= -1
         return distance
 
     def get_pin_far_from_pin(self, pin_1, pin_2):
-        pin_1_distance = self.get_pin_far_from_start(pin_1)
-        pin_2_distance = self.get_pin_far_from_start(pin_2)
-        distance = pin_1_distance - pin_2_distance
+        longest_pin = self.pins.get(pin_1, {})
+        shortest_pin = self.pins.get(pin_2, {})
+        distance = 0
+        for k, v in longest_pin.items():
+            temp_distance = v - shortest_pin.get(k, 0)
+            if temp_distance < 0:
+                temp_distance *= -1
+
+            distance += temp_distance
+
+
         if distance < 0:
             distance *= -1
         return distance

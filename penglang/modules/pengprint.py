@@ -178,7 +178,7 @@ def better_say_in_a_box(
         )
     )
 
-def penguin_speech_bubble(speech: str, bubble_size: int = 28, speech_direction: Literal[">", "<", "^"] = "<", penguins: int = 1):
+def penguin_speech_bubble(speech: str, bubble_size: int = 28, speech_direction: Literal[">", "<", "^"] = "<", penguins: int = 1, penguin_looks: str = "🐧"):
     lines = tw.wrap(
         speech,
         bubble_size
@@ -189,7 +189,7 @@ def penguin_speech_bubble(speech: str, bubble_size: int = 28, speech_direction: 
 
     pl.say(" " + "-" * (bubble_size + 2))
     pl.say("        \\")
-    pl.say("         " + "🐧"*penguins)
+    pl.say("         " + f"{penguin_looks}"*penguins)
 
 def get_ice_size(fallback: tuple[int, int] = (80, 24)) -> terminal_size:
     """
