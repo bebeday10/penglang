@@ -2,6 +2,7 @@ from struct import pack
 from typing import Any, Callable, Literal
 
 import customtkinter as ctk
+import tkinter as tk
 
 class PenguinFancyWindow(ctk.CTkToplevel):
     def __init__(self, *args, fg_color = None, window_title: str = "Penguin Fancy Window", size: str = "1280x720", **kwargs):
@@ -99,6 +100,18 @@ class PenguinFancyWindow(ctk.CTkToplevel):
             return "It doesn't exist!!!"
         self.widgets[widget_name].delete(0, "end")
 
+    def when_closed(self, command: Callable):
+        self.protocol("WM_DELETE_WINDOW", command)
+
+    def configure_widget(self, widget_name: str, make_ice_again: bool = False, **to_configure):
+        if self.widgets.get(widget_name) is None:
+            return "It doesn't exist!!!"
+
+        self.widgets[widget_name].configure(make_ice_again, **to_configure)
+
+    def app_icon(self, icon_path):
+        self._app_icon = tk.PhotoImage(file=icon_path)
+        self.after(201, lambda: self.iconphoto(False, self._app_icon))
 
 
 
