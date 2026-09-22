@@ -24,6 +24,7 @@ class PenguinIceWindow(pfw.PenguinFancyWindow):
             before_exit: Callable | None = None,
             extra_help: str = "",
             arg_split: str = " ",
+            clear_cmd: bool = True,
             **kwargs
             ):
 
@@ -48,7 +49,9 @@ class PenguinIceWindow(pfw.PenguinFancyWindow):
             self.keywords["exit"] = self.exit_cmd
         self.arg_split = arg_split
         self.extra_help = extra_help
-        
+        if clear_cmd:
+            self.keywords["clear"] = self.clear_text
+
 
     def add_text(self, text: str = ""):
         self.widgets["Main Textbox"].configure(state="normal")
@@ -132,4 +135,12 @@ class PenguinIceWindow(pfw.PenguinFancyWindow):
         if self.before_exit:
             self.before_exit()
         self.manager.stop()
+
+    def clear_text(self):
+        """
+        Clear the text.
+        """
+        self.widgets["Main Textbox"].configure(state="normal")
+        self.remove_textbox_text("Main Textbox")
+        self.widgets["Main Textbox"].configure(state="disabled")
         

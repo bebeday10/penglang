@@ -63,6 +63,7 @@ class PenguinFancyWindow(ctk.CTkToplevel):
         return self.get_widget(widget_name, "0.0", "end")
 
     def remove_textbox_text(self, widget_name):
+        """Clear the textbox."""
         if self.widgets.get(widget_name) is None:
             return "It doesn't exist!!!"
         self.widgets[widget_name].delete("0.0", "end")
