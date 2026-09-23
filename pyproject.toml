@@ -17,7 +17,8 @@ dependencies = [
     "pygame-ce",
     "readchar",
     "typing_extensions",
-    "customtkinter"
+    "customtkinter",
+    "pillow"
 ]
 license = "MIT"
 keywords = [
@@ -40,7 +41,13 @@ keywords = [
     "coins",
     "safe-coin-place",
     "stable",
-    "correct-version"
+    "correct-version",
+    "image",
+    "picture",
+    "image-capable",
+    "ascii",
+    "gui",
+    "simple-gui"
     ]
 
 [project.urls]

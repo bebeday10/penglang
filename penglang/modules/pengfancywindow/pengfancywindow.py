@@ -1,6 +1,6 @@
 from struct import pack
 from typing import Any, Callable, Literal
-
+from PIL import Image
 import customtkinter as ctk
 import tkinter as tk
 
@@ -10,13 +10,13 @@ class PenguinFancyWindow(ctk.CTkToplevel):
         self.title(window_title)
         self.geometry(size)
         self.widgets: dict[str, ctk.CTkBaseClass] = {}
-    def add_widget(self, widget: ctk.CTkBaseClass, widget_name: str, x_space: int = 10, y_space: int = 10, side: Literal["left", "right", "top", "bottom"] = "left", owner=None, packother=None, **other):
+    def add_widget(self, widget: ctk.CTkBaseClass, widget_name: str, x_space: int = 10, y_space: int = 10, side: Literal["left", "right", "top", "bottom"] = "left", owner=None, packother=None, corner_radius=10, border_width=10, **other):
         if packother is None:
             packother = {}
         if owner is None:
             owner = self
 
-        self.widgets[widget_name] = widget(owner, corner_radius=10, border_width = 10, **other)
+        self.widgets[widget_name] = widget(owner, corner_radius=corner_radius, border_width = border_width, **other)
         self.widgets[widget_name].pack(padx=x_space, pady=y_space, fill="both", expand=True, side=side, **packother)
 
     def get_widget(self, widget_name: str, *args, **kwargs):
@@ -113,6 +113,43 @@ class PenguinFancyWindow(ctk.CTkToplevel):
     def app_icon(self, icon_path):
         self._app_icon = tk.PhotoImage(file=icon_path)
         self.after(201, lambda: self.iconphoto(False, self._app_icon))
+
+    def add_image(
+            self,
+            image_widget_name: str,
+            image_file: str,
+            label_widget_name: str | None = None,
+            x_space: int = 10,
+            y_space: int = 10,
+            side: Literal["left", "right", "top", "bottom"] = "left",
+            image_size: tuple[int, int] = (256, 256),
+            owner=None,
+            corner_radius = 0,
+            border_width = 0,
+
+    ):
+        if owner is None:
+            owner = self
+        if label_widget_name is None:
+            label_widget_name = image_widget_name + "_label"
+        self.widgets[image_widget_name] = ctk.CTkImage(
+            Image.open(image_file),
+            Image.open(image_file),
+            image_size
+        )
+
+        self.add_widget(
+            ctk.CTkLabel,
+            label_widget_name,
+            x_space,
+            y_space,
+            side,
+            owner,
+            text="",
+            image=self.widgets[image_widget_name],
+            corner_radius=corner_radius,
+            border_width=border_width
+        )
 
 
 

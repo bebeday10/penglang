@@ -1,6 +1,8 @@
+from copy import copy, deepcopy
+
 from .. import pengfancywindow as pfw
 from .. import pengfancywindowmanager as pfwm
-from typing import Callable
+from typing import Callable, Iterable
 import difflib as dl
 import inspect
 import _tkinter as _tk
@@ -58,6 +60,7 @@ class PenguinIceWindow(pfw.PenguinFancyWindow):
         self.widgets["Main Textbox"].insert("end", f"\n{text}")
         self.widgets["Main Textbox"].configure(state="disabled")
     def check_for_keywords(self, event=None):
+        self._fix_keywords()
         result = None
         entered = self.get_entry("Main Entry").lower().strip()
         dash_replace = "--dash-replace" in entered
@@ -119,6 +122,9 @@ class PenguinIceWindow(pfw.PenguinFancyWindow):
         self.add_text(f"The current sub-keyword split is: '{self.arg_split}'.")
         self.add_text("--- Extra Help ---")
         self.add_text(self.extra_help)
+        self.add_text("--- How to Use Sub-Keywords ---")
+        self.add_text("Sub-keywords are for adding extra stuff to keywords.")
+        self.add_text(f"You can see the long help like this: 'help{self.arg_split}long'")
 
     def close_match_check(self, message):
         close_matches = dl.get_close_matches(message, self.keywords.keys(), 10, self.close_match_sense)
@@ -143,4 +149,11 @@ class PenguinIceWindow(pfw.PenguinFancyWindow):
         self.widgets["Main Textbox"].configure(state="normal")
         self.remove_textbox_text("Main Textbox")
         self.widgets["Main Textbox"].configure(state="disabled")
+
+    def _fix_keywords(self):
+        for keyword, call in copy(self.keywords).items():
+            if isinstance(keyword, (list, tuple, set)):
+                del self.keywords[keyword]
+                for i in keyword:
+                    self.keywords[i] = call
         

@@ -1,4 +1,10 @@
 # Changelog
+## v1.1.0
+Hello **cowfish**. We are newly in this phase. Today we present title counters, translators, menus, boxes of stuff, bundles, and more.
+
+---
+
+
 ## v1.0.0
 Hello **dogfish**. This is the first stable release, make sure to celebrate it! Today we present the newest and finest *Pengnologies*™, the highest leading group, such as **updated modules whole imports**, **question and askers**, **fish**, and many more *state of the arts*.
 
