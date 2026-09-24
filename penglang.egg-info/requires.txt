@@ -3,5 +3,7 @@ ascii-magic
 pygame-ce
 readchar
 typing_extensions
+customtkinter
+pillow
 
 [nothing]
