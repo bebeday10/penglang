@@ -10,14 +10,14 @@ class PenguinFancyWindow(ctk.CTkToplevel):
         self.title(window_title)
         self.geometry(size)
         self.widgets: dict[str, ctk.CTkBaseClass] = {}
-    def add_widget(self, widget: ctk.CTkBaseClass, widget_name: str, x_space: int = 10, y_space: int = 10, side: Literal["left", "right", "top", "bottom"] = "left", owner=None, packother=None, corner_radius=10, border_width=10, **other):
+    def add_widget(self, widget: ctk.CTkBaseClass, widget_name: str, x_space: int = 10, y_space: int = 10, side: Literal["left", "right", "top", "bottom"] = "left", owner=None, packother=None, corner_radius=10, border_width=10, fill="both", expand=True, **other):
         if packother is None:
             packother = {}
         if owner is None:
             owner = self
 
         self.widgets[widget_name] = widget(owner, corner_radius=corner_radius, border_width = border_width, **other)
-        self.widgets[widget_name].pack(padx=x_space, pady=y_space, fill="both", expand=True, side=side, **packother)
+        self.widgets[widget_name].pack(padx=x_space, pady=y_space, fill=fill, expand=expand, side=side, **packother)
 
     def get_widget(self, widget_name: str, *args, **kwargs):
         if self.widgets.get(widget_name) is None:
@@ -76,9 +76,12 @@ class PenguinFancyWindow(ctk.CTkToplevel):
             side: Literal["left", "right", "top", "bottom"] = "left",
             command: Callable | None = None,
             placeholder_text: str = None,
+            fill="x",
+            expand=False,
+            height=50,
             owner=None
     ):
-        self.add_widget(ctk.CTkEntry, widget_name, x_space, y_space, side=side, owner=owner, placeholder_text=placeholder_text)
+        self.add_widget(ctk.CTkEntry, widget_name, x_space, y_space, side=side, owner=owner, placeholder_text=placeholder_text, fill=fill, expand=expand, height=height)
         if command:
             self.widgets[widget_name].bind("<Return>", command)
 
@@ -88,7 +91,7 @@ class PenguinFancyWindow(ctk.CTkToplevel):
             x_space: int = 10,
             y_space: int = 10,
             side: Literal["left", "right", "top", "bottom"] = "left",
-
+            
             owner=None
     ):
         self.add_widget(ctk.CTkFrame, widget_name, x_space, y_space, side=side, owner=owner, packother={"ipadx": 15, "ipady": 15})

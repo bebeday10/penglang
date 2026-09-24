@@ -1,5 +1,5 @@
 from copy import copy, deepcopy
-
+import customtkinter as ctk
 from .. import pengfancywindow as pfw
 from .. import pengfancywindowmanager as pfwm
 from typing import Callable, Iterable
@@ -27,17 +27,18 @@ class PenguinIceWindow(pfw.PenguinFancyWindow):
             extra_help: str = "",
             arg_split: str = " ",
             clear_cmd: bool = True,
+            keyword_list_cmd: bool = True,
             **kwargs
             ):
 
         super().__init__(*args, fg_color=fg_color, window_title=window_title, size=size, **kwargs)
         self.exit_cmd = exit_cmd or self.exit_command
-        self.add_frame("Main Frame", 30, 30)
+        self.add_widget(ctk.CTkFrame, "Main Frame", 30, 30, corner_radius=20, border_width=10)
         self.add_textbox("Main Textbox", owner=self.widgets["Main Frame"], side="top", x_space=30, y_space=20)
         self.widgets["Main Textbox"].configure(state="disabled")
         self.add_entry("Main Entry", owner=self.widgets["Main Frame"], command=self.check_for_keywords, side="top", x_space=30, y_space=20, placeholder_text="Type here...")
         if exit_button:
-            self.add_button("Exit", text="Exit", command=self.exit_command, owner=self.widgets["Main Frame"], side="top", x_space=30, y_space=20)
+            self.add_widget(ctk.CTkButton,"Exit", text="Exit", command=self.exit_command, owner=self.widgets["Main Frame"], side="top", x_space=30, y_space=20, fill="x", expand=False, height=50)
         self.manager = manager
         self.keywords = keywords or {}
         if help:
@@ -53,6 +54,9 @@ class PenguinIceWindow(pfw.PenguinFancyWindow):
         self.extra_help = extra_help
         if clear_cmd:
             self.keywords["clear"] = self.clear_text
+        if keyword_list_cmd:
+            self.keywords["keyword-list"] = self.keyword_list
+
 
 
     def add_text(self, text: str = ""):
@@ -101,30 +105,77 @@ class PenguinIceWindow(pfw.PenguinFancyWindow):
     def add_keywords(self, **keywords):
         self.keywords.update(keywords)
 
-    def help_keyword(self, size="short"):
+    def keyword_list(self):
+        """Show keywords and their sub-keywords in a short, concise form."""
+        self.add_text("keyword list:")
+        for i, (keyword, cmd) in enumerate(self.keywords.items()):
+            signature = inspect.signature(cmd)
+            if signature.parameters:
+                self.add_text(f"{i}. {keyword}{self.arg_split}{self.arg_split.join(f"<{sub}>" for sub in signature.parameters.keys())}")
+            else:
+                self.add_text(f"{i}. {keyword}")
+
+    def help_keyword(self, size="short", cut="all"):
         """
         Show this help message.
 
         Sub-Keywords:
             size: After "help", put "long" or "short".
+            cut: After size, put "all", "other", "all-help", "extra-help", "how-to-use-sub-keywords" or a keyword's name.
         """
-        self.add_text("--- Help ---")
-        for keyword, does in self.keywords.items():
-            args = inspect.signature(does)
-            docs = inspect.getdoc(does)
+        if cut == "all":
+            self.add_text("--- Help ---")
+            for keyword, does in self.keywords.items():
+                args = inspect.signature(does)
+                docs = inspect.getdoc(does)
+                if size == "short":
+                    self.add_text(f"{keyword}: {docs}")
+                else:
+                    self.add_text(f"{keyword}:\n{does.__name__}:\n{docs}\nSub-keywords (Keyword=Default): {args}")
+                    self.add_text()
+            self.add_text("--- Other ---")
+            self.add_text("Use '--dash-replace' to replace all dashes with the sub-keyword split.")
+            self.add_text(f"The current sub-keyword split is: '{self.arg_split}'.")
+            self.add_text("--- Extra Help ---")
+            self.add_text(self.extra_help)
+            self.add_text("--- How to Use Sub-Keywords ---")
+            self.add_text("Sub-keywords are for adding extra stuff to keywords.")
+            self.add_text(f"You can see the long help like this: 'help{self.arg_split}long'")
+        elif cut == "all-help":
+            self.add_text("--- Help ---")
+            for keyword, does in self.keywords.items():
+                args = inspect.signature(does)
+                docs = inspect.getdoc(does)
+                if size == "short":
+                    self.add_text(f"{keyword}: {docs}")
+                else:
+                    self.add_text(f"{keyword}:\n{does.__name__}:\n{docs}\nSub-keywords (Keyword=Default): {args}")
+                    self.add_text()
+        elif cut == "other":
+            self.add_text("--- Other ---")
+            self.add_text("Use '--dash-replace' to replace all dashes with the sub-keyword split.")
+            self.add_text(f"The current sub-keyword split is: '{self.arg_split}'.")
+        elif cut == "extra-help":
+            self.add_text("--- Extra Help ---")
+            self.add_text(self.extra_help)
+        elif cut == "how-to-use-sub-keywords":
+            self.add_text("--- How to Use Sub-Keywords ---")
+            self.add_text("Sub-keywords are for adding extra stuff to keywords.")
+            self.add_text(f"You can see the long help like this: 'help{self.arg_split}long'")
+        else:
+            try:
+                self.keywords[cut]
+            except KeyError:
+                self.add_text("that keyword doesn't exist!")
+                return
+            self.add_text(f"--- Help For '{cut}' ---")
+            args = inspect.signature(self.keywords[cut])
+            docs = inspect.getdoc(self.keywords[cut])
             if size == "short":
-                self.add_text(f"{keyword}: {docs}")
+                self.add_text(f"{cut}: {docs}")
             else:
-                self.add_text(f"{keyword}:\n{does.__name__}:\n{docs}\nSub-keywords (Keyword=Default): {args}")
-                self.add_text()
-        self.add_text("--- Other ---")
-        self.add_text("Use '--dash-replace' to replace all dashes with the sub-keyword split.")
-        self.add_text(f"The current sub-keyword split is: '{self.arg_split}'.")
-        self.add_text("--- Extra Help ---")
-        self.add_text(self.extra_help)
-        self.add_text("--- How to Use Sub-Keywords ---")
-        self.add_text("Sub-keywords are for adding extra stuff to keywords.")
-        self.add_text(f"You can see the long help like this: 'help{self.arg_split}long'")
+                self.add_text(f"{cut}:\n{self.keywords[cut].__name__}:\n{docs}\nSub-keywords (Keyword=Default): {args}")
+
 
     def close_match_check(self, message):
         close_matches = dl.get_close_matches(message, self.keywords.keys(), 10, self.close_match_sense)
