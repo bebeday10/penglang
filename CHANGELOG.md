@@ -1,4 +1,65 @@
 # Changelog
+## v1.1.0
+Hello **cowfish**. We are newly in this phase. Today we present title counters, translators, menus, boxes of stuff, bundles, *and more*.
+
+---
+
+**The examples** have gotten a massive upgrade!  
+Check out what **PengLang** *really* has to offer, in *real-world scenarios*.
+
+---
+
+**The bundles** have arrived, for penguin to not balloon their files with imports.  
+**The bundles we have now:**
+- Everything (simply everything)
+- Karaoke (Karaoke machines, songs, and designer tools)
+- Say (Everything related to speech, from say to speech bubbles)
+
+---
+
+PengLang has yet again improve `penglang.modules` imports. Now, it imports even more modules than before.
+
+---
+
+**Boxes of stuff**... Pick one out, and it's gone. Pick wisely.
+
+---
+
+**Title counters** for penguins that need to count their *Jenguin* count.
+
+---
+
+**List combine** for PengIterable. Combine 2 lists into a dictionary, *and expect fun penguin surprises*.
+
+---
+
+**PengMenu**, let hungry customers choose food **how they like it**. Penguins use these so that customers, don't choose random things (such as "*burnt sweetened pineapple*").
+
+---
+
+**Coin bags** are fixed. Economy stable.
+
+---
+
+The list of *no ends*. Penguins may use these to go round and round in circles.
+
+---
+
+**Inspect your messages**, **make speech bubbles**, **get ice sizes** in **PengPrint** are now here.
+
+---
+
+**The stories**... The unfinished story are for penguins to solve.
+
+---
+
+Penguins asking can now use a type.
+
+---
+
+*(Fixed a bug for Penguins.)*  
+Goodbye, and see you whenever.
+
 ## v1.0.0
 Hello **dogfish**. This is the first stable release, make sure to celebrate it! Today we present the newest and finest *Pengnologies*™, the highest leading group, such as **updated modules whole imports**, **question and askers**, **fish**, and many more *state of the arts*.
 
