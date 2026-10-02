@@ -90,3 +90,6 @@ def put_speech_in_speech_everywhere(original_speech: str, speech_to_put: str, lo
         pl.say(speech_with_speech)
     speech_list.append(speech_with_speech)
     return speech_list
+
+def add_new_line(speech: str):
+    return f"{speech}\n"
