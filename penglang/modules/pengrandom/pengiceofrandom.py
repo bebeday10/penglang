@@ -80,6 +80,7 @@ class PenguinIceOfRandom:
             critical_hits = 0
             starting_time = t.time()
             critical_hit = None
+            character_pool = ", ".join(self.random_list)
             def render(text):
 
                 nonlocal critical_hit, critical_hits
@@ -101,8 +102,10 @@ class PenguinIceOfRandom:
                 renderable.append(f"How long an attempt gets made: {timedelta(seconds=round(attempt_time, 6))}\n")
                 renderable.append(f"Characters generated: {characters_generated} ({self.length} characters per batch)\n")
                 renderable.append(f"Critical hits made: {critical_hits} hits\n")
+                renderable.append(f"Estimated critical hits: {len(self.random_list)} ({round((critical_hits / len(self.random_list)) * 100, 6)}%)\n")
                 time_elapsed = timedelta(seconds=round(seconds_elapsed, 6))
                 renderable.append(f"Time wasted: {time_elapsed}\n")
+                renderable.append(f"Character pool ({len(self.random_list)} characters): {character_pool}\n")
                 if target[:-1] in text:
                     critical_hit = text
                     critical_hits += 1
