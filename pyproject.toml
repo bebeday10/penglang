@@ -18,7 +18,8 @@ dependencies = [
     "readchar",
     "typing_extensions",
     "customtkinter",
-    "pillow"
+    "pillow",
+    "psutil"
 ]
 license = "MIT"
 keywords = [

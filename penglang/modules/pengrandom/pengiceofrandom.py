@@ -8,7 +8,9 @@ import os
 from rich.live import Live
 from rich.panel import Panel
 from rich.text import Text
+from rich.progress import Progress
 import time as t
+import psutil as pu
 from datetime import timedelta
 
 class PenguinIceOfRandom:
@@ -81,30 +83,43 @@ class PenguinIceOfRandom:
             starting_time = t.time()
             critical_hit = None
             character_pool = ", ".join(self.random_list)
+
             def render(text):
 
                 nonlocal critical_hit, critical_hits
                 renderable = Text()
                 if target in text:
+                    stop_event.set()
                     renderable.append("Finished! Final text:\n")
                     renderable.append(f"{text}\n")
+
                 current_time = t.time()
                 seconds_elapsed = current_time - starting_time
                 attempt_time = seconds_elapsed / attempts
                 renderable.append(f"Word to find: {target}\n", "bold")
                 attempts_estimate = int(1 / (1 - (1 - 1 / (len(self.random_list) ** len(target))) ** (self.length - len(target) + 1)))
+                one_letter_cut_est = int(1 / (1 - (1 - 1 / (len(self.random_list) ** (len(target) - 1))) ** (self.length - (len(target) - 1) + 1)))
                 estimated_time_end = (seconds_elapsed / attempts) * attempts_estimate
                 true_estimated_time_end = timedelta(seconds=round(estimated_time_end - seconds_elapsed, 6)) 
                 characters_generated = self.length * attempts
+                cpu_usage = pu.cpu_percent()
+                ram_usage = pu.virtual_memory()
+                network_usage = pu.net_io_counters()
+                disk_usage = pu.disk_usage(str(pu.disk_partitions()[0].device))
                 progress = (attempts / attempts_estimate) * 100
                 renderable.append(f"Attempts: {attempts}\n")
-                renderable.append(f"Estimated end: {attempts_estimate} attempts ({timedelta(seconds=round(estimated_time_end, 6))}) ({round(progress, 6)}% ({true_estimated_time_end} left))\n")
+                renderable.append(f"Estimated end: {attempts_estimate} attempts ({attempts_estimate * self.length} characters) ({timedelta(seconds=round(estimated_time_end, 6))}) ({round(progress, 6)}% ({true_estimated_time_end} left))\n")
+                renderable.append(f"If you had just cut down a single letter: {one_letter_cut_est} attempts, and the difference: {attempts_estimate - one_letter_cut_est} attempts (Feel bad?)\n")
                 renderable.append(f"How long an attempt gets made: {timedelta(seconds=round(attempt_time, 6))}\n")
                 renderable.append(f"Characters generated: {characters_generated} ({self.length} characters per batch)\n")
                 renderable.append(f"Critical hits made: {critical_hits} hits\n")
                 renderable.append(f"Estimated critical hits: {len(self.random_list)} ({round((critical_hits / len(self.random_list)) * 100, 6)}%)\n")
                 time_elapsed = timedelta(seconds=round(seconds_elapsed, 6))
                 renderable.append(f"Time wasted: {time_elapsed}\n")
+                renderable.append(f"CPU usage: {cpu_usage}% (You probably can't see this because it keeps updating) ({worker_penguins} workers working on this)\n")
+                renderable.append(f"RAM usage: {ram_usage.used}B/{ram_usage.total}B ({ram_usage.available}B vacant)\n")
+                renderable.append(f"Network usage (we don't access the network): {network_usage.bytes_recv}B received, {network_usage.bytes_sent}B sent\n")
+                renderable.append(f"{pu.disk_partitions()[0].device} disk usage: {disk_usage.used}B/{disk_usage.total}B ({disk_usage.free}B free)\n")
                 renderable.append(f"Character pool ({len(self.random_list)} characters): {character_pool}\n")
                 if target[:-1] in text:
                     critical_hit = text
@@ -136,5 +151,7 @@ class PenguinIceOfRandom:
                     executor.submit(search_attempts)
                     for _ in range(worker_penguins)
                 ]
+                for future in futures:
+                    result = future.result()
 
     

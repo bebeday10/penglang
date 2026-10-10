@@ -18,6 +18,7 @@ Requires-Dist: readchar
 Requires-Dist: typing_extensions
 Requires-Dist: customtkinter
 Requires-Dist: pillow
+Requires-Dist: psutil
 Provides-Extra: nothing
 Dynamic: license-file
 
