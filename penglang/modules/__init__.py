@@ -3,7 +3,6 @@
 __version__ = "0.5.0"
 
 from . import (
-    pengmath,
     pengimage,
     pengrandom,
     pengbanana,
@@ -42,8 +41,6 @@ from . import (
     pengstory,
     pengtimer
 )
-from .pengcounter import pengcounter
-from .pengsymbol import pengsymbol
 
 
 SHOWLOGS = False

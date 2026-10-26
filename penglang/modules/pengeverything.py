@@ -24,7 +24,7 @@ from .pengimage import *
 from .pengiterable import *
 from .pengkaraoke import *
 from .penglearningplace import *
-from .pengmath import *
+from .pengmath.pengmath import *
 from .pengmenu import *
 from .pengmustfollow import *
 from .pengnoend import *

@@ -57,6 +57,7 @@ def penguin_side_speech_bubble(speech: str, bubble_size: int = 28, speech_direct
             pl.say((" "*penguin_len) + f" | {line:{speech_direction}{bubble_size}} |")
     if penguins >= 1:
         pl.say(f"{penguin_looks} \\" + "_" * (bubble_size + 2) + "/")
+        penguins -= 1
     else:
         pl.say(f"{" " * penguin_len} \\" + "_" * (bubble_size + 2) + "/")
     if penguins >= 1:
@@ -98,6 +99,7 @@ def penguin_side_speech_bubble_no_ice(speech: str, bubble_size: int = 28, speech
             to_return += ps.add_new_line((" "*penguin_len) + f" | {line:{speech_direction}{bubble_size}} |")
     if penguins >= 1:
         to_return += ps.add_new_line(f"{penguin_looks} \\" + "_" * (bubble_size + 2) + "/")
+        penguins -= 1
     else:
         to_return += ps.add_new_line(f"{" " * penguin_len} \\" + "_" * (bubble_size + 2) + "/")
     if penguins >= 1:
@@ -119,3 +121,5 @@ async def penguin_side_speech_bubble_typewrite(speech: str, bubble_size: int = 2
         for i, letter in enumerate(speech):
             l.update(penguin_side_speech_bubble_no_ice(speech[:i], bubble_size, speech_direction, penguins, penguin_looks), refresh=True)
             await asy.sleep(delay)
+        l.update(penguin_side_speech_bubble_no_ice(speech, bubble_size, speech_direction, penguins, penguin_looks), refresh=True)
+        await asy.sleep(delay)

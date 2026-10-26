@@ -78,5 +78,4 @@ def random_decisions(*_, times=1, **options) -> list:
     """
     items: list = list(options.keys())
     weights: list = list(options.values())
-
     return r.choices(items, weights, k=times)

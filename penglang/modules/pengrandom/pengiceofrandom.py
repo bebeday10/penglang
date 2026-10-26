@@ -11,11 +11,12 @@ from rich.text import Text
 from rich.progress import Progress
 import time as t
 import psutil as pu
-from datetime import timedelta
+from datetime import timedelta, datetime, timezone
+import uuid
 
 class PenguinIceOfRandom:
     def __init__(self, random_list: list = list(map(str, ps.alphanums)), length=50):
-        self.random_list = list(map(str, random_list))
+        self.random_list = list(pi.list_to_dict(list(map(str, random_list)), None).keys())
         self.length = length
 
     def to_ice(self):
@@ -83,6 +84,8 @@ class PenguinIceOfRandom:
             starting_time = t.time()
             critical_hit = None
             character_pool = ", ".join(self.random_list)
+            pid = os.getpid()
+            id = uuid.uuid4()
 
             def render(text):
 
@@ -103,9 +106,14 @@ class PenguinIceOfRandom:
                 true_estimated_time_end = timedelta(seconds=round(estimated_time_end - seconds_elapsed, 6)) 
                 characters_generated = self.length * attempts
                 cpu_usage = pu.cpu_percent()
+                cpu_clock = pu.cpu_freq()
                 ram_usage = pu.virtual_memory()
+                page_swap = pu.swap_memory()
                 network_usage = pu.net_io_counters()
                 disk_usage = pu.disk_usage(str(pu.disk_partitions()[0].device))
+                uptime = t.time() - pu.boot_time()
+                disk_counter = pu.disk_io_counters()
+
                 progress = (attempts / attempts_estimate) * 100
                 renderable.append(f"Attempts: {attempts}\n")
                 renderable.append(f"Estimated end: {attempts_estimate} attempts ({attempts_estimate * self.length} characters) ({timedelta(seconds=round(estimated_time_end, 6))}) ({round(progress, 6)}% ({true_estimated_time_end} left))\n")
@@ -115,11 +123,18 @@ class PenguinIceOfRandom:
                 renderable.append(f"Critical hits made: {critical_hits} hits\n")
                 renderable.append(f"Estimated critical hits: {len(self.random_list)} ({round((critical_hits / len(self.random_list)) * 100, 6)}%)\n")
                 time_elapsed = timedelta(seconds=round(seconds_elapsed, 6))
-                renderable.append(f"Time wasted: {time_elapsed}\n")
+                renderable.append(f"System uptime: {timedelta(seconds=round(uptime, 6))}\n")
+                renderable.append(f"Time wasted: {time_elapsed} ({round(seconds_elapsed / uptime, 6)}% of system uptime)\n")
+                renderable.append(f"Latest epoch time: {datetime.fromtimestamp(0, timezone.utc)} (UTC)\n")
                 renderable.append(f"CPU usage: {cpu_usage}% (You probably can't see this because it keeps updating) ({worker_penguins} workers working on this)\n")
+                renderable.append(f"CPU clock: {cpu_clock.current*1e6}Hz/{cpu_clock.max*1e6}Hz (min {cpu_clock.min*1e6}Hz)\n")
                 renderable.append(f"RAM usage: {ram_usage.used}B/{ram_usage.total}B ({ram_usage.available}B vacant)\n")
+                renderable.append(f"Page swap: {page_swap.used}B/{page_swap.total}B ({page_swap.percent}%) ({page_swap.free}B vacant) (Feel poor and slow?)\n")
                 renderable.append(f"Network usage (we don't access the network): {network_usage.bytes_recv}B received, {network_usage.bytes_sent}B sent\n")
                 renderable.append(f"{pu.disk_partitions()[0].device} disk usage: {disk_usage.used}B/{disk_usage.total}B ({disk_usage.free}B free)\n")
+                renderable.append(f"System disk: Read count: {disk_counter.read_count} times ({disk_counter.read_bytes}B) ({disk_counter.read_time} milliseconds) Write count: {disk_counter.write_count} times ({disk_counter.write_bytes}B) ({disk_counter.write_time} milliseconds)\n")
+                renderable.append(f"Process Identifier: {pid}\n")
+                renderable.append(f"This run's UUID: {id}\n")
                 renderable.append(f"Character pool ({len(self.random_list)} characters): {character_pool}\n")
                 if target[:-1] in text:
                     critical_hit = text

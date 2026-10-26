@@ -10,7 +10,7 @@ import penglang.modules.pengdecorator as pd
 import penglang.modules.pengimage as pimg
 import penglang.modules.pengiterable as piter
 import penglang.modules.pengkaraoke as pk
-import penglang.modules.pengmath as pmath
+import penglang.modules.pengmath.pengmath as pmath
 import penglang.modules.pengpath as ppath
 import penglang.modules.pengprint as pprint
 import penglang_dev.penglang.modules.pengrandom.pengrandom as pr
