@@ -162,8 +162,8 @@
         - f-string that has asks. (see ask)
 
 - [x] v1.1.0 - unscheduled
-- [ ] v1.2.0 - fancy windows and vending machine sales
-- [ ] v1.3.0 - grids, data, ~~more path options~~
+- [x] v1.2.0 - fancy windows and vending machine sales
+- [x] v1.3.0 - ~~more path options~~
   - path:
     - ~~make root an argument~~ *Finished in v1.0.0*
 - [ ] v1.4.0 - more math, dishes, and dishwashers
@@ -183,7 +183,7 @@
     - base action
     - say action
     - actions use `__matmul__`
-- [ ] v1.6.0 - blizzard, leaderboard
+- [ ] v1.6.0 - blizzard, leaderboard, bakery
   - leaderboard:
     - uses table
     - has multiple sort methods
@@ -195,3 +195,4 @@
     - exportable to md or json
 
 - [ ] v1.9.0 - social networking
+- [ ] v1.10.0 - grids, data
