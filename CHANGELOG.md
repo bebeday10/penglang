@@ -1,4 +1,33 @@
 # Changelog
+## v1.3.0
+Hello **cod**. The 4th **instalment** of v1 has *arrived* after a *short* time of **35** days. Today we present PengLang subscriptions, button windows, math machines and rectangle shapes.
+
+---
+
+The PengLang subscriptions are here! Pay up, *now*:
+- PengLang Pro
+- PengLang Pro Max
+- PengLang Air
+- PengLang Duo 
+ 
+<sup>You are lucky this is a joke.</sup>  
+
+---
+
+A new prebuilt: Button windows! Simply give a list, and buttons **appear**, and get what they press!
+
+---
+
+Math, math, math. Too hard? Give it to the *PenguinMathMachine*!  
+Penguin: "Greatly appreciated, I don't need to do math anymore."
+
+---
+
+*Rectangle shapes*. **Compare them**. Find the *more* **worth** one.
+
+---
+
+Next time, the 5th.
 ## v1.2.0
 Hello **sharkfins**. It is time for v1.2.0. Today we present more examples, *fancy* windows and vending machine *sales*.
 
