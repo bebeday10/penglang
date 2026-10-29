@@ -1,4 +1,40 @@
 # Changelog
+## v1.2.0
+Hello **sharkfins**. It is time for v1.2.0. Today we present more examples, *fancy* windows and vending machine *sales*.
+
+---
+
+"More examples, more!" said the penguins. So they got *realworld* examples.  
+**Examples**:
+- Counter
+- Cursor
+- Disco
+- Door
+- Horse
+- **John** Shop
+- ***Must*** Follow
+- Pass*john*word
+- Password
+- Penguin Alarm
+- Penguin Money
+- Playlist
+- Restaurant
+- Translator
+
+---
+
+*Fancy windows*. The windows, are now ***fancy***. Create a **manager**, make a **window**, *no* variable mess.  
+**The penguin dictionary nest** stores *everything*, and **everything**.   
+Penguins say, "this is **great** for *window making*. also it **doesn't** look like *1995*."  
+Prebuilts, like the ice window, are for penguins who are lazy, and just want *something*.
+
+---
+
+Sales for Vending Machines. *Now cheap out~*
+
+---
+
+Thanks for using my library, and to next time!
 ## v1.1.0
 Hello **cowfish**. We are newly in this phase. Today we present title counters, translators, menus, boxes of stuff, bundles, *and more*.
 

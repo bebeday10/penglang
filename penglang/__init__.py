@@ -1,4 +1,4 @@
-__version__ = "0.9.0"
+__version__ = "1.2.0"
 
 from .penglang import *
 from . import modules
