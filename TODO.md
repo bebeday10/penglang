@@ -166,7 +166,7 @@
 - [x] v1.3.0 - ~~more path options~~
   - path:
     - ~~make root an argument~~ *Finished in v1.0.0*
-- [ ] v1.4.0 - more math, dishes, and dishwashers
+- [ ] v1.4.0 - more math, dishes, and dishwashers, rubber duck debugger
   - more math:
     - floor div
     - remainder
