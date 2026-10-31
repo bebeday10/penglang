@@ -31,3 +31,21 @@ class PenguinNoEnd:
 
     def __len__(self):
         return len(self.stuff)
+
+    def __getitem__(self, key):
+        if not self.stuff:
+            return []
+        if isinstance(key, int):
+            changed_key = (key) % len(self.stuff)
+            return self.stuff[changed_key]
+        if isinstance(key, slice):
+            changed_slice = [(key.start) % len(self.stuff) if key.start is not None else None, ((key.stop) % len(self.stuff)) if key.stop is not None else None, key.step]
+            
+            if (changed_slice[0] is not None) and (changed_slice[1] is not None):
+                if changed_slice[1] < changed_slice[0]:
+                    if changed_slice[0] is not None:
+                        changed_slice[0] = (key.stop) % len(self.stuff)
+                    if changed_slice[1] is not None:
+                        changed_slice[1] = (key.start) % len(self.stuff)
+            return self.stuff[changed_slice[0]:changed_slice[1]:changed_slice[2]]
+
