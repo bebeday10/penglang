@@ -2,6 +2,7 @@ from dataclasses import dataclass
 from . import pengprint as pr
 from . import pengnoend as pne
 import random as r
+from rich.errors import MarkupError
 @dataclass
 class PenguinRubberDuckFishVirusChecker:
     duck_name: str = "Duck"
@@ -31,7 +32,11 @@ class PenguinRubberDuckFishVirusChecker:
             "wrong",
             "correct",
             "thoughtfully",
-            "sensically"
+            "sensically",
+            "greatly",
+            "helpful",
+            "gigantic",
+            "impeccable"
         ]
         self.colors = self.colors or [
             "red",
@@ -57,7 +62,8 @@ class PenguinRubberDuckFishVirusChecker:
             "sleepy dry grey",
             "golden yellow",
             "lava orange",
-            "mushroom red"
+            "mushroom red",
+            "volcanic grey-black"
         ]
     def talk_to_duck(self):
         while True:
@@ -77,13 +83,76 @@ class PenguinRubberDuckFishVirusChecker:
                 break
             delay = self.delay
             if self.dynamic_delay:
-                delay = delay / (len(answer.split()) ** self.dynamic_sense)
-            pr.penguin_side_speech_bubble_typewrite(answer, penguin_looks=self.user_name, delay=delay, bubble_size=self.bubble_size)
+                try:
+                    delay = delay / (len(answer.split()) ** self.dynamic_sense)
+                except ZeroDivisionError:
+                    pass
+            try:
+                pr.penguin_side_speech_bubble_typewrite(answer, penguin_looks=self.user_name, delay=delay, bubble_size=self.bubble_size)
+            except MarkupError:
+                    print("this is what you get for messing with markup")
             saying = self._duck_speech(answer)
             delay = self.delay
             if self.dynamic_delay:
-                delay = delay / (len(saying.split()) ** self.dynamic_sense)
-            pr.penguin_side_speech_bubble_typewrite(saying, penguin_looks=f"{self.duck_name}", delay=delay, bubble_size=self.bubble_size)
+                try:
+                    delay = delay / (len(saying.split()) ** self.dynamic_sense)
+                except ZeroDivisionError:
+                    pass
+            try:
+                pr.penguin_side_speech_bubble_typewrite(saying, penguin_looks=f"{self.duck_name}", delay=delay, bubble_size=self.bubble_size)
+            except MarkupError:
+                    print("this is what you get for messing with markup")
+
+    def exec_to_duck(self):
+        code_globals = {}
+        code_locals = {}
+        while True:
+            print(f"Talk to {self.duck_name}, paste some code, enter on a line saying '{self.send_msg}' to send. (or 'exit')")
+            lines = []
+
+            while True:
+                line = input(">")
+                if line == self.send_msg:
+                    break
+
+                lines.append(line)
+
+
+            answer = "\n".join(lines).strip()
+            if answer == "exit":
+                break
+            delay = self.delay
+            if self.dynamic_delay:
+                try:
+                    delay = delay / (len(answer.split()) ** self.dynamic_sense)
+                except ZeroDivisionError:
+                    pass
+            try:
+
+                exec(answer, code_globals, code_locals)
+            except Exception as e:
+                 print(f"error: {e}")
+            try:
+                pr.penguin_side_speech_bubble_typewrite(str(code_locals["answer"]), penguin_looks=self.user_name, delay=delay, bubble_size=self.bubble_size)
+            except MarkupError:
+                    print("this is what you get for messing with markup")
+            except KeyError:
+                print("did not define the answer.")
+                code_locals["answer"] = answer
+            try:
+                saying = self._duck_speech(str(code_locals["answer"]))
+            except KeyError:
+                print("did not define the answer.")
+            delay = self.delay
+            if self.dynamic_delay:
+                try:
+                    delay = delay / (len(saying.split()) ** self.dynamic_sense)
+                except ZeroDivisionError:
+                    pass
+            try:
+                pr.penguin_side_speech_bubble_typewrite(saying, penguin_looks=f"{self.duck_name}", delay=delay, bubble_size=self.bubble_size)
+            except MarkupError:
+                    print("this is what you get for messing with markup")
 
     def duck_to_duck(self, starting_question: str = "placeholder", context_aware: bool = True, duck_amount: int = 2, question_only_context: bool = False):
         full_saying = starting_question
@@ -91,16 +160,28 @@ class PenguinRubberDuckFishVirusChecker:
         full_saying += saying
         delay = self.delay
         if self.dynamic_delay:
-            delay = delay / (len(saying.split()) ** self.dynamic_sense)
-        pr.penguin_side_speech_bubble_typewrite(saying, penguin_looks=f"{self.duck_name} 1", delay=delay, bubble_size=self.bubble_size)
+            try:
+                delay = delay / (len(saying.split()) ** self.dynamic_sense)
+            except ZeroDivisionError:
+                pass
+        try:
+            pr.penguin_side_speech_bubble_typewrite(saying, penguin_looks=f"{self.duck_name} 1", delay=delay, bubble_size=self.bubble_size)
+        except MarkupError:
+                    print("this is what you get for messing with markup")
         while True:
             for i in range(1, duck_amount + 1):
                 saying = self._duck_speech(full_saying if context_aware else starting_question if question_only_context else saying)
                 full_saying += saying
                 delay = self.delay
                 if self.dynamic_delay:
-                    delay = delay / (len(saying.split()) ** self.dynamic_sense)
-                pr.penguin_side_speech_bubble_typewrite(saying, penguin_looks=f"{self.duck_name} {i}", delay=delay, bubble_size=self.bubble_size)
+                    try:
+                        delay = delay / (len(saying.split()) ** self.dynamic_sense)
+                    except ZeroDivisionError:
+                        pass
+                try:
+                    pr.penguin_side_speech_bubble_typewrite(saying, penguin_looks=f"{self.duck_name} {i}", delay=delay, bubble_size=self.bubble_size)
+                except MarkupError:
+                            print("this is what you get for messing with markup")
 
 
 
@@ -154,7 +235,18 @@ class PenguinRubberDuckFishVirusChecker:
             f"in '{chosen}', you are using tabs AND spaces. some languages don't like this {adj}, and they will most likely tell you in {color}. why did you ask me?",
             f"i see the ways {adj}. in '{chosen}', everything goes to 0, thus dividing by 0.",
             f"there is nothing wrong in '{chosen}'. i suggest it being something in the backend.",
-            f"i specialize in this field, but '{chosen}' seems to be a subspecies of the field that only seasoned experts specializing specifically there knows. try asking another {color} duck near here."
+            f"i specialize in this field, but '{chosen}' seems to be a subspecies of the field that only seasoned experts specializing specifically there knows. try asking another {color} duck near here.",
+            f"in '{chosen}', it working on your machine does not mean it works on others {adj}. have you personally checked?",
+            f"what is '{chosen}'? i suggest a {adj} {color} fish virus checking question instead on whatever this is.",
+            f"'{chosen}' is because it only goes up to the dual digits, and crashes on the {adj} triple digits.",
+            f"'{chosen}' happened because it was not adapted to the {color} daylight saving time. they should {adj} demolish that.",
+            f"after seeing '{chosen}' for a {adj} long time, there seems to be a typo that i cannot ignore.",
+            f"there seems to be no problems in '{chosen}', and you're just {adj} messing with me.",
+            f"there seems to be an epoch fail in '{chosen}', showing {adj} january 1 1970 (or december 31 1969 if you are in the western {color} hemisphere)", 
+            f"that '{chosen}' seems to be in the {adj} bit family instead of the {color} byte family. try dividing by 8.",
+            f"'{chosen}' because it reached the signed {color} 32-bit integer, thus {adj} exploding at january 19 2038.",
+            f"on windows, '{chosen}' is because windows reports in {adj} KiB, MiB, GiB, TiB etc., while incorrectly saying it's {color} KB, MB, GB, TB etc.",
+            f"i am very concerned that it says '{chosen}'. what did you do to this poor {adj} little {color} thing?"
         ]
         saying = r.choice(duck_sayings)
         return saying

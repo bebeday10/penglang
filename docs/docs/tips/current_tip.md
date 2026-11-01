@@ -1,15 +1,13 @@
 # The current tip
 
-!!! tip "Tip #3: For the new v0.10.0: Use bananas"
-    Bananas are a great way to increase banana healthiness.  
-    Penguins can make bananas by importing it.  
-    ```python
-    import penglang.modules.pengbanana
+!!! tip "Tip #4: Rubber-duck debugging"
+    !!! info "Main page"
+        Read more [here](../features/duck.md).
+    Rubber-duck debugging is a way to debug by explaining code to a **rubber duck**.
+    In PengLang v1.4.0, Penguin Rubber Duck Fish Virus Checkers were added.  
+    You can solve a problem with them, or let more than one duck solve your problems (lazyhead).
 
-    thing = PenguinBanana()
-    ```
-    They then can use these bananas to eat.  
-    ***Don't eat rotten bananas!***
-    !!! info "Only works on 0.10.0 and above!"
-        This feature only works on 0.10.0 and above.  
-        Beware the penguins of 0.9.0 and below.
+    !!! info "Only works on v1.4.0 and above!"
+    !!! failure "Using v1.3.0 and below"
+        When one uses v1.3.0 or below, Python may scream at them.  
+        Be sure to update to the latest PengLang!
