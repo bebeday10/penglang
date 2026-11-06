@@ -1,7 +1,7 @@
 from .. import pengfancywindow as pfw
 
 class PenguinButtonWindow(pfw.PenguinFancyWindow):
-    def __init__(self, *args, buttons: list = None, fg_color=None, window_title = "Penguin Fancy Window", size = "1280x720", self_destruct=True, destruct_manager=False, manager=None, **kwargs):
+    def __init__(self, *args, buttons: list = None, fg_color=None, window_title = "Penguin Button Window", size = "1280x720", self_destruct=True, destruct_manager=False, manager=None, **kwargs):
         super().__init__(*args, fg_color=fg_color, window_title=window_title, size=size, **kwargs)
         self.buttons = buttons or []
         self.current_selection = None

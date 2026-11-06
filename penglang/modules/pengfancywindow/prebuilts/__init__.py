@@ -1,2 +1,3 @@
 from .pengicewindow import PenguinIceWindow
 from .pengbuttonwindow import PenguinButtonWindow
+from .pengimagewindow import PenguinImageWindow
