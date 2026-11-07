@@ -8,12 +8,19 @@ import os
 from rich.live import Live
 from rich.panel import Panel
 from rich.text import Text
-from rich.progress import Progress
+from rich.progress import Progress, ProgressColumn, BarColumn, TextColumn, TimeElapsedColumn, TimeRemainingColumn
 import time as t
 import psutil as pu
 from datetime import timedelta, datetime, timezone
 import uuid
+class PenguinProgressColumn(ProgressColumn):
+    def render(self, task):
+        if task.total is None:
+            return Text("?")
 
+        percentage = task.completed / task.total * 100
+
+        return Text(f"{percentage:.5f}%", "magenta")
 class PenguinIceOfRandom:
     def __init__(self, random_list: list = list(map(str, ps.alphanums)), length=50):
         self.random_list = list(pi.list_to_dict(list(map(str, random_list)), None).keys())
@@ -73,6 +80,53 @@ class PenguinIceOfRandom:
             result = self.to_no_ice_target(target=target, worker_penguins=worker_penguins, show_attempts=show_attempts)
             pl.say(result[0])
             pl.say(f"Attempts: {result[1]}")
+
+    def to_progress_ice_target(self, target: str, worker_penguins=None, show_attempts: bool = False):
+        with Progress(TextColumn("{task.description}"), BarColumn(), PenguinProgressColumn(), TimeElapsedColumn(), TimeRemainingColumn()) as p:
+            task = p.add_task(
+                f"[cyan]Finding '{target}'...",
+                
+                total=int(1 / (1 - (1 - 1 / (len(self.random_list) ** len(target))) ** (self.length - len(target) + 1)))
+            )
+            if worker_penguins is None:
+                worker_penguins = min(32, (os.process_cpu_count() or 1) + 4)
+            stop_event: Event = Event()
+            attempts = 0
+            def search():
+                while not stop_event.is_set():
+                    text = self.to_no_ice()
+                    p.update(task, advance=1)
+                    if target in text:
+                        stop_event.set()
+                        return text
+
+            def search_attempts():
+                nonlocal attempts
+                while not stop_event.is_set():
+                    text = self.to_no_ice()
+                    attempts += 1
+                    p.update(task, advance=1)
+                    if target in text:
+                        stop_event.set()
+                        return text
+
+            with ThreadPoolExecutor(max_workers=worker_penguins) as executor:
+                if not show_attempts:
+                    futures = [
+                        executor.submit(search)
+                        for _ in range(worker_penguins)
+                    ]
+                else:
+                    futures = [
+                        executor.submit(search_attempts)
+                        for _ in range(worker_penguins)
+                    ]
+                for future in futures:
+                    result = future.result()
+                    if result is not None and not show_attempts:
+                        return result
+                    elif result is not None:
+                        return result, attempts
 
     def to_detailed_ice_target(self, target: str, worker_penguins=None, fps: int = 60):
         with Live(refresh_per_second=fps) as l:
