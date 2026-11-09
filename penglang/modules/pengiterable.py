@@ -10,12 +10,12 @@ PengIterable: the module for iterables
 - inverse stuff
 """
 
-
 from .. import penglang as pl
 from collections import defaultdict
 from copy import deepcopy
-from typing import Any, Callable, Iterable
-
+from typing import Any, Callable, Iterable, Literal
+from . import pengerror as pe
+PenguinIndexError = pe.make_error("PenguinIndexError", IndexError)
 def get_answer(key: Any, dictionary: dict, if_no_exist: Any = None) -> Any:
     """
     get the answers from a dictionary
@@ -160,3 +160,20 @@ def list_combine(list_a: list, list_b: list) -> dict:
 
     return dictionary
 
+def index_dictionary(dictionary: dict, index: int, returns: Literal["key", "value"] = "value"):
+    """
+    Index a dictionary. Indexes start from oldest to newest. It is zero-indexed.
+
+    Args:
+        dictionary (dict): the dictionary 
+        index (int): the index to index
+    """
+    
+    key_list = list(dictionary.keys())
+    try: dict_index = key_list[index]
+    except IndexError:
+        raise PenguinIndexError("dictionary does not have that many keys")
+    if returns == "value":
+        return dictionary[dict_index]
+    else:
+        return dict_index
