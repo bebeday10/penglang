@@ -1,5 +1,7 @@
 from copy import copy, deepcopy
 from dataclasses import dataclass
+
+from penglang import PenguinError
 from .pengtone import PenguinTone
 from rich.live import Live
 from rich.text import Text
@@ -14,7 +16,12 @@ import wave
 from datetime import timedelta
 
 os.environ["PYGAME_HIDE_SUPPORT_PROMPT"] = "hide"
-import pygame
+import contextlib
+import io
+
+with contextlib.redirect_stdout(io.StringIO()):
+    import pygame
+
 
 NOTES = {
     "C": 0,
@@ -53,12 +60,13 @@ class PenguinMusicWorkplace:
     def edit(self):
         if self.octave not in self.tones:
             self.tones[self.octave] = {i: {} for i in self.letters}
-        for i in self.letters:
-            
-            for j in range(self.render_distance + self.render_shift + 2):
-                if j not in self.tones[self.octave][i]:
-                    self.tones[self.octave][i][j] = None
-        with Live(refresh_per_second=60) as l:
+        for octave in range(max(self.tones.keys()), min(self.tones.keys()) - 1, -1):
+            for i in self.letters:
+                
+                for j in range(self.render_distance + self.render_shift + 2):
+                    if j not in self.tones[octave][i]:
+                        self.tones[octave][i][j] = None
+        with Live() as l:
             try:
                 while True:
                     # --- Rendering ---
@@ -126,11 +134,12 @@ class PenguinMusicWorkplace:
                             self.cursor[2] += 1
                             if self.octave not in self.tones:
                                 self.tones[self.octave] = {i: {} for i in self.letters}
-                            for i in self.letters:
-                                
-                                for j in range(self.render_distance + self.render_shift + 2):
-                                    if j not in self.tones[self.octave][i]:
-                                        self.tones[self.octave][i][j] = None
+                            for octave in range(max(self.tones.keys()), min(self.tones.keys()) - 1, -1):
+                                for i in self.letters:
+                                    
+                                    for j in range(self.render_distance + self.render_shift + 2):
+                                        if j not in self.tones[octave][i]:
+                                            self.tones[octave][i][j] = None
                             self.cursor[1] = 0
                         else:
                             self.cursor[1] += 1
@@ -139,14 +148,15 @@ class PenguinMusicWorkplace:
                         if self.cursor[1] <= 0:
                             self.octave -= 1
                             self.cursor[2] -= 1
+                            self.cursor[1] = len(self.letters) - 1
                             if self.octave not in self.tones:
                                 self.tones[self.octave] = {i: {} for i in self.letters}
-                            for i in self.letters:
-                                
-                                for j in range(self.render_distance + self.render_shift + 2):
-                                    if j not in self.tones[self.octave][i]:
-                                        self.tones[self.octave][i][j] = None
-                            self.cursor[1] = len(self.letters) - 1
+                            for octave in range(max(self.tones.keys()), min(self.tones.keys()) - 1, -1):
+                                for i in self.letters:
+                                    
+                                    for j in range(self.render_distance + self.render_shift + 2):
+                                        if j not in self.tones[octave][i]:
+                                            self.tones[octave][i][j] = None
                             
                         else:
                             self.cursor[1] -= 1
@@ -156,11 +166,12 @@ class PenguinMusicWorkplace:
                             self.render_shift += 1
                             if self.octave not in self.tones:
                                 self.tones[self.octave] = {i: {} for i in self.letters}
-                            for i in self.letters:
-                                
-                                for j in range(self.render_distance + self.render_shift + 2):
-                                    if j not in self.tones[self.octave][i]:
-                                        self.tones[self.octave][i][j] = None
+                            for octave in range(max(self.tones.keys()), min(self.tones.keys()) - 1, -1):
+                                for i in self.letters:
+                                    
+                                    for j in range(self.render_distance + self.render_shift + 2):
+                                        if j not in self.tones[octave][i]:
+                                            self.tones[octave][i][j] = None
                         self.cursor[0] += 1
 
                     elif key == rc.key.LEFT or key == "a":
@@ -172,11 +183,12 @@ class PenguinMusicWorkplace:
 
                             if self.octave not in self.tones:
                                 self.tones[self.octave] = {i: {} for i in self.letters}
-                            for i in self.letters:
-                                
-                                for j in range(self.render_distance + self.render_shift + 2):
-                                    if j not in self.tones[self.octave][i]:
-                                        self.tones[self.octave][i][j] = None
+                            for octave in range(max(self.tones.keys()), min(self.tones.keys()) - 1, -1):
+                                for i in self.letters:
+                                    
+                                    for j in range(self.render_distance + self.render_shift + 2):
+                                        if j not in self.tones[octave][i]:
+                                            self.tones[octave][i][j] = None
 
                         self.cursor[0] -= 1
 
@@ -196,22 +208,24 @@ class PenguinMusicWorkplace:
                         self.cursor[2] += 1
                         if self.octave not in self.tones:
                             self.tones[self.octave] = {i: {} for i in self.letters}
-                        for i in self.letters:
-                            
-                            for j in range(self.render_distance + self.render_shift + 2):
-                                if j not in self.tones[self.octave][i]:
-                                    self.tones[self.octave][i][j] = None
+                        for octave in range(max(self.tones.keys()), min(self.tones.keys()) - 1, -1):
+                            for i in self.letters:
+                                
+                                for j in range(self.render_distance + self.render_shift + 2):
+                                    if j not in self.tones[octave][i]:
+                                        self.tones[octave][i][j] = None
                         self.cursor[1] = len(self.letters) - 1
                     elif key == rc.key.PAGE_DOWN:
                         self.octave -= 1
                         self.cursor[2] -= 1
                         if self.octave not in self.tones:
                             self.tones[self.octave] = {i: {} for i in self.letters}
-                        for i in self.letters:
-                            
-                            for j in range(self.render_distance + self.render_shift + 2):
-                                if j not in self.tones[self.octave][i]:
-                                    self.tones[self.octave][i][j] = None
+                        for octave in range(max(self.tones.keys()), min(self.tones.keys()) - 1, -1):
+                            for i in self.letters:
+                                
+                                for j in range(self.render_distance + self.render_shift + 2):
+                                    if j not in self.tones[octave][i]:
+                                        self.tones[octave][i][j] = None
                         self.cursor[1] = len(self.letters) - 1
 
                     elif key == "r":
@@ -226,6 +240,14 @@ class PenguinMusicWorkplace:
 
                     elif key == rc.key.CTRL_E:
                         self.tones = {}
+                        if self.octave not in self.tones:
+                            self.tones[self.octave] = {i: {} for i in self.letters}
+                        for octave in range(max(self.tones.keys()), min(self.tones.keys()) - 1, -1):
+                            for i in self.letters:
+                                
+                                for j in range(self.render_distance + self.render_shift + 2):
+                                    if j not in self.tones[octave][i]:
+                                        self.tones[octave][i][j] = None
 
                     elif key == rc.key.CTRL_G:
                         print(f"{f"Certificate of {self.filename}":=<50}")
@@ -252,21 +274,23 @@ class PenguinMusicWorkplace:
                         self.render_distance -= 1
                         if self.octave not in self.tones:
                             self.tones[self.octave] = {i: {} for i in self.letters}
-                        for i in self.letters:
-                            
-                            for j in range(self.render_distance + self.render_shift + 2):
-                                if j not in self.tones[self.octave][i]:
-                                    self.tones[self.octave][i][j] = None
+                        for octave in range(max(self.tones.keys()), min(self.tones.keys()) - 1, -1):
+                            for i in self.letters:
+                                
+                                for j in range(self.render_distance + self.render_shift + 2):
+                                    if j not in self.tones[octave][i]:
+                                        self.tones[octave][i][j] = None
 
                     elif key == "}":
                         self.render_distance += 1
                         if self.octave not in self.tones:
                             self.tones[self.octave] = {i: {} for i in self.letters}
-                        for i in self.letters:
-                            
-                            for j in range(self.render_distance + self.render_shift + 2):
-                                if j not in self.tones[self.octave][i]:
-                                    self.tones[self.octave][i][j] = None
+                        for octave in range(max(self.tones.keys()), min(self.tones.keys()) - 1, -1):
+                            for i in self.letters:
+                                
+                                for j in range(self.render_distance + self.render_shift + 2):
+                                    if j not in self.tones[octave][i]:
+                                        self.tones[octave][i][j] = None
 
                     elif key == "(":
                         self.sample_rate -= 1
@@ -292,21 +316,24 @@ class PenguinMusicWorkplace:
                         self.render_shift = 0
                         if self.octave not in self.tones:
                             self.tones[self.octave] = {i: {} for i in self.letters}
-                        for i in self.letters:
-                            
-                            for j in range(self.render_distance + self.render_shift + 2):
-                                if j not in self.tones[self.octave][i]:
-                                    self.tones[self.octave][i][j] = None
+                        for octave in range(max(self.tones.keys()), min(self.tones.keys()) - 1, -1):
+                            for i in self.letters:
+                                
+                                for j in range(self.render_distance + self.render_shift + 2):
+                                    if j not in self.tones[octave][i]:
+                                        self.tones[octave][i][j] = None
                     elif key == rc.key.END:
                         self.cursor[0] = self.length
                         self.render_shift = self.length - self.render_distance + 1
                         if self.octave not in self.tones:
                             self.tones[self.octave] = {i: {} for i in self.letters}
-                        for i in self.letters:
-                            
-                            for j in range(self.render_distance + self.render_shift + 2):
-                                if j not in self.tones[self.octave][i]:
-                                    self.tones[self.octave][i][j] = None
+                        
+                        for octave in range(max(self.tones.keys()), min(self.tones.keys()) - 1, -1):
+                            for i in self.letters:
+                                
+                                for j in range(self.render_distance + self.render_shift + 2):
+                                    if j not in self.tones[octave][i]:
+                                        self.tones[octave][i][j] = None
 
                     elif key == rc.key.CTRL_J:
                         try:
@@ -320,13 +347,16 @@ class PenguinMusicWorkplace:
                         self.render_shift = max(0, answer - self.render_distance + 1)
                         if self.octave not in self.tones:
                             self.tones[self.octave] = {i: {} for i in self.letters}
-                        for i in self.letters:
-                            
-                            for j in range(self.render_distance + self.render_shift + 2):
-                                if j not in self.tones[self.octave][i]:
-                                    self.tones[self.octave][i][j] = None
+                        for octave in range(max(self.tones.keys()), min(self.tones.keys()) - 1, -1):
+                            for i in self.letters:
+                                
+                                for j in range(self.render_distance + self.render_shift + 2):
+                                    if j not in self.tones[octave][i]:
+                                        self.tones[octave][i][j] = None
             except Exception as e:
                 print(f"We have saved you from losing data. {e}")
+                self.save()
+                raise PenguinError("read above ^^")
 
     def get_frequency(self, note: str, octave: int) -> float:
         midi = (octave + 1) * 12 + NOTES[note]
@@ -350,11 +380,38 @@ class PenguinMusicWorkplace:
                     result.append(note[position])
 
         return result
+    def mix_position(self, position: int) -> array.array:
+        combined = []
 
-    def play_position(self, position: int):
-        
         for tone in self.get_tones_at(position):
-            sound = tone.generate_tone(sample_rate=self.sample_rate, bpm=self.bpm)
+            sound = tone.generate_tone(
+                sample_rate=self.sample_rate,
+                bpm=self.bpm
+            )
+
+            samples = array.array("h", sound.get_raw())
+
+            if len(samples) > len(combined):
+                combined.extend([0] * (len(samples) - len(combined)))
+
+            for i, sample in enumerate(samples):
+                combined[i] += sample
+
+        if not combined:
+            return array.array("h")
+
+        peak = max(abs(sample) for sample in combined)
+
+        if peak > 32767:
+            scale = 32767 / peak
+            combined = [int(sample * scale) for sample in combined]
+
+        return array.array("h", combined)
+    def play_position(self, position: int):
+        combined = self.mix_position(position)
+
+        if combined:
+            sound = pygame.mixer.Sound(buffer=combined.tobytes())
             sound.set_volume(self.volume)
             sound.play()
 
@@ -412,7 +469,7 @@ class PenguinMusicWorkplace:
                 f.setframerate(self.sample_rate)
                 audio_data = bytearray()
                 for pos in range(self.length + 1):
-                    combined = array.array("h")
+                    combined = [0] * (int(self.sample_rate * 60 / self.bpm) * 2)
 
                     for tone in self.get_tones_at(pos):
                         sound = tone.generate_tone(
@@ -422,19 +479,17 @@ class PenguinMusicWorkplace:
 
                         samples = array.array("h", sound.get_raw())
 
-                        if not combined:
-                            combined = samples
-                        else:
-                            for i in range(len(samples)):
-                                combined[i] += samples[i]
-                    for i, sample in enumerate(combined):
-                        combined[i] = max(-32768, min(32767, sample))
+                        for i in range(len(samples)):
+                            combined[i] += samples[i]
 
-                    if not combined:
-                        combined = array.array(
-                            "h",
-                            [0] * int(self.sample_rate * 60 / self.bpm) * 2
-                        )
+                    peak = max(abs(sample) for sample in combined)
+
+                    if peak > 32767:
+                        scale = 32767 / peak
+                        combined = [int(sample * scale) for sample in combined]
+
+                    combined = array.array("h", combined)
+
                     audio_data.extend(combined.tobytes())
                 f.writeframes(audio_data)
                                 

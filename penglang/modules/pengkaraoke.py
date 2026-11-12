@@ -16,7 +16,12 @@ from rich.live import Live
 from .penglink.hubs import karaoke as plink
 from .. import penglang as pl
 import asyncio as asy
-import pygame as pg
+import contextlib
+import io
+
+with contextlib.redirect_stdout(io.StringIO()):
+    import pygame as pg
+
 
 
 

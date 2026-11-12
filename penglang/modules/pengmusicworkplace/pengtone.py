@@ -1,7 +1,12 @@
 from dataclasses import dataclass
 import math
 import array
-import pygame
+import contextlib
+import io
+
+with contextlib.redirect_stdout(io.StringIO()):
+    import pygame
+
 
 
 @dataclass
