@@ -22,4 +22,4 @@ class PenguinCounter:
         self.count -= interval
 
     def __str__(self):
-        return self.count
+        return str(self.count)
