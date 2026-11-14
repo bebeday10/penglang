@@ -39,7 +39,16 @@ from . import (
     penglearningplace,
     pengrace,
     pengstory,
-    pengtimer
+    pengtimer,
+    pengride,
+    pengerror,
+    pengbluescreen,
+    pengcustomersupport,
+    pengfood,
+    pengmath,
+    pengduckviruscheck,
+    pengfancywindow,
+    pengrectangleshape,
 )
 
 
