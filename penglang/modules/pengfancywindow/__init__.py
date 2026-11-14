@@ -3,3 +3,4 @@ from .pengfancywindow import PenguinFancyWindow
 from .prebuilts.pengicewindow import PenguinIceWindow
 from .prebuilts.pengbuttonwindow import PenguinButtonWindow
 from .prebuilts.pengimagewindow import PenguinImageWindow
+from .prebuilts.pengbadgewindow import PenguinBadgeWindow

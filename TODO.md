@@ -73,9 +73,9 @@
 
 ## pengmath
 
-- [ ] add power
-- [ ] add floor division
-- [ ] add remainder
+- [x] add power
+- [x] add floor division
+- [x] add remainder
 
 ## penggame
 
@@ -96,7 +96,7 @@
 
 ## pengvending
 
-- [ ] add sales
+- [x] add sales
 
 ## pengmoney
 
@@ -166,7 +166,7 @@
 - [x] v1.3.0 - ~~more path options~~
   - path:
     - ~~make root an argument~~ *Finished in v1.0.0*
-- [ ] v1.4.0 - more math, dishes, and dishwashers, rubber duck debugger
+- [x] v1.4.0 - more math, dishes, and dishwashers, rubber duck debugger
   - more math:
     - floor div
     - remainder

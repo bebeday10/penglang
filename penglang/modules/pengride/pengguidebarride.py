@@ -8,7 +8,14 @@ PenguinLocationNotLocatableError = make_error("PenguinLocationNotLocatableError"
 
 @dataclass
 class PenguinGuideBarRide(PenguinRide):
-    locations: pne.PenguinNoEnd[str]
+    """
+    Ride that uses guide bars and has predetermined locations.
+    """
+    locations: pne.PenguinNoEnd[str] | None = None
+
+    def __post_init__(self):
+        self.locations = self.locations or []
+        return super().__post_init__()
 
     def ride_to(self, location):
         if location not in self.locations:
@@ -18,3 +25,6 @@ class PenguinGuideBarRide(PenguinRide):
     def ride_to_next_location(self):
         self.locations.forward(1)
         self.location = self.locations.get()
+
+    def __contains__(self, item):
+        return item in self.locations

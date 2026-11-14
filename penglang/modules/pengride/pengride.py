@@ -5,6 +5,9 @@ from ..pengpenguin import Penguin
 
 @dataclass
 class PenguinRide:
+    """
+    Base ride class.
+    """
     location: str
     people: list[Penguin] | None = None
     max_people: int = 6
