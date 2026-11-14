@@ -1,8 +1,8 @@
 from dataclasses import dataclass
 
 @dataclass
-class PenguinNoEnd:
-    stuff: list
+class PenguinNoEnd[T]:
+    stuff: list[T]
     current_selection: int = 0
 
     def forward(self, amount_forward: int = 1):
@@ -15,7 +15,7 @@ class PenguinNoEnd:
             return None
         self.current_selection = (self.current_selection - amount_backward) % len(self.stuff)
 
-    def get(self):
+    def get(self) -> None | T:
         if len(self.stuff) == 0:
             return None
         return self.stuff[self.current_selection]
@@ -48,4 +48,7 @@ class PenguinNoEnd:
                     if changed_slice[1] is not None:
                         changed_slice[1] = (key.start) % len(self.stuff)
             return self.stuff[changed_slice[0]:changed_slice[1]:changed_slice[2]]
+
+    def __contains__(self, item):
+        return item in self.stuff
 
