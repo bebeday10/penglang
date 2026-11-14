@@ -66,7 +66,7 @@ class PenguinMusicWorkplace:
                 for j in range(self.render_distance + self.render_shift + 2):
                     if j not in self.tones[octave][i]:
                         self.tones[octave][i][j] = None
-        with Live() as l:
+        with Live(auto_refresh=False) as l:
             try:
                 while True:
                     # --- Rendering ---

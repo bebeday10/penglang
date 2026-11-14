@@ -1,4 +1,88 @@
 # Changelog
+## v1.4.0
+Hello **salmon**. Today we present **bluescreens**, **customer support**, **rubber duck fish virus checkers**, **badge and image windows**, and *more*.
+
+---
+
+The penguins have broke your computer and introduced a *bluescreen*. *Although*, sometimes it's not blue, instead being one of **16 million** colors. *Error codes*, *progress bars*, *sad faces*, *messages*...
+
+There are decillions of possibilities it can be...
+
+---
+
+**Customer support** can be **trained on text**, then it will use that text and *talk to you*.  
+By default, it is trained on the **PengLang Docs**.  
+Choose models from 1 to any positive number. Higher models mean higher stability, but you need to tell it more.
+
+---
+
+**Rubber duck fish virus checkers** can help you check for fish viruses in your code, albeit frustrating.  
+It may recommend changing colors, finding elves, and *more*.
+
+---
+
+**Badge windows** for when you earn badges and need to celebrate, and **image windows** when you need to show things.  
+Penguins call this "window equality".
+
+---
+
+**Food**... *food*... **PengFood**?!  
+Penguins want to eat food.  
+**First**, they need *recipes* to find food.  
+**Second**, they need *food machines* to make food.    
+**Third**, they need *dishes* to eat food.  
+**Fourth**, they *eat* food.  
+**Fifth**, the *dishes are dirty* because they ate food.  
+**Sixth**, they use *dishwashers* to clean dishes.
+
+---
+
+**PengMath** has new math to math after a long awaiting.
+
+- Floor division
+- Exponentiation
+- Average
+- Median
+- Mode
+
+---
+
+*As part of PengMath*, **PengTolerance** has arrived to tolerate the penguins.  
+
+The middle is 9 and a penguin's toleration is of 3.  
+
+6 counts, 12 counts, 10 counts, 8 counts, 5 doesn't count, 13 doesn't count.
+
+---
+
+The music workplace has arrived!
+
+Make some music using the music workplace.  
+Move the cursor, change the octave, see a grid, save it, load it, export it as WAV!
+
+---
+
+Penguins can now subscript PenguinNoEnd, and it now supports `item in PenguinNoEnd([item])`!  
+
+---
+
+**PenguinIceOfRandom** now has a minimalist progress bar. Penguins call this "great performance at reading".
+
+---
+
+**The PenguinRide family** is here! Go **anywhere**, *anytime*.
+
+- PenguinRide
+  - PenguinPublicRide
+    - PenguinPublicGuideBarRide
+  - PenguinGuideBarRide
+    - PenguinPublicGuideBarRide
+  - PenguinThingRide
+
+---
+
+It *may* be all, *for now*. Goodbye!
+
 ## v1.3.0
 Hello **cod**. The 4th **instalment** of v1 has *arrived* after a *short* time of **35** days. Today we present PengLang subscriptions, button windows, math machines and rectangle shapes.
 
