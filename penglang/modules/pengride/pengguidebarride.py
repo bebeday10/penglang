@@ -14,7 +14,7 @@ class PenguinGuideBarRide(PenguinRide):
     locations: pne.PenguinNoEnd[str] | None = None
 
     def __post_init__(self):
-        self.locations = self.locations or []
+        self.locations = self.locations or pne.PenguinNoEnd()
         return super().__post_init__()
 
     def ride_to(self, location):

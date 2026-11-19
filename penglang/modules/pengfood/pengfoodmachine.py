@@ -22,7 +22,7 @@ class PenguinFoodMachine:
     def make_food(self, food_name):
         food_index = 0
         for i, recipe in enumerate(self.recipes):
-            if food_name == recipe:
+            if food_name == recipe.name:
                 food_index = i
                 break
         else:
