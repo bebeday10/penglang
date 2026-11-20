@@ -113,7 +113,9 @@ class PenguinMathMachine:
             answer = evaluation_copy[0]
             for i in range((int(evaluation_copy[1]) % int(answer)) - 1, int(answer), int(evaluation_copy[1])):
                 
-                answer += i                
+                answer += i
+
+            answer -= 1                
 
         elif do == "pow":
             answer = evaluation_copy[0]
