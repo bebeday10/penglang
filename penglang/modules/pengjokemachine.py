@@ -65,7 +65,33 @@ class PenguinJokeMachine:
             "hair",
             "honeycomb",
             "bear",
-            "gummy bear"
+            "gummy bear",
+            "corkscrew",
+            "actor",
+            "week",
+            "pneumonoultramicroscopicsilicovolcanoconiosis",
+            "racehorse",
+            "phone",
+            "job",
+            "road",
+            "eye",
+            "shirt",
+            "clothes",
+            "echo",
+            "boxers",
+            "company",
+            "building",
+            "computer",
+            "shark",
+            "clownfish",
+            "apology",
+            "dots",
+            "dashes",
+            "morse code",
+            "typewriter",
+            "painter",
+            "paper",
+            "drawing"
         ]
         self.places = [
             "the road",
@@ -88,7 +114,17 @@ class PenguinJokeMachine:
             "the playground",
             "the mountains",
             "the library",
-            "the cave"
+            "the cave",
+            "the stable",
+            "the rural land",
+            "the farm",
+            "the ice rink",
+            "the beach",
+            "the shore",
+            "the company",
+            "the computer",
+            "the sea",
+            "the typewriter"
             
         ]
     @multitask
@@ -100,6 +136,7 @@ class PenguinJokeMachine:
     def get_start(self):
         obj = choice(self.objects)
         second_obj = choice(self.objects)
+        third_obj = choice(self.objects)
         place = choice(self.places)
         starts = [
             f"Why did the {obj} cross {place}?",
@@ -117,7 +154,9 @@ class PenguinJokeMachine:
             f"I hate {obj}—",
             f"What do you call a {obj} in a {second_obj}?",
             f"Why do {obj} have sticky {second_obj}?",
-            f"What do you call a {obj} with no {second_obj}?"
+            f"What do you call a {obj} with no {second_obj}?",
+            f"What did the {obj} say when {second_obj} ate the {third_obj}?",
+            f"What do you call a {obj} written in {second_obj} and {third_obj}?"
         ]
         return choice(starts)
 
@@ -141,6 +180,8 @@ class PenguinJokeMachine:
             f"With a {obj}.",
             f"{obj}'s so full of {second_obj}.",
             f"A {obj}.",
-            f"Because {obj} use {second_obj}."
+            f"Because {obj} use {second_obj}.",
+            f"{obj} tastes a little funny.",
+            f"Re-{obj}."
         ]
         return choice(ends)
